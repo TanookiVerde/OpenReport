@@ -5,9 +5,6 @@
  */
 package openreport;
 
-import com.itextpdf.text.Document;
-import com.itextpdf.text.pdf.PdfDocument;
-import com.itextpdf.text.pdf.PdfWriter;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -26,6 +23,7 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
+        System.out.println("You clicked me!");
         label.setText("Hello World!");
     }
     
