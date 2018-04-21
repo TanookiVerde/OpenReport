@@ -7,10 +7,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class OpenReport extends Application {
-    
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("scene_bd-menu.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("layouts/scene_bd-menu.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getResource("layouts/scene_main-menu.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getResource("layouts/scene_customization-menu.fxml"));
         
         Scene scene = new Scene(root);
         
@@ -18,11 +19,7 @@ public class OpenReport extends Application {
         stage.show();
     }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         launch(args);
     }
-    
 }
