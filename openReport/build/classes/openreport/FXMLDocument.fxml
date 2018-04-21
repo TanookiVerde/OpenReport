@@ -192,12 +192,6 @@
                                                         </items>
                                                       </SplitMenuButton>
                                                       <Label text="Alvo" GridPane.rowIndex="2" />
-                                                      <SplitMenuButton mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                                        <items>
-                                                          <MenuItem mnemonicParsing="false" text="S" />
-                                                          <MenuItem mnemonicParsing="false" text="Action 2" />
-                                                        </items>
-                                                      </SplitMenuButton>
                                                    </children>
                                                 </GridPane>
                                              </children>
