@@ -17,5 +17,7 @@ public class c_Header extends Component {
         this.telefone = telefone;
         this.webSite = webSite;
         this.image = image;
+        
+        type = ComponentType.HEADER;
     }
 }
