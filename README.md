@@ -1,20 +1,13 @@
 # OpenReport
 
-## Alunos envolvidos
-![](https://i.imgur.com/u5xvRsc.png)
-   * **Gabriel Aureo de Oliveira Campos** - Desenvolvimento, pesquisa
-   * **Henrique Vermelho de Toledo** - Scrum Master, design, e desenvolvimento
-   * **Matheus Vinicius da Silva de Figueiredo** - Desenvolvimento, pesquisa
-   * **Pedro Vítor Marques Nascimento** - Design, arte, desenvolvimento, gestão
+## Equipe
+   * **Gabriel Aureo de Oliveira Campos** - Desenvolvimento do Banco de Dados.
+   * **Henrique Vermelho de Toledo** - Scrum Master e desenvolvimento de interface.
+   * **Matheus Vinicius da Silva de Figueiredo** - Desenvolvimento da exportação para PDF e geração de Template.
+   * **Pedro Vítor Marques Nascimento** - Desenvolvimento de interface.
 
 ## Definição de Conclusão
 O time considera pronto um software que possibilite ao usuário adicionar, editar e remover dados do banco de dados da escola. Além disso a possibilidade de, em cima deles, emitir relatórios com estrutura dividida em Title, Page Header, Body, Page Footer e Footer. Estes relatórios podem acessar os dados do banco de dados de maneira que seja possível listar alunos em uma turma específica e coisas do gênero. Outra funcionalidade é a possibilidade de salvar o template do relatório em um arquivo XML que pode ser lido posteriormente pelo sistema.
-
-## Ferramentas
-* Java 1.8
-* JavaFX
-* Netbeans IDE 8.2
-* [iText 5.5.1](https://drive.google.com/open?id=14n_LnNdxtv4bUePJbjCPg-2EbdQmsler)
 
 ## Backlog
 Nome|Tipo|Horas|Concluído
@@ -62,3 +55,8 @@ Número|Data|Funcionalidades
 3|?|Exportar para PDF, abrir template e anteriores.
 Final|?|Finalização - polimento - e correção de bugs.
 
+## Ferramentas
+* Java 1.8
+* JavaFX
+* Netbeans IDE 8.2
+* [iText 5.5.1](https://drive.google.com/open?id=14n_LnNdxtv4bUePJbjCPg-2EbdQmsler)
