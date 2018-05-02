@@ -14,10 +14,11 @@ public class OpenReport extends Application {
         
         //Parent root = FXMLLoader.load(getClass().getResource("layouts/scene_bd-menu.fxml"));
         //Parent root = FXMLLoader.load(getClass().getResource("layouts/scene_main-menu.fxml"));
-       
-        Parent root = FXMLLoader.load(getClass().getResource("layouts/scene_customization-menu.fxml"));
-        Scene scene = new Scene(root);
         
+        Parent root = FXMLLoader.load(getClass().getResource("layouts/scene_customization-menu.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getResource("layouts/Components/component_plain-text.fxml"));
+        Scene scene = new Scene(root);
+     
         stage.setTitle("OpenReport");
         stage.setScene(scene);
         stage.show();

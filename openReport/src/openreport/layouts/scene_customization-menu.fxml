@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.DialogPane?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -12,7 +13,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:controller="openreport.FXMLDocumentController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="openreport.FXMLDocumentController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -54,8 +55,9 @@
                      <children>
                         <VBox alignment="TOP_CENTER" prefHeight="409.0" prefWidth="798.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
+                              <Button fx:id="addTitle" mnemonicParsing="false" onAction="#addTitleComponent" text="Adicionar Componente" />
                               <Accordion />
-                              <Button fx:id="addButton" mnemonicParsing="false" text="Adicionar Componente" />
+                              <DialogPane fx:id="titleButtonSlot" />
                            </children>
                         </VBox>
                      </children>
