@@ -18,15 +18,17 @@ public class PDFtest {
         c_Title tb = new c_Title("HISTÓRICO ESCOLAR DE TRANSFERÊNCIA", null);
         c_Header tc = new c_Header("INSTITUTO DE APLICAÇÃO FERNANDO RODRIGUES",
                 "RUA SANTA ALEXANDRINA","50","2278-600",
-                "(21) 2441-5312","www.cap.uerj.br","url_imagem");
+                "(21) 2441-5312","www.cap.uerj.br","resources/images/gaara.png");
+        c_Signature td = new c_Signature("Jorge da Silva Bastos", "Coordenador Adjunto");
         
         Document doc = new Document();
         PdfWriter.getInstance(doc, new FileOutputStream(DEST));
         
-        doc.open();
+        doc.open();       
+        tc.print(doc);
         tb.print(doc);
         ta.print(doc);
-        tc.print(doc);
+        td.print(doc);
         doc.close();
         
     }
