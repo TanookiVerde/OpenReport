@@ -47,6 +47,76 @@ Visual do Componente Imagem |Interface Componentes|1h
 Componente Tabela para histórico Escolar|Exportar PDF|4h
 Componente Imagem |Exportar PDF|1h
 
+## Sprints
+### [Burn down Charts de cada Sprint, por membro](https://docs.google.com/spreadsheets/d/1cLAJabJcqsTo1P4E_HbKuMOHV_B_Jd2DMFNLmmlBLp0/edit?usp=sharing)
+Aqui anexamos (link no título) um documento com todos os burn down charts elaborados até então.
+
+### Sprint 0 
+* Backlog iniciado - Trello
+* Reunião decisiva da equipe para planejamento do backlog, objetivo e funções de cada membro da equipe.
+* Rumo de projeto decidido, objetivo na Wiki atualizado
+* Primeiros planejamentos de back-end, interface (mockups)
+#### Retrospectiva:
+Esta sprint serviu como um preparo geral para o trabalho principal que o grupo terá de codificação das ideias discutidas, nas quais as ferramentas preparadas até agora - o *PM-Canvas*, *Trello*, *Mapa Mental* dentre outros servirão de apoio para um projeto flexível-iterativo, organizado e agilmente desenvolvido.
+### Sprint 1
+#### Backlog:
+* Atualização Semanal Wiki (1 de 12)
+* Tela de Customização (Oca)
+* Tela inicial de seleção emplates (oca)
+* Visual dos Componentes
+* Gerar arquivo XML a partir de uma classe
+* Finalizar modelo E.R e estrutura de hierarquia  do Back End
+#### Modelo Entidade-Relacionamento para Back-end
+![E.R](https://i.imgur.com/rW7SyFj.png)
+#### Modelo Lógico
+![Lógico](https://i.imgur.com/ArXUp52.png)
+#### Retrospectiva:
+Nessa sprint foi acertado a divisão do desenvolvimento foi dividido em Front-end e Back-end. Foi concluído cerca de um  terço dos requisitos levantados. Destaques, conforme já citados na reação 6, incluem serialização e deserialização em XML, um esboço de interface semi-oca pronto, e o Banco de Dados modelado em E.R. A partir dessas sprints, encontram-se anexados Burndown Charts para cada membro conforme o dependível [vídeo instrucional do Cesar Brod](https://www.youtube.com/watch?v=_Dt_o7MKImQ) (recomendação do Professor Luis)
+
+### Sprint 2
+#### Backlog:
+* Atualização Semanal Wiki (2 de 12)
+* Adição de Componentes
+* Remoção de Componentes (incompleto)
+* Implementação do Diagrama e das tabelas em mySQL
+* Popular Banco de Dados (incompleto)
+* Imprimir Cabeçalho
+* Imprimir Título
+* Imprimir Texto
+
+
+#### Retrospectiva:
+Houve uma produção sólida com um número razoável de itens do backlog concluídos. Um dos integrantes repassou adiante suas tarefas da semana por fatores de múltiplas provas na mesma. Dois itens de destaque - a Remoção de Componentes e População do Banco de Dados acabaram não satisfatórios mesmo depois de tempo investido. Para as próximas sprints, também em um período inicial de provas do período, espera-se poder concluir esses itens juntamente de mais novos requisitos.
+
+### Sprint 3
+#### Backlog:
+* Atualização Semanal Wiki (3 de 12)
+* Popular Banco de Dados (incompleto)
+* Remoção de Componentes (incompleto)
+* Componente Imagem
+* Imprimir Assinatura
+* Adição em cada campo
+
+#### Retrospectiva:
+Uma queda na produção, tanto nessa quanto possivelmente na próxima semana, como anteriormente previsto na Sprint 2. Um dos membros que havia se ausentado para outras obrigações acadêmicas ocupou a maior parte da produção dessa semana. Não foi alocado tempo o suficiente para os bugs na remoção, uma vez que a documentação da wiki exigiu um tempo maior do que o previsto, e popular o Banco de Dados foi subestimado, requerindo muito mais tempo do que imaginado.
+
+### Sprint 4
+#### Backlog:
+* Atualização Semanal Wiki (4 de 12)
+* Popular Banco de Dados
+* Implementação de Queries Enumerados (incompleto)
+* Remoção de Componentes (incompleto)
+* Imprimir Tabela Simples
+* Imprimir Componentes de acordo com Layout
+* Remoção em Cada Campo
+* Edição em Cada Campo
+
+#### Retrospectiva:
+Umas das maiores tarefas do back-end, como imprimir tabelas e a implementação dos Queries enumerados foram iniciadas, mas quanto ao Banco de Dados foi suprido o atraso gerido pelas avaliações. A pedido do Professor Luis, para acesso ao versionamento e um melhor histórico de updates, foi movida a parte da documentação referente as Sprints para este repositório. A documentação novamente exigiu mais tempo do que o previsto. Após esta sprint haverá uma melhor mobilidade para cumprir mais tarefas do backlog.
+
+## Relatórios produzidos _(em ordem de entrega)_
+Os links *(nos títulos)* concedem permissão para comentários, agradecemos quaisquer observações que possam ser feitas para melhorar a qualidade de nossos relatórios!
+<br>
 ## Iterações do Produto Final
 Número|Data|Funcionalidades
 ----|----|-----
