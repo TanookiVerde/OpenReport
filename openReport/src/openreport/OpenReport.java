@@ -25,6 +25,7 @@ public class OpenReport extends Application {
     }
 
     public static void main(String[] args) {
+        DBManager.main(args);
         launch(args);
     }
 }

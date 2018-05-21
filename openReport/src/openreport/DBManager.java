@@ -6,8 +6,8 @@
 package openreport;
 
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import com.mchange.v2.c3p0.*;
+import java.beans.PropertyVetoException;
 
 /**
  *
@@ -21,6 +21,21 @@ public class DBManager {
     private static Connection con;
     
     private DBManager(){};
+    
+    public static ComboPooledDataSource getDataSource() throws PropertyVetoException{
+        ComboPooledDataSource cpds = new ComboPooledDataSource();
+        cpds.setJdbcUrl(url);
+        cpds.setUser(user);
+        cpds.setPassword(password);
+        
+        cpds.setInitialPoolSize(5);
+        cpds.setMinPoolSize(5);
+        cpds.setAcquireIncrement(5);
+        cpds.setMaxPoolSize(20);
+        cpds.setMaxStatements(100);
+        
+        return cpds;
+    }
         
     public static Connection connect(){
         try {
