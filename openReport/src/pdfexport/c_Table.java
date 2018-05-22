@@ -6,12 +6,12 @@ import com.itextpdf.text.pdf.PdfPTable;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class C_Table extends Component{
+public class c_Table extends Component{
     public ArrayList<String> content;
     public int columnAmount;
     public int cellPerColumn;
      
-    public C_Table(int _columnAmount, int _cellPerColumn, String... _content){
+    public c_Table(int _columnAmount, int _cellPerColumn, String... _content){
         content = new ArrayList<String>();
         for(String c : _content){
              content.add(c);
