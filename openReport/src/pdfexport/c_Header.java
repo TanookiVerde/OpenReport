@@ -3,8 +3,8 @@ package pdfexport;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
 import java.io.IOException;
+import javafx.event.ActionEvent;
 import javafx.scene.layout.VBox;
-import javafx.scene.*;
 import javafx.fxml.*;
 
 public class c_Header implements IComponent {
@@ -19,7 +19,9 @@ public class c_Header implements IComponent {
     public VBox vbox; //vbox em que o componente serah armazenado
     public int vboxIndex; //indice do componente nesta vbox
     
-    private final String fxmlPath = "fxml/component_header.fxml";
+    public Template template;
+    
+    public static String fxmlPath = "fxml/component_header.fxml";
 
     public c_Header(String schoolName, String street, String aptNumber, String cep, String telefone, String webSite, String logoPath) {
         this.schoolName = schoolName;
@@ -30,21 +32,16 @@ public class c_Header implements IComponent {
         this.webSite = webSite;
         this.logoPath = logoPath;
     }
+
     @Override
-    public void addComponent(VBox area){
-        try{
-            Parent comp = FXMLLoader.load(getClass().getResource(fxmlPath));
-            area.getChildren().add(comp);
-            vboxIndex = area.getChildren().indexOf(comp);
-            vbox = area;
-        }
-        catch(IOException i){
-            System.out.println("ERRO "+i.getMessage());
-        }
-    }
-    @Override @FXML
     public void deleteComponent(){
         vbox.getChildren().remove(vboxIndex);
+        template.removeComponentFromTitle(vboxIndex);
+    }
+    @Override
+    public void setComponentInformation(VBox box, int index, Template template){
+        this.vbox = box;
+        this.vboxIndex = index;
     }
     @Override
     public void print(Document document) throws IOException, DocumentException {
@@ -70,17 +67,8 @@ public class c_Header implements IComponent {
         document.add(table);
         document.add(new Paragraph("\n"));
     }
+    @FXML
+    public void test(ActionEvent event){
+        System.out.println("OI");
+    }
 }
-/*
-Button b = new Button("Teste");
-b.setOnAction(
-        new EventHandler<ActionEvent>(){
-            @Override
-            public void handle(ActionEvent e){
-                deleteComponent();
-            }
-        }
-);
-area.getChildren().add(b);
-vboxIndex = area.getChildren().indexOf(b);
-*/

@@ -7,6 +7,6 @@ import javafx.scene.layout.VBox;
 
 public interface IComponent {
     public void print(Document document) throws IOException, DocumentException;
-    public void addComponent(VBox vbox);
+    public void setComponentInformation(VBox area, int index, Template template);
     public void deleteComponent();
 }

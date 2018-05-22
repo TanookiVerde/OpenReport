@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="openreport.CustomizationMenuController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pdfexport.Template">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -62,7 +62,7 @@
                   </AnchorPane>
             </content>
                <graphic>
-                  <Button fx:id="addTitle" mnemonicParsing="false" onAction="#addTitleComponent" text="+">
+                  <Button fx:id="addTitle" mnemonicParsing="false" onAction="#addComponentOnTitle" text="+">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
