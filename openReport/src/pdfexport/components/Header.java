@@ -23,7 +23,7 @@ public class Header implements IComponent {
     
     public List<IComponent> list;
     
-    public static String fxmlPath = "fxml/component_header.fxml";
+    public static String fxmlPath = "components/Header.fxml";
 
     public Header(String schoolName, String street, String aptNumber, String cep, String telefone, String webSite, String logoPath) {
         this.schoolName = schoolName;
@@ -34,7 +34,16 @@ public class Header implements IComponent {
         this.webSite = webSite;
         this.logoPath = logoPath;
     }
-    @Override @FXML
+    public Header(){
+        this.schoolName = " ";
+        this.street = " ";
+        this.aptNumber = " ";
+        this.cep = " ";
+        this.telefone = " ";
+        this.webSite = " ";
+        this.logoPath = " ";
+    }
+    @Override
     public void deleteComponent(ActionEvent event){
         vbox.getChildren().remove(vboxIndex);
         Template.template.title.remove(vboxIndex - 1);
