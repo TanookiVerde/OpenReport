@@ -2,12 +2,22 @@ package pdfexport.components;
 
 import com.itextpdf.text.*;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.layout.VBox;
 
 public class Title implements IComponent{
     public String title;
     public String subtitle;
+    
+    public static String fxmlPath = "components/Title.fxml";
+    @FXML
+    public VBox vbox; //vbox em que o componente serah armazenado
+    public int vboxIndex; //indice do componente nesta vbox
+    
+    //public java.util.List<IComponent> list;
     
     public Title(String title, String subtitle){
         this.title = title;
@@ -34,11 +44,16 @@ public class Title implements IComponent{
     }
     @Override
     public void setComponentInformation(VBox slot, int index, java.util.List<IComponent> template) {
+        this.vbox = slot;
+        this.vboxIndex = index;
+        //this.list = template;
     }
-    @Override
-    public void deleteComponent(ActionEvent event) {
+    @FXML
+    private void deleteComponent(ActionEvent event) {
+        vbox.getChildren().remove(vbox.getChildren().get(vboxIndex));
     }
-    @Override
-    public void edit(ActionEvent event) {
+    @FXML
+    private void edit(ActionEvent event) {
+        System.out.println("EDITOU");
     }
 }

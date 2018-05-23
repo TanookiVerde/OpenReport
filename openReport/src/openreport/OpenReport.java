@@ -15,8 +15,6 @@ public class OpenReport extends Application {
         stage.setTitle("OpenReport");
         stage.setScene(scene);
         stage.show();
-        System.out.println(Template.class);
-        System.out.println(Template.class.getResource("components/Header.fxml"));
     }
     public static void main(String[] args) {
         launch(args);

@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.HBox;
+import pdfexport.components.Title;
 import pdfexport.slots.DocumentHeader;
 
 public class Template {
@@ -44,6 +45,8 @@ public class Template {
         try{
             Node root = FXMLLoader.load(getClass().getResource(DocumentHeader.slotPath));
             slotGrid.getChildren().add(root);
-        }catch(IOException i){}
+        }catch(IOException i){
+        System.out.println(i.getMessage());
+        }
     }
 }

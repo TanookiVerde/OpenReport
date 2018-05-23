@@ -6,7 +6,6 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.VBox;
 import javafx.fxml.*;
-import pdfexport.Template;
 import java.util.List;
 
 public class Header implements IComponent {
@@ -18,10 +17,11 @@ public class Header implements IComponent {
     public String webSite;
     public String logoPath;
     
+    @FXML
     public VBox vbox; //vbox em que o componente serah armazenado
     public int vboxIndex; //indice do componente nesta vbox
     
-    public List<IComponent> list;
+    //public List<IComponent> list;
     
     public static String fxmlPath = "components/Header.fxml";
 
@@ -43,17 +43,16 @@ public class Header implements IComponent {
         this.webSite = " ";
         this.logoPath = " ";
     }
-    @Override
-    public void deleteComponent(ActionEvent event){
+    @FXML
+    private void deleteComponent(ActionEvent event){
         vbox.getChildren().remove(vboxIndex);
-        Template.template.title.remove(vboxIndex - 1);
-        list.remove(vboxIndex);
+        //list.remove(vboxIndex);
     }
     @Override
-    public void setComponentInformation(VBox box, int index, List<IComponent> template){
-        this.vbox = box;
+    public void setComponentInformation(VBox slot, int index, List<IComponent> template){
+        this.vbox = slot;
         this.vboxIndex = index;
-        this.list = template;
+        //this.list = template;
     }
     @Override
     public void print(Document document) throws IOException, DocumentException {
@@ -79,7 +78,8 @@ public class Header implements IComponent {
         document.add(table);
         document.add(new Paragraph("\n"));
     }
-    @Override
-    public void edit(ActionEvent event) {
+    @FXML
+    private void edit(ActionEvent event) {
+        System.out.println(this.toString());
     }
 }

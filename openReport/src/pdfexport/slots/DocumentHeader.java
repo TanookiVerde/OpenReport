@@ -4,10 +4,10 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.layout.VBox;
 import pdfexport.Template;
-import pdfexport.components.Header;
+import pdfexport.components.*;
 
 public class DocumentHeader implements ISlot {
     private final int maxComponentNumber = 3;
@@ -19,21 +19,37 @@ public class DocumentHeader implements ISlot {
     
     @Override
     public void addTitle(ActionEvent event) {
+        Title t;
+        try{
+            FXMLLoader l = new FXMLLoader();
+            Parent p = l.load(
+                    Template.class.getResource(Title.fxmlPath)
+            );
+            componentGrid.getChildren().add(p);
+            t = l.getController();
+            t.setComponentInformation(
+                    componentGrid, 
+                    componentGrid.getChildren().indexOf(p), 
+                    Template.template.title
+            );
+            Template.template.title.add(t);
+        }catch(IOException i){
+            System.out.println("ERRO: "+i.getMessage());
+        }
     }
     @Override
     public void addHeader(ActionEvent event) {
         Header h;
         try{
             FXMLLoader l = new FXMLLoader();
-            l.setController(new Header());
-            Node n = l.load(
+            Parent p = l.load(
                     Template.class.getResource(Header.fxmlPath)
             );
-            componentGrid.getChildren().add(n);
+            componentGrid.getChildren().add(p);
             h = l.getController();
             h.setComponentInformation(
                     componentGrid, 
-                    componentGrid.getChildren().indexOf(n), 
+                    componentGrid.getChildren().indexOf(p), 
                     Template.template.title
             );
             Template.template.title.add(h);

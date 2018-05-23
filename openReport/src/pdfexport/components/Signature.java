@@ -39,10 +39,8 @@ public class Signature implements IComponent{
     @Override
     public void setComponentInformation(VBox area, int index, List<IComponent> template) {
     }
-    @Override
     public void deleteComponent(ActionEvent event) {
     }
-    @Override
     public void edit(ActionEvent event) {
     }
 }

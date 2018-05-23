@@ -47,10 +47,8 @@ public class Table implements IComponent{
     @Override
     public void setComponentInformation(VBox slot, int index, java.util.List<IComponent> template) {
     }
-    @Override
     public void deleteComponent(ActionEvent event) {
     }
-    @Override
     public void edit(ActionEvent event) {
     }
 }
