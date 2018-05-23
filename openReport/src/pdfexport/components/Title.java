@@ -1,13 +1,15 @@
-package pdfexport;
+package pdfexport.components;
 
 import com.itextpdf.text.*;
 import java.io.IOException;
+import javafx.event.ActionEvent;
+import javafx.scene.layout.VBox;
 
-public class c_Title extends Component{
+public class Title implements IComponent{
     public String title;
     public String subtitle;
     
-    public c_Title(String title, String subtitle){
+    public Title(String title, String subtitle){
         this.title = title;
         this.subtitle = subtitle;
     }
@@ -29,5 +31,14 @@ public class c_Title extends Component{
             document.add(subtitle_paragraph);
         }
         document.add(new Paragraph("\n"));
+    }
+    @Override
+    public void setComponentInformation(VBox slot, int index, java.util.List<IComponent> template) {
+    }
+    @Override
+    public void deleteComponent(ActionEvent event) {
+    }
+    @Override
+    public void edit(ActionEvent event) {
     }
 }

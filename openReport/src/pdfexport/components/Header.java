@@ -1,4 +1,4 @@
-package pdfexport;
+package pdfexport.components;
 
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
@@ -6,8 +6,10 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.VBox;
 import javafx.fxml.*;
+import pdfexport.Template;
+import java.util.List;
 
-public class c_Header implements IComponent {
+public class Header implements IComponent {
     public String schoolName;
     public String street;
     public String aptNumber;
@@ -19,11 +21,11 @@ public class c_Header implements IComponent {
     public VBox vbox; //vbox em que o componente serah armazenado
     public int vboxIndex; //indice do componente nesta vbox
     
-    public Template template;
+    public List<IComponent> list;
     
     public static String fxmlPath = "fxml/component_header.fxml";
 
-    public c_Header(String schoolName, String street, String aptNumber, String cep, String telefone, String webSite, String logoPath) {
+    public Header(String schoolName, String street, String aptNumber, String cep, String telefone, String webSite, String logoPath) {
         this.schoolName = schoolName;
         this.street = street;
         this.aptNumber = aptNumber;
@@ -32,16 +34,17 @@ public class c_Header implements IComponent {
         this.webSite = webSite;
         this.logoPath = logoPath;
     }
-
-    @Override
-    public void deleteComponent(){
+    @Override @FXML
+    public void deleteComponent(ActionEvent event){
         vbox.getChildren().remove(vboxIndex);
-        template.removeComponentFromTitle(vboxIndex);
+        Template.template.title.remove(vboxIndex - 1);
+        list.remove(vboxIndex);
     }
     @Override
-    public void setComponentInformation(VBox box, int index, Template template){
+    public void setComponentInformation(VBox box, int index, List<IComponent> template){
         this.vbox = box;
         this.vboxIndex = index;
+        this.list = template;
     }
     @Override
     public void print(Document document) throws IOException, DocumentException {
@@ -67,8 +70,7 @@ public class c_Header implements IComponent {
         document.add(table);
         document.add(new Paragraph("\n"));
     }
-    @FXML
-    public void test(ActionEvent event){
-        System.out.println("OI");
+    @Override
+    public void edit(ActionEvent event) {
     }
 }

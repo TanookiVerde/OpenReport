@@ -1,12 +1,14 @@
-package pdfexport;
+package pdfexport.components;
 
 import com.itextpdf.text.*;
 import java.io.IOException;
+import javafx.event.ActionEvent;
+import javafx.scene.layout.VBox;
 
-public class c_Text extends Component {
+public class Text implements IComponent {
     public String text;
 
-    public c_Text(String text) {
+    public Text(String text) {
         this.text = text;
     }
     public void SetText(String txt){
@@ -19,5 +21,14 @@ public class c_Text extends Component {
         p.setAlignment(Element.ALIGN_CENTER);
         document.add(p);
         document.add(new Paragraph("\n"));
+    }
+    @Override
+    public void setComponentInformation(VBox slot, int index, java.util.List<IComponent> template) {
+    }
+    @Override
+    public void deleteComponent(ActionEvent event) {
+    }
+    @Override
+    public void edit(ActionEvent event) {
     }
 }

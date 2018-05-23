@@ -1,13 +1,17 @@
-package pdfexport;
+package pdfexport.components;
 
 import com.itextpdf.text.*;
 import java.io.IOException;
+import javafx.event.ActionEvent;
+import javafx.scene.layout.VBox;
+import pdfexport.*;
+import java.util.List;
 
-public class c_Signature extends Component{
+public class Signature implements IComponent{
     public String name;
     public String role;
      
-    public c_Signature(String _name, String _role){
+    public Signature(String _name, String _role){
          name = _name;
          role = _role;
      }
@@ -31,5 +35,14 @@ public class c_Signature extends Component{
         subtitle_paragraph.setFont(subtitle_font);
         subtitle_paragraph.setAlignment(Element.ALIGN_CENTER);
         document.add(subtitle_paragraph);
+    }
+    @Override
+    public void setComponentInformation(VBox area, int index, List<IComponent> template) {
+    }
+    @Override
+    public void deleteComponent(ActionEvent event) {
+    }
+    @Override
+    public void edit(ActionEvent event) {
     }
 }

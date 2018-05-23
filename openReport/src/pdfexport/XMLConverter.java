@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class XmlUtility {
+public class XMLConverter {
     public static String serializeTemplateToXML(Template t){     
         XStream xstream = new XStream();
         xstream.alias("template", Template.class);
@@ -16,10 +16,8 @@ public class XmlUtility {
         try (PrintWriter out = new PrintWriter("results/objects/template.xml")) {
         out.println(xml);
         }catch (FileNotFoundException ex) {
-            Logger.getLogger(XmlUtility.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(XMLConverter.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        System.out.println("File saved!"); 
     return xml;
     } 
     public static Template deserializeTemplateFromXML(String template){

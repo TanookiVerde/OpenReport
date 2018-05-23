@@ -1,17 +1,19 @@
-package pdfexport;
+package pdfexport.components;
 
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import java.io.IOException;
 import java.util.ArrayList;
+import javafx.event.ActionEvent;
+import javafx.scene.layout.VBox;
 
-public class c_Table extends Component{
+public class Table implements IComponent{
     public ArrayList<String> content;
     public int columnAmount;
     public int cellPerColumn;
      
-    public c_Table(int _columnAmount, int _cellPerColumn, String... _content){
+    public Table(int _columnAmount, int _cellPerColumn, String... _content){
         content = new ArrayList<String>();
         for(String c : _content){
              content.add(c);
@@ -41,5 +43,14 @@ public class c_Table extends Component{
         
         document.add(table);
         document.add(new Paragraph("\n"));
+    }
+    @Override
+    public void setComponentInformation(VBox slot, int index, java.util.List<IComponent> template) {
+    }
+    @Override
+    public void deleteComponent(ActionEvent event) {
+    }
+    @Override
+    public void edit(ActionEvent event) {
     }
 }
