@@ -8,6 +8,8 @@ package openreport;
 import java.sql.*;
 import com.mchange.v2.c3p0.*;
 import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -19,10 +21,11 @@ public class DBManager {
     static String password = "open1-";
     
     private static Connection con;
+    private static ComboPooledDataSource cpds;
     
     private DBManager(){};
     
-    public static ComboPooledDataSource getDataSource() throws PropertyVetoException{
+    private static ComboPooledDataSource initializeDataSource() throws PropertyVetoException{
         ComboPooledDataSource cpds = new ComboPooledDataSource();
         cpds.setJdbcUrl(url);
         cpds.setUser(user);
@@ -36,22 +39,45 @@ public class DBManager {
         
         return cpds;
     }
+    
+    public static ResultSet callStatement(String methodCall){
+        CallableStatement cst = null;
+        Connection con = connect();
+        try {
+            cst = con.prepareCall(methodCall);
+            ResultSet rs = cst.executeQuery();
+            return rs;
+           
+        } catch (SQLException ex) {
+            Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, ex);
+        }/* finally{
+            try {
+                cst.close();
+                con.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, ex);
+            }            
+        }*/
+        
+        return null;
+    }
         
     public static Connection connect(){
         try {
-            return con = DriverManager.getConnection(url, user, password);
+            return cpds.getConnection();
         } catch (SQLException ex) {
             throw new RuntimeException(ex);
         }
         
     }
     
-    public static Connection getConnection() throws SQLException{
+    private static Connection getConnection() throws SQLException{
         if(con != null && !con.isClosed()){
             return con;
         }
         return connect();
     }
+    
     
 
     public static void test(Connection c){
@@ -69,10 +95,39 @@ public class DBManager {
         }
     }
     
+    public static void printResultSet(ResultSet set){
+        try {
+            ResultSetMetaData rsmd = set.getMetaData();
+            int count = rsmd.getColumnCount();
+            for(int i = 1; i <= count ; i++){
+                    if (i > 1) System.out.print("\t| ");
+                    System.out.print(rsmd.getColumnLabel(i));
+                }
+            System.out.println("");
+            while(set.next()){
+                for(int i = 1; i <= count ; i++){
+                    if (i > 1) System.out.print("\t| ");
+                    System.out.print(set.getString(i));
+                }
+                System.out.println("");
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
     public static void main(String argv[]){
-        Connection c = DBManager.connect();  
-        test(c);
-              
+        try {
+            //Connection c = DBManager.connect();
+            //test(c);
+            cpds = initializeDataSource();
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ResultSet rs = callStatement("call ALUNODISC(\"Historia\")");
+        printResultSet(rs);
     }
     
     
