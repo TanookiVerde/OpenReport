@@ -40,26 +40,26 @@ public class DBManager {
         return cpds;
     }
     
-    public static ResultSet callStatement(String methodCall){
+    public static Test callStatement(Test obj, String methodCall){
         CallableStatement cst = null;
         Connection con = connect();
         try {
             cst = con.prepareCall(methodCall);
             ResultSet rs = cst.executeQuery();
-            return rs;
+            obj.populate(rs);
            
         } catch (SQLException ex) {
             Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, ex);
-        }/* finally{
+        } finally{
             try {
                 cst.close();
                 con.close();
             } catch (SQLException ex) {
                 Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, ex);
             }            
-        }*/
+        }
         
-        return null;
+        return obj;
     }
         
     public static Connection connect(){
@@ -126,6 +126,7 @@ public class DBManager {
         } catch (PropertyVetoException ex) {
             Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
         ResultSet rs = callStatement("call ALUNODISC(\"Historia\")");
         printResultSet(rs);
     }
