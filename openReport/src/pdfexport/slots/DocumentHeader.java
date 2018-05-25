@@ -1,6 +1,5 @@
 package pdfexport.slots;
 
-import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,63 +8,78 @@ import javafx.scene.layout.VBox;
 import pdfexport.Template;
 import pdfexport.components.*;
 
+/**
+ * Classe que representa um Slot (lista de components). Nela é possível adicionar
+ * components no template.
+ */
 public class DocumentHeader implements ISlot {
-    private final int maxComponentNumber = 3;
     
-    public static String slotPath = "/pdfexport/slots/DocumentHeader.fxml";
+    public final static int MAX_COMPONENT_NUMBER    = 3;
+    public final static String SLOT_PATH            = "/pdfexport/slots/DocumentHeader.fxml";
     
     @FXML
     private VBox componentGrid;
     
+    /**
+     * Método chamado quando o usuário clica no botão de adicionar um component do tipo
+     * Title.
+     */
     @Override
     public void addTitle(ActionEvent event) {
-        Title t;
+        if(componentGrid.getChildren().size() + 1 > MAX_COMPONENT_NUMBER) {
+            return;
+        }
         try{
-            FXMLLoader l = new FXMLLoader();
-            Parent p = l.load(
-                    Template.class.getResource(Title.fxmlPath)
-            );
-            componentGrid.getChildren().add(p);
-            t = l.getController();
-            t.setComponentInformation(
+            FXMLLoader loader = new FXMLLoader(Template.class.getResource(Title.FXML_PATH));
+            Parent newNode = (Parent) loader.load();
+            Title component = loader.getController();
+            
+            componentGrid.getChildren().add(newNode);
+            
+            component.setComponentInformation(
                     componentGrid, 
-                    componentGrid.getChildren().indexOf(p), 
+                    newNode, 
                     Template.template.title
             );
-            Template.template.title.add(t);
-        }catch(IOException i){
-            System.out.println("ERRO: "+i.getMessage());
+            
+            Template.template.title.add(component);
+        }catch(Exception i){
+            System.out.println(i.getMessage());
+            System.out.println(i.getStackTrace());
         }
     }
+    /**
+     * Método chamado quando o usuário clica no botão de adicionar um component do tipo
+     * Header.
+     */
     @Override
     public void addHeader(ActionEvent event) {
-        Header h;
-        try{
-            FXMLLoader l = new FXMLLoader();
-            Parent p = l.load(
-                    Template.class.getResource(Header.fxmlPath)
-            );
-            componentGrid.getChildren().add(p);
-            h = l.getController();
-            h.setComponentInformation(
-                    componentGrid, 
-                    componentGrid.getChildren().indexOf(p), 
-                    Template.template.title
-            );
-            Template.template.title.add(h);
-        }catch(IOException i){
-            System.out.println("ERRO: "+i.getMessage());
-        }
     }
+    /**
+     * Método chamado quando o usuário clica no botão de adicionar um component do tipo
+     * Sprite.
+     */
     @Override
     public void addSprite(ActionEvent event) {
     }
+    /**
+     * Método chamado quando o usuário clica no botão de adicionar um component do tipo
+     * Signature.
+     */
     @Override
     public void addSignature(ActionEvent event) {
     }
+    /**
+     * Método chamado quando o usuário clica no botão de adicionar um component do tipo
+     * Table.
+     */
     @Override
     public void addSimpleTable(ActionEvent event) {
     }
+    /**
+     * Método chamado quando o usuário clica no botão de adicionar um component do tipo
+     * Text.
+     */
     @Override
     public void addText(ActionEvent event) {
     }

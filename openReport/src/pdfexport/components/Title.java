@@ -2,27 +2,34 @@ package pdfexport.components;
 
 import com.itextpdf.text.*;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
 import javafx.scene.layout.VBox;
 
+/**
+* Classe que representa o component Title.
+*/
 public class Title implements IComponent{
     public String title;
     public String subtitle;
     
-    public static String fxmlPath = "components/Title.fxml";
-    @FXML
+    public final static String FXML_PATH = "/pdfexport/components/Title.fxml";
+    
     public VBox vbox; //vbox em que o componente serah armazenado
-    public int vboxIndex; //indice do componente nesta vbox
+    public Parent node;
     
-    //public java.util.List<IComponent> list;
+    public java.util.List<IComponent> list;
     
-    public Title(String title, String subtitle){
-        this.title = title;
-        this.subtitle = subtitle;
+    public Title(){
+        this.title = " ";
+        this.subtitle = " ";
     }
+    /**
+     * Este método é chamado quando se está percorrendo o vetor de components e 
+     * "printando" suas informações em sequência. Ele está vinculado à interface 
+     * IComponent.
+     */
     @Override
     public void print(Document document) throws IOException, DocumentException {
         Font title_font = FontFactory.getFont(FontFactory.HELVETICA, 20, Font.BOLD);
@@ -42,18 +49,35 @@ public class Title implements IComponent{
         }
         document.add(new Paragraph("\n"));
     }
+    /**
+     * Este método é chamado assim que se cria um component. Através dele o component sabe
+     * onde está armazenado, qual node o representa e em qual lista da instância template ele
+     * está. Dessa maneira ele pode futuramente se deletar ou mudar de ordem.
+     */
     @Override
-    public void setComponentInformation(VBox slot, int index, java.util.List<IComponent> template) {
+    public void setComponentInformation(VBox slot, Parent node, java.util.List<IComponent> template) {
         this.vbox = slot;
-        this.vboxIndex = index;
-        //this.list = template;
+        this.node = node;
+        this.list = template;
     }
-    @FXML
-    private void deleteComponent(ActionEvent event) {
-        vbox.getChildren().remove(vbox.getChildren().get(vboxIndex));
+    /**
+     * Este método é chamado quando o usuário clica no botão de deletá-lo. Ele se remove da VBox que
+     * representa a lista de componentes e também da lista de components no template. É importante dizer
+     * que ele calcula seu indice usando o node que foi passado pelo método setComponentInformation.
+     */
+    @Override @FXML
+    public void deleteComponent(ActionEvent event) {
+        int currentIndex = vbox.getChildren().indexOf(node);
+        vbox.getChildren().remove(vbox.getChildren().get(currentIndex));
+        list.remove(currentIndex);
+        System.out.println(list);
     }
-    @FXML
-    private void edit(ActionEvent event) {
+    /**
+     * Este método é chamado quando o usuário clica no botão de atualizar informações do component
+     * (a.k.a. Editar). Ele coleta as informações dos InputFields e as coloca nos campos do component.
+     */
+    @Override @FXML
+    public void editComponent(ActionEvent event) {
         System.out.println("EDITOU");
     }
 }

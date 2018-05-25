@@ -3,6 +3,8 @@ package pdfexport.components;
 import com.itextpdf.text.*;
 import java.io.IOException;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.Parent;
 import javafx.scene.layout.VBox;
 
 public class Text implements IComponent {
@@ -23,10 +25,12 @@ public class Text implements IComponent {
         document.add(new Paragraph("\n"));
     }
     @Override
-    public void setComponentInformation(VBox slot, int index, java.util.List<IComponent> template) {
+    public void setComponentInformation(VBox slot, Parent node, java.util.List<IComponent> template) {
     }
+    @Override @FXML
     public void deleteComponent(ActionEvent event) {
     }
-    public void edit(ActionEvent event) {
+    @Override @FXML
+    public void editComponent(ActionEvent event) {
     }
 }

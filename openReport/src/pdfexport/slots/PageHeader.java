@@ -20,21 +20,6 @@ public class PageHeader implements ISlot {
     }
     @Override
     public void addHeader(ActionEvent event) {
-        try{
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource(Header.fxmlPath));
-            Header h = loader.getController();
-            Node node = loader.load();
-            componentGrid.getChildren().add(node);
-            Template.template.pageheader.add(h);
-            h.setComponentInformation(
-                    componentGrid,
-                    componentGrid.getChildren().indexOf(node),
-                    Template.template.pageheader
-            );
-        }
-        catch(IOException i){  
-        }
     }
     @Override
     public void addSprite(ActionEvent event) {

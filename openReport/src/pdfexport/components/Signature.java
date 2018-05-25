@@ -6,6 +6,8 @@ import javafx.event.ActionEvent;
 import javafx.scene.layout.VBox;
 import pdfexport.*;
 import java.util.List;
+import javafx.fxml.FXML;
+import javafx.scene.Parent;
 
 public class Signature implements IComponent{
     public String name;
@@ -37,10 +39,12 @@ public class Signature implements IComponent{
         document.add(subtitle_paragraph);
     }
     @Override
-    public void setComponentInformation(VBox area, int index, List<IComponent> template) {
+    public void setComponentInformation(VBox area, Parent node, List<IComponent> template) {
     }
+    @Override @FXML
     public void deleteComponent(ActionEvent event) {
     }
-    public void edit(ActionEvent event) {
+    @Override @FXML
+    public void editComponent(ActionEvent event) {
     }
 }
