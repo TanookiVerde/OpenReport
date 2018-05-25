@@ -114,9 +114,96 @@ Uma queda na produção, tanto nessa quanto possivelmente na próxima semana, co
 #### Retrospectiva:
 Umas das maiores tarefas do back-end, como imprimir tabelas e a implementação dos Queries enumerados foram iniciadas, mas quanto ao Banco de Dados foi suprido o atraso gerido pelas avaliações. A pedido do Professor Luis, para acesso ao versionamento e um melhor histórico de updates, foi movida a parte da documentação referente as Sprints para este repositório. A documentação novamente exigiu mais tempo do que o previsto. Após esta sprint haverá uma melhor mobilidade para cumprir mais tarefas do backlog.
 
+### Sprint 5
+#### Backlog:
+* Atualização Semanal Wiki (5 de 12)
+* Implementação de Queries Enumerados (incompleto)
+* Remoção de Componentes
+* Componente imagem (bugs)
+* Imprimir Componentes de acordo com Layout (incompleto)
+
+
+#### Retrospectiva:
+Nesta sprint, além das tarefas principais concluídas e outras quase terminadas, foi proposta uma reorganização geral na estrutura do programa, principalmente no que tange a sua interface visual. Verificou-se que a biblioteca JavaFX iria requerer um número grande de funções para o caráter modular do programa, e para isso o grupo se reuniu em torno de uma estrutura composta por mais controllers, um para os slots que os componentes ocupariam, um para os componentes em si, um para templates e assim por diante. Isso requeriu uma boa parte de refatoração do código, além da leitura sobre estruturas previamente em desuso pelos elementos do grupo, como interfaces. 
+
+Acredita-se que através dessa mudança, o grupo não precisará migrar o desenvolvimento para Java Web, algo que envolveria um tempo fora de cogitação para ser codificado.
+
 ## Relatórios produzidos _(em ordem de entrega)_
 Os links *(nos títulos)* concedem permissão para comentários, agradecemos quaisquer observações que possam ser feitas para melhorar a qualidade de nossos relatórios!
 <br>
+
+### [Relatório 1 - Métodos Ágeis, Scrum e Análise de Requisitos](http://goo.gl/Qp6Mvm) 
+Um dos conceitos fundamentais da Engenharia de Software é o planejamento; um projeto feito sem organização ou estratégia pode virar facilmente um desastre e frustrar tanto o cliente quanto os próprios desenvolvedores. Nesse contexto, dentre as diversas maneiras de se lidar com este problema, destaca-se o uso de Métodos Ágeis, que consistem em técnicas e metodologias para potencializar o ritmo de desenvolvimento de um projeto.
+
+Existem diversos Métodos Ágeis: Kanban, DSDM, entre outros, cada um com suas características e tipos recomendados de projeto. O Scrum, um dos mais famosos, é conhecido pela divisão do projeto em ciclos mensais (ou até semanais) chamados de Sprints. Este conceito significa simplesmente uma coleção de tarefas para serem feitas até o término de tal ciclo. Além disso, é designado à equipe um Scrum Master, indivíduo responsável pelo contato com clientes finais/donos de produto e pela designação das tarefas de cada sprint.
+
+Para um Método Ágil funcionar, em especial o Scrum, é preciso uma lista de funcionalidades para que o software seja concluído. Em especial, é necessário acima de tudo entender qual o problema que a solução virtual visa resolver na elaboração desta lista. É preciso ter certeza que o produto final irá realmente beneficiar o cliente.
+
+A elaboração da lista completa de funcionalidades só é possível a partir da Análise de Requerimento de Software, pois é nela que os profissionais competentes irão moldar o produto, entender sua proposta e, claro, suas funcionalidades chave para então encaminhá-las aos desenvolvedores.
+<br>
+
+### [Relatório 2 - Processo de Software e Canvas](http://goo.gl/cSvbDn)
+
+Fundamentalmente, Processo de Software representa um amontoado de técnicas, modelos, e ações direcionadas para o desenvolvimento e manutenção de software e afins. Nesse contexto, equipes responsáveis pela produção se organizam em torno de diversos modelos em existência na indústria com o fim de gerir e dar sequência ao produto final que é o software funcional e em concordância com o que foi proposto para o mesmo. 
+
+Um exemplo interessante disso em ação é a criação deste próprio relatório, que não deixa de ser uma parte instrumental do projeto final da disciplina FES-2018, sendo realizado semanalmente para que no final, exista uma documentação do projeto e dos ensinamentos repassados aos alunos.
+
+Dentre os modelos, destaca-se o modelo em cascata (Waterfall Model), variações do mesmo, e modelos ágeis que surgiram em resposta aos mesmos. Para o primeiro, tipicamente é dedicado para cada etapa do processo um tempo extenso - requisitos, design, codificação, testes e manutenção. Esse método é originado das engenharias, sendo quase uma equivalência aproximada para fins de desenvolvimento de software.  
+
+Entretanto, é amplamente criticado na indústria por suas características que não se traduzem bem para o viés digital - é dotado de inflexibilidade, exigindo relatórios extensos e numerosos, baixíssima capacidade de mudança durante desenvolvimento, com permissões e burocracias gerenciais obrigatórias. Para hoje sabe-se que a agilidade e flexibilidade são intrínsecas ao bom desenvolvimento. O Scrum, discutido anteriormente e as subsequentes variações do Waterfall Model se unem nessa direção. 
+
+Como parte do Processo de Software, uma ferramenta que entrará como parte do projeto é o Project Model Canvas, que se dá por um quadro, impresso ou digital, aonde há regiões separadas (da esquerda para a direita numa progressão linear) para um amontoado considerável de necessidades e características que um processo desse tipo abrange. É de considerável ajuda às equipes, organizando desde de stakeholders, equipes, custos até restrições que inicialmente podem passar despercebidos. 
+<br>
+
+### Relatório 3 - Testes de Usabilidade e Sprint \#0
+
+O conceito de Testes de Usabilidade foi apresentado como uma proposta interessante na parte de interação com o cliente - através de protótipos produzidos no papel, é possível dar ao cliente uma ideia do que se pode desenvolver e como ele irá interagir com o produto final. 
+
+Acredita-se que estes testes de funcionalidade, juntamente com as tirinhas de desenvolvimento citadas anteriormente sejam de firme ajuda nos meados da Sprint \#0 (também apresentada em aula) - que é a etapa do desenvolvimento ágil iterativo responsável por colocar nos eixos iniciais as fases de codificação do software. 
+É fundamental verificar na entrega da Sprint \#0 que a equipe esteja reunida, que os requisitos tenham sido levantados e o backlog inicial de entregas erguido considerando o mesmo.
+
+A equipe GaaraVSRocklee.wmv espera entregar a Sprint \#0 na forma do Trello, plataforma aonde serão organizadas as entregas/backlog do Scrum e cada sprint será formalizada dentro do Trello do grupo. Além disso, uma visita rápida de uma responsável da Prefeitura de Caxias, Sandra, foi realizada para dar um pouco de luz ao projeto.
+<br>
+
+### Relatório 4 - Visita Prefeitura Caxias e debate Merendas x Relatório.
+
+Foi realizada outra visita da equipe da prefeitura da Caxias, com duas responsáveis pela gestão do Sistema i-Educar, Sandra e Poliana. Houve um sentimento de definição maior do projeto em questão, posto que a turma foi apresentada o sistema i-Educar em funcionamento e problemas existentes da plataforma. Ficou claro também ao grupo que o software desejado pela prefeitura era uma distinta da inicialmente proposta de customização estética de relatórios - atualmente procura-se mais a resolução erros específicos da plataforma i-Educar com o sistema i-Report.
+
+Somado a isso, houve uma reunião geral da turma com a equipe em outra aula instrumental na decisão dos rumos do projeto final. Cada grupo apresentando suas impressões dos estudos até então contribuiu para a instauração de uma nova opção de projeto - um sistema para gerenciar merendas para substituir as planilhas em Excel usados em escolas em Caxias.
+
+Por motivos de alteração da estrutura existente e requisitos originais do projeto, o grupo GaaraVsRockLee.wmv decidiu em uma reunião no domingo, dia 15/04 que optaria pela rota dos relatórios.
+<br>
+
+### Relatório 5 - Entrega de Sprint 0 e planejamentos
+Nessas aulas foram planejados e entregues nos dias subsequentes o backlog final do produto (instrumental no funcionamento do Scrum para popular as sprints), o Sail Boat para auxiliar nos rumos do projeto e serviram de grande auxílio para desencadear o desenvolvimento e estimar com mais corretude o tempo necessário para as etapas do projeto.
+
+Com o auxílio do professor Luis e da Poliana da equipe de Caxias, foi possível dar início ao desenvolvimento do projeto, tendo em vista o dimensionamento das tarefas e reflexões tidas a respeito do projeto. Também foi lecionado ao grupo diretivos para confecção do Burn Down Chart, gráfico responsável pela medição das tarefas cumpridas em relação ao tempo.
+
+O grupo espera que essas ferramentas possam ser de ajuda constante, isto é, que estejam no auxílio e em uso (principalmente o backlog) até o final do projeto.
+<br>
+
+### Relatório 6 - Entrega de Sprint 1, 2 e mais planejamentos
+Apesar da interrupção de alguns feriados tomando tempo precioso das aulas, o time teve um relativo sucesso em cumprir as tarefas graças a abundância de documentação conquistada e disponibilizada por esforço individual e em conjunto com a turma   e o professor. 
+
+Na altura da sprint 1, o desenvolvimento foi dividido em Front-end e Back-end e a codificação do que representa praticamente um  terço dos requisitos levantados já foi concluída. Destaques incluem serialização e deserialização em XML, um esboço de interface semi-oca pronto, e o Banco de Dados modelado em E.R. Além disso, foi concluído o Burndown Chart para cada membro conforme o dependível [vídeo instrucional do Cesar Brod](https://www.youtube.com/watch?v=_Dt_o7MKImQ) (recomendação do Professor Luis)
+
+### Relatório 7 - Entrega de Sprint 3, 4, introdução a testes.
+O andamento destas sprints foi infelizmente postergado devido a uma semana concentrada de avaliações acadêmicas. Entretanto, conforme detalhado nas sprints, ainda foram entregues itens do backlog de membros que possuiam tempo disponível. Quanto às aulas, o professor Eber começou a lecionar durante as segundas feiras, e o grupo teve uma introdução à Testes de Software.
+
+Dentre as várias definições lecionadas, destacamos algumas:
+* Smoke Testing, que é o teste preliminar para averiguar se o básico de um programa funciona, antes de ser testado de maneira mais aprofundada. É ideal para projetos de prazos críticos.
+* Testes de Regressão, são aqueles em que um conjunto de testes é repetido, utilizado em funções ou componentes de um programa alterados recentemente e já previamente testados.
+* Testes de Validação, que confirmam (validam) o funcionamento definitivo do programa conforme os requisitos pré-estabelecidos no início do ciclo de desenvolvimento.
+* Testes de Sistema, aqueles responsáveis pela integração do software produzido no seu contexto definitivo de utilização - com hardwares distintos, usuários e dados.
+* Integração de Software, que concerne a montagem da estrutura do programa para entender como cada módulo do mesmo está conectado e partir para a testagem dos mesmos.
+* Testes de Caixa Preta - que é o teste "opaco" e se refere ao teste que analisa a saída de um programa a partir de uma entrada.
+* Testes de Caixa Branca - em contrapartida, analisa o código fonte para  modelar as especificações do teste.
+Além disso, foram vistas definições formais de testes, estratégias e limites para valores de teste, juntamente com exercícios em sala de aula para aplicar o conhecimento obtido.
+
+### Relatório 8 - Entrega de Sprint 5, continuação de testes.
+As aulas dessa semana por parte do professor Eber serviram para expandir o conceito de Testes de Caixa Branca, que concerne casos de testes referentes a perspectiva interna do programa, isto é, o código fonte. Para entendê-los melhor, apresentou-se o conceito de Grafos de Fluxo elementares, Grafos de Controle dentre outros que permitiam estruturar o programa em forma de nós que possam ser efetivamente percorridos pelos casos de teste propostos.
+
+Como aplicação, foi visto outro exercício em sala de aula para desenvolver casos de testes de um programa que verificava características de lados de triangulos.   
 ## Iterações do Produto Final
 Número|Data|Funcionalidades
 ----|----|-----
