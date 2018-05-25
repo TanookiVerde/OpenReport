@@ -4,7 +4,6 @@ import com.itextpdf.text.*;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.VBox;
-import pdfexport.*;
 import java.util.List;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
@@ -12,10 +11,17 @@ import javafx.scene.Parent;
 public class Signature implements IComponent{
     public String name;
     public String role;
+    
+    public final static String FXML_PATH = "/pdfexport/components/Signature.fxml";
+    
+    public VBox vbox;
+    public Parent node;
+    
+    public java.util.List<IComponent> list;
      
-    public Signature(String _name, String _role){
-         name = _name;
-         role = _role;
+    public Signature(){
+         name = " ";
+         role = " ";
      }
     @Override
     public void print(Document document) throws IOException, DocumentException {        

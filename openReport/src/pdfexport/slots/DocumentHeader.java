@@ -14,7 +14,7 @@ import pdfexport.components.*;
  */
 public class DocumentHeader implements ISlot {
     
-    public final static int MAX_COMPONENT_NUMBER    = 3;
+    public final static int MAX_COMPONENT_NUMBER    = 1;
     public final static String SLOT_PATH            = "/pdfexport/slots/DocumentHeader.fxml";
     
     @FXML

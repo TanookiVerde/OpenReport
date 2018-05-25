@@ -8,8 +8,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.layout.HBox;
-import pdfexport.slots.DocumentHeader;
+import javafx.scene.layout.VBox;
+import pdfexport.slots.*;
 
 /**
  * Classe que representa um Template. Nele podemos encontrar a lista de components
@@ -29,7 +29,7 @@ public class Template {
     public static Template template = new Template();
     
     @FXML
-    private HBox slotGrid;
+    private VBox slotGrid;
     
     public Template(){
         title = new ArrayList<>();
@@ -68,10 +68,13 @@ public class Template {
     @FXML
     public void initialize() {
         try{
-            Node root = FXMLLoader.load(getClass().getResource(DocumentHeader.SLOT_PATH));
-            slotGrid.getChildren().add(root);
+            Node docHeader = FXMLLoader.load(getClass().getResource(DocumentHeader.SLOT_PATH));
+            slotGrid.getChildren().add(docHeader);
+            Node pageHeader = FXMLLoader.load(getClass().getResource(PageHeader.SLOT_PATH));
+            slotGrid.getChildren().add(pageHeader);
+            //ToDo: Add outros Slots
         }catch(IOException i){
-        System.out.println(i.getMessage());
+            System.out.println(i.getMessage());
         }
     }
 }
