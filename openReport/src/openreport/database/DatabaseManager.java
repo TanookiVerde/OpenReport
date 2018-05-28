@@ -8,6 +8,7 @@ package openreport.database;
 import java.sql.*;
 import com.mchange.v2.c3p0.*;
 import java.beans.PropertyVetoException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -38,15 +39,23 @@ public class DatabaseManager {
         return cpds;
     }
     
-    public static Test callStatement(Test obj, String methodCall){
+    public static <T extends IData> ArrayList<T> callStatement(Class<T> dummy, String methodCall) {
         CallableStatement cst = null;
         Connection con = connect();
+        ArrayList<T> array = new ArrayList<T>();
         try {
             cst = con.prepareCall(methodCall);
             ResultSet rs = cst.executeQuery();
-            obj.populate(rs);
-           
+            while(rs.next()){
+                T obj = dummy.newInstance();
+                obj.populate(rs);
+                array.add(obj);
+            }           
         } catch (SQLException ex) {
+            Logger.getLogger(DatabaseManager.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(DatabaseManager.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
             Logger.getLogger(DatabaseManager.class.getName()).log(Level.SEVERE, null, ex);
         } finally{
             try {
@@ -57,7 +66,7 @@ public class DatabaseManager {
             }            
         }
         
-        return obj;
+        return array;
     }
         
     public static Connection connect(){
@@ -117,6 +126,8 @@ public class DatabaseManager {
     }
     
     public static void main(String argv[]){
+        ArrayList<Aluno> array = new ArrayList<Aluno>();
+        Aluno aluno = new Aluno();
         try {
             //Connection c = DatabaseManager.connect();
             //test(c);
@@ -125,8 +136,8 @@ public class DatabaseManager {
             Logger.getLogger(DatabaseManager.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        ResultSet rs = callStatement("call ALUNODISC(\"Historia\")");
-        printResultSet(rs);
+        array = (ArrayList<Aluno>)callStatement(aluno.getClass(), "call ALUNODISC(\"Historia\")");
+        System.out.print(array.toString());
     }
     
     
