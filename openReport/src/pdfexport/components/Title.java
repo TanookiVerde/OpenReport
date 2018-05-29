@@ -14,12 +14,14 @@ public class Title implements IComponent{
     public String title;
     public String subtitle;
     
-    public final static String FXML_PATH = "/pdfexport/components/Title.fxml";
+    //public final static String FXML_PATH = "/pdfexport/components/Title.fxml";
     
-    public VBox vbox; //vbox em que o componente serah armazenado
+    // Para referenciar em funções de adição, remoção e edição
+    public VBox vbox; 
     public Parent node;
-    
     public java.util.List<IComponent> list;
+    public static String FXML_PATH = "/pdfexport/components/Title.fxml";
+
     
     public Title(){
         this.title = " ";

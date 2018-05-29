@@ -17,14 +17,13 @@ public class Header implements IComponent {
     public String telefone;
     public String webSite;
     public String logoPath;
+   
     
-    @FXML
-    public VBox vbox; //vbox em que o componente serah armazenado
+    // Para referenciar em funções de adição, remoção e edição
+    public VBox vbox; 
     public Parent node;
-    
     public List<IComponent> list;
-    
-    public static String fxmlPath = "components/Header.fxml";
+    public static String FXML_PATH = "/pdfexport/components/Header.fxml";
 
     public Header(String schoolName, String street, String aptNumber, String cep, String telefone, String webSite, String logoPath) {
         this.schoolName = schoolName;
@@ -76,6 +75,10 @@ public class Header implements IComponent {
     }
     @Override @FXML
     public void deleteComponent(ActionEvent event) {
+        int currentIndex = vbox.getChildren().indexOf(node);
+        vbox.getChildren().remove(vbox.getChildren().get(currentIndex));
+        list.remove(currentIndex);
+        System.out.println(list);
     }
     @Override @FXML
     public void editComponent(ActionEvent event) {

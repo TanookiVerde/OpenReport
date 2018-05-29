@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package openreport.database;
 
 import java.sql.*;
@@ -15,6 +16,8 @@ import java.util.logging.Logger;
  *
  * @author Gabriel Aureo
  */
+
+/*
 public class DatabaseManager {
     static String url = "jdbc:mysql://den1.mysql6.gear.host:3306/openreports";
     static String user = "openreports";
@@ -131,3 +134,5 @@ public class DatabaseManager {
     
     
 }
+
+*/

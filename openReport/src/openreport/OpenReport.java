@@ -11,6 +11,7 @@ public class OpenReport extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(OpenReport.class.getResource("layouts/scene_template.fxml"));
+
         Scene scene = new Scene(root);
         stage.setTitle("OpenReport");
         stage.setScene(scene);

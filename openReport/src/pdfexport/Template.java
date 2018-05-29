@@ -13,18 +13,18 @@ import pdfexport.slots.*;
 
 /**
  * Classe que representa um Template. Nele podemos encontrar a lista de components
- * em cada slot (pageheader, body, etc).
- * <p>
+ em cada slot (pageHeader, body, etc).
+ <p>
  * Esta Classe também serve como um Controller para a Tela de Customização, por isso
  * podemos encontrar métodos como toPDF e saveToXML que são ativados por clique em
  * botões.
  */
 public class Template {
-    public List<IComponent> title;
-    public List<IComponent> pageheader;
+    public List<IComponent> documentHeader;
+    public List<IComponent> pageHeader;
     public List<IComponent> body;
-    public List<IComponent> pagefooter;
-    public List<IComponent> footer;
+    public List<IComponent> pageFooter;
+    public List<IComponent> documentFooter;
     
     public static Template template = new Template();
     
@@ -32,11 +32,11 @@ public class Template {
     private VBox slotGrid;
     
     public Template(){
-        title = new ArrayList<>();
-        pageheader = new ArrayList<>();
+        documentHeader = new ArrayList<>();
+        pageHeader = new ArrayList<>();
         body = new ArrayList<>();
-        pagefooter = new ArrayList<>();
-        footer = new ArrayList<>();
+        pageFooter = new ArrayList<>();
+        documentFooter = new ArrayList<>();
     }
     /**
      * Este método é chamado quando o usuário clica no botão de salvar como PDF

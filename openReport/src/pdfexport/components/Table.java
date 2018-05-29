@@ -14,6 +14,13 @@ public class Table implements IComponent{
     public ArrayList<String> content;
     public int columnAmount;
     public int cellPerColumn;
+    
+    // Para referenciar em funções de adição, remoção e edição
+    public VBox vbox; 
+    public Parent node;
+    public java.util.List<IComponent> list;
+    public static String FXML_PATH = "/pdfexport/components/Table.fxml";
+
      
     public Table(int _columnAmount, int _cellPerColumn, String... _content){
         content = new ArrayList<String>();
@@ -48,9 +55,16 @@ public class Table implements IComponent{
     }
     @Override
     public void setComponentInformation(VBox slot, Parent node, java.util.List<IComponent> template) {
+        this.vbox = slot;
+        this.node = node;
+        this.list = template;
     }
     @Override @FXML
     public void deleteComponent(ActionEvent event) {
+        int currentIndex = vbox.getChildren().indexOf(node);
+        vbox.getChildren().remove(vbox.getChildren().get(currentIndex));
+        list.remove(currentIndex);
+        System.out.println(list);
     }
     @Override @FXML
     public void editComponent(ActionEvent event) {

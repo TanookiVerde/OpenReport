@@ -36,13 +36,12 @@ public class DocumentHeader implements ISlot {
             
             componentGrid.getChildren().add(newNode);
             
-            component.setComponentInformation(
-                    componentGrid, 
+            component.setComponentInformation(componentGrid, 
                     newNode, 
-                    Template.template.title
+                    Template.template.documentHeader
             );
             
-            Template.template.title.add(component);
+            Template.template.documentHeader.add(component);
         }catch(Exception i){
             System.out.println(i.getMessage());
             System.out.println(i.getStackTrace());
@@ -51,9 +50,30 @@ public class DocumentHeader implements ISlot {
     /**
      * Método chamado quando o usuário clica no botão de adicionar um component do tipo
      * Header.
-     */
+0     */
     @Override
     public void addHeader(ActionEvent event) {
+        if(componentGrid.getChildren().size() + 1 > MAX_COMPONENT_NUMBER) {
+            return;
+        }
+        try{
+            FXMLLoader loader = new FXMLLoader(Template.class.getResource(Header.FXML_PATH));
+            Parent newNode = (Parent) loader.load();
+            Header component = loader.getController();
+            
+            componentGrid.getChildren().add(newNode);
+            
+            component.setComponentInformation(componentGrid, 
+                    newNode, 
+                    Template.template.documentHeader
+            );
+            
+            Template.template.documentHeader.add(component);
+        }catch(Exception i){
+            System.out.println(i.getMessage());
+            System.out.println(i.getStackTrace());
+        }
+ 
     }
     /**
      * Método chamado quando o usuário clica no botão de adicionar um component do tipo
@@ -61,6 +81,7 @@ public class DocumentHeader implements ISlot {
      */
     @Override
     public void addSprite(ActionEvent event) {
+        //to add
     }
     /**
      * Método chamado quando o usuário clica no botão de adicionar um component do tipo
@@ -68,6 +89,26 @@ public class DocumentHeader implements ISlot {
      */
     @Override
     public void addSignature(ActionEvent event) {
+        if(componentGrid.getChildren().size() + 1 > MAX_COMPONENT_NUMBER) {
+            return;
+        }
+        try{
+            FXMLLoader loader = new FXMLLoader(Template.class.getResource(Signature.FXML_PATH));
+            Parent newNode = (Parent) loader.load();
+            Signature component = loader.getController();
+            
+            componentGrid.getChildren().add(newNode);
+            
+            component.setComponentInformation(componentGrid, 
+                    newNode, 
+                    Template.template.documentHeader
+            );
+            
+            Template.template.documentHeader.add(component);
+        }catch(Exception i){
+            System.out.println(i.getMessage());
+            System.out.println(i.getStackTrace());
+        }
     }
     /**
      * Método chamado quando o usuário clica no botão de adicionar um component do tipo
@@ -75,6 +116,26 @@ public class DocumentHeader implements ISlot {
      */
     @Override
     public void addSimpleTable(ActionEvent event) {
+        if(componentGrid.getChildren().size() + 1 > MAX_COMPONENT_NUMBER) {
+            return;
+        }
+        try{
+            FXMLLoader loader = new FXMLLoader(Template.class.getResource(Table.FXML_PATH));
+            Parent newNode = (Parent) loader.load();
+            Table component = loader.getController();
+            
+            componentGrid.getChildren().add(newNode);
+            
+            component.setComponentInformation(componentGrid, 
+                    newNode, 
+                    Template.template.documentHeader
+            );
+            
+            Template.template.documentHeader.add(component);
+        }catch(Exception i){
+            System.out.println(i.getMessage());
+            System.out.println(i.getStackTrace());
+        }
     }
     /**
      * Método chamado quando o usuário clica no botão de adicionar um component do tipo
@@ -82,5 +143,25 @@ public class DocumentHeader implements ISlot {
      */
     @Override
     public void addText(ActionEvent event) {
+        if(componentGrid.getChildren().size() + 1 > MAX_COMPONENT_NUMBER) {
+            return;
+        }
+        try{
+            FXMLLoader loader = new FXMLLoader(Template.class.getResource(Text.FXML_PATH));
+            Parent newNode = (Parent) loader.load();
+            Text component = loader.getController();
+            
+            componentGrid.getChildren().add(newNode);
+            
+            component.setComponentInformation(componentGrid, 
+                    newNode, 
+                    Template.template.documentHeader
+            );
+            
+            Template.template.documentHeader.add(component);
+        }catch(Exception i){
+            System.out.println(i.getMessage());
+            System.out.println(i.getStackTrace());
+        }
     }
 }

@@ -12,12 +12,11 @@ public class Signature implements IComponent{
     public String name;
     public String role;
     
-    public final static String FXML_PATH = "/pdfexport/components/Signature.fxml";
-    
-    public VBox vbox;
+   // Para referenciar em funções de adição, remoção e edição
+    public VBox vbox; 
     public Parent node;
-    
     public java.util.List<IComponent> list;
+    public static String FXML_PATH = "/pdfexport/components/Signature.fxml";
      
     public Signature(){
          name = " ";
@@ -45,10 +44,17 @@ public class Signature implements IComponent{
         document.add(subtitle_paragraph);
     }
     @Override
-    public void setComponentInformation(VBox area, Parent node, List<IComponent> template) {
+    public void setComponentInformation(VBox slot, Parent node, List<IComponent> template) {
+        this.vbox = slot;
+        this.node = node;
+        this.list = template;
     }
     @Override @FXML
     public void deleteComponent(ActionEvent event) {
+        int currentIndex = vbox.getChildren().indexOf(node);
+        vbox.getChildren().remove(vbox.getChildren().get(currentIndex));
+        list.remove(currentIndex);
+        System.out.println(list);
     }
     @Override @FXML
     public void editComponent(ActionEvent event) {
