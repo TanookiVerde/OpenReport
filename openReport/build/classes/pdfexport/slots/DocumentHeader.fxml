@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<TitledPane text="Document Header" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pdfexport.slots.DocumentHeader">
+<TitledPane stylesheets="@../../openreport/layouts/scene_template.css" text="Document Header" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pdfexport.slots.DocumentHeader">
    <content>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="670.0" prefWidth="200.0">
          <children>
