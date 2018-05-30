@@ -38,10 +38,10 @@ public class PageFooter implements ISlot {
             
             component.setComponentInformation(componentGrid, 
                     newNode, 
-                    Template.template.documentHeader
+                    Template.template.pageFooter
             );
             
-            Template.template.documentHeader.add(component);
+            Template.template.pageFooter.add(component);
         }catch(Exception i){
             System.out.println(i.getMessage());
             System.out.println(i.getStackTrace());
@@ -63,12 +63,13 @@ public class PageFooter implements ISlot {
             
             componentGrid.getChildren().add(newNode);
             
-            component.setComponentInformation(componentGrid, 
+            component.setComponentInformation(
+                    componentGrid, 
                     newNode, 
-                    Template.template.documentHeader
+                    Template.template.pageFooter
             );
             
-            Template.template.documentHeader.add(component);
+            Template.template.pageFooter.add(component);
         }catch(Exception i){
             System.out.println(i.getMessage());
             System.out.println(i.getStackTrace());
@@ -81,7 +82,27 @@ public class PageFooter implements ISlot {
      */
     @Override
     public void addSprite(ActionEvent event) {
-        //to add
+        if(componentGrid.getChildren().size() + 1 > MAX_COMPONENT_NUMBER) {
+            return;
+        }
+        try{
+            FXMLLoader loader = new FXMLLoader(Template.class.getResource(Sprite.FXML_PATH));
+            Parent newNode = (Parent) loader.load();
+            Sprite component = loader.getController();
+            
+            componentGrid.getChildren().add(newNode);
+            
+            component.setComponentInformation(
+                    componentGrid, 
+                    newNode, 
+                    Template.template.pageFooter
+            );
+            
+            Template.template.pageFooter.add(component);
+        }catch(Exception i){
+            System.out.println(i.getMessage());
+            System.out.println(i.getStackTrace());
+        }
     }
     /**
      * Método chamado quando o usuário clica no botão de adicionar um component do tipo
@@ -101,10 +122,10 @@ public class PageFooter implements ISlot {
             
             component.setComponentInformation(componentGrid, 
                     newNode, 
-                    Template.template.documentHeader
+                    Template.template.pageFooter
             );
             
-            Template.template.documentHeader.add(component);
+            Template.template.pageFooter.add(component);
         }catch(Exception i){
             System.out.println(i.getMessage());
             System.out.println(i.getStackTrace());
@@ -128,10 +149,10 @@ public class PageFooter implements ISlot {
             
             component.setComponentInformation(componentGrid, 
                     newNode, 
-                    Template.template.documentHeader
+                    Template.template.pageFooter
             );
             
-            Template.template.documentHeader.add(component);
+            Template.template.pageFooter.add(component);
         }catch(Exception i){
             System.out.println(i.getMessage());
             System.out.println(i.getStackTrace());
@@ -155,10 +176,10 @@ public class PageFooter implements ISlot {
             
             component.setComponentInformation(componentGrid, 
                     newNode, 
-                    Template.template.documentHeader
+                    Template.template.pageFooter
             );
             
-            Template.template.documentHeader.add(component);
+            Template.template.pageFooter.add(component);
         }catch(Exception i){
             System.out.println(i.getMessage());
             System.out.println(i.getStackTrace());

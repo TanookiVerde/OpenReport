@@ -38,10 +38,10 @@ public class PageHeader implements ISlot {
             
             component.setComponentInformation(componentGrid, 
                     newNode, 
-                    Template.template.documentHeader
+                    Template.template.pageHeader
             );
             
-            Template.template.documentHeader.add(component);
+            Template.template.pageHeader.add(component);
         }catch(Exception i){
             System.out.println(i.getMessage());
             System.out.println(i.getStackTrace());
@@ -63,12 +63,13 @@ public class PageHeader implements ISlot {
             
             componentGrid.getChildren().add(newNode);
             
-            component.setComponentInformation(componentGrid, 
+            component.setComponentInformation(
+                    componentGrid, 
                     newNode, 
-                    Template.template.documentHeader
+                    Template.template.pageHeader
             );
             
-            Template.template.documentHeader.add(component);
+            Template.template.pageHeader.add(component);
         }catch(Exception i){
             System.out.println(i.getMessage());
             System.out.println(i.getStackTrace());
@@ -91,12 +92,13 @@ public class PageHeader implements ISlot {
             
             componentGrid.getChildren().add(newNode);
             
-            component.setComponentInformation(componentGrid, 
+            component.setComponentInformation(
+                    componentGrid, 
                     newNode, 
-                    Template.template.documentHeader
+                    Template.template.pageHeader
             );
             
-            Template.template.documentHeader.add(component);
+            Template.template.pageHeader.add(component);
         }catch(Exception i){
             System.out.println(i.getMessage());
             System.out.println(i.getStackTrace());
@@ -120,10 +122,10 @@ public class PageHeader implements ISlot {
             
             component.setComponentInformation(componentGrid, 
                     newNode, 
-                    Template.template.documentHeader
+                    Template.template.pageHeader
             );
             
-            Template.template.documentHeader.add(component);
+            Template.template.pageHeader.add(component);
         }catch(Exception i){
             System.out.println(i.getMessage());
             System.out.println(i.getStackTrace());
@@ -147,10 +149,10 @@ public class PageHeader implements ISlot {
             
             component.setComponentInformation(componentGrid, 
                     newNode, 
-                    Template.template.documentHeader
+                    Template.template.pageHeader
             );
             
-            Template.template.documentHeader.add(component);
+            Template.template.pageHeader.add(component);
         }catch(Exception i){
             System.out.println(i.getMessage());
             System.out.println(i.getStackTrace());
@@ -174,10 +176,10 @@ public class PageHeader implements ISlot {
             
             component.setComponentInformation(componentGrid, 
                     newNode, 
-                    Template.template.documentHeader
+                    Template.template.pageHeader
             );
             
-            Template.template.documentHeader.add(component);
+            Template.template.pageHeader.add(component);
         }catch(Exception i){
             System.out.println(i.getMessage());
             System.out.println(i.getStackTrace());
