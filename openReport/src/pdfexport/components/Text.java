@@ -16,9 +16,11 @@ public class Text implements IComponent {
     public java.util.List<IComponent> list;
     public static String FXML_PATH = "/pdfexport/components/Text.fxml";
     
-
     public Text(String text) {
         this.text = text;
+    }
+    public Text(){
+        this.text = "Coloque seu texto aqui";
     }
     public void SetText(String txt){
         this.text = txt;

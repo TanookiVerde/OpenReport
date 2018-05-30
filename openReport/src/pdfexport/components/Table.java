@@ -29,7 +29,12 @@ public class Table implements IComponent{
         }
         columnAmount = _columnAmount;
         cellPerColumn = _cellPerColumn;
-     }
+    }
+    public Table(){
+        content = new ArrayList<String>();
+        columnAmount = 1;
+        cellPerColumn = 1;
+    }
     @Override
     public void print(Document document) throws IOException, DocumentException {        
         
