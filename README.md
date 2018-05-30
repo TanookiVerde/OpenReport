@@ -13,31 +13,31 @@ O time considera pronto um software que possibilite ao usuário adicionar, edita
 Nome|Tipo|Horas|Concluído
 -----|----|----|-----
 |Telas isoladas ocas|Interface|2h|X
-|Adição de Dados em cada Campo|Interface BD|3h|
-|Edição de Dados em cada Campo|Interface BD|2h|
-|Remoção de Dados em cada Campo|Interface BD|1h|
-|Conexão Direta com BD para acesso e edição|Interface BD|4h|
+|Adição de Dados em cada Campo|Interface BD|3h|O
+|Edição de Dados em cada Campo|Interface BD|2h|O
+|Remoção de Dados em cada Campo|Interface BD|1h|O
+|Conexão Direta com BD para acesso e edição|Interface BD|4h|X
 |Interface dos componentes isoladamente|Interface Componentes|1h|X
-|Adição de Componentes|Interface Componentes|3h|O
-|Remoção de Componentes|Interface Componentes|1h|O
-|Edição de Componentes|Interface Componentes|3h|
+|Adição de Componentes|Interface Componentes|3h|X
+|Remoção de Componentes|Interface Componentes|1h|X
+|Edição de Componentes|Interface Componentes|3h|O
 |Salvar Modificações em Classe Template|Interface Componentes|2h|
 |Chamada de Exportar PDF a partir de Classe|Interface Componentes|2h|
 |Serialização e Deserialização de Classe Template em XML|Exportar PDF|2h|X
-|Salvar XML em arquivo|Exportar PDF|1h|
+|Salvar XML em arquivo|Exportar PDF|1h|X
 |Imprimir Cabeçalho|Exportar PDF|3h|X
 |Imprimir Texto|Exportar PDF|1h|X
 |Imprimir Título|Exportar PDF|1h|X
-|Imprimir Assinatura|Exportar PDF|2h|
-|Imprimir Tabela Simples|Exportar PDF|4h|
-|Tabela: Pegar dados do BD|Exportar PDF|3h|
-|Imprimir componentes de acordo com Layout|Exportar PDF|5h|
+|Imprimir Assinatura|Exportar PDF|2h|X
+|Imprimir Tabela Simples|Exportar PDF|4h|X
+|Tabela: Pegar dados do BD|Exportar PDF|3h|X
+|Imprimir componentes de acordo com Layout|Exportar PDF|5h|O
 |Finalização Diagrama ER|Banco de Dados|1h|X
-|Implementação do Diagrama e das tabelas em mySQL|Banco de Dados|2h|O
-|Popular Banco de Dados|Banco de Dados|1h|O
+|Implementação do Diagrama e das tabelas em mySQL|Banco de Dados|2h|X
+|Popular Banco de Dados|Banco de Dados|1h|X
 |Enumeração dos Queries de acordo com o componente Tabela Simples|Banco de Dados|2h|
-|Implementação dos Queries enumerados|Banco de Dados|6h|
-|Integração com Java|Banco de Dados|5h|
+|Implementação dos Queries enumerados|Banco de Dados|6h|O
+|Integração com Java|Banco de Dados|5h|X
 
 Bônus|Tipo|Horas
 ----|----|-----
