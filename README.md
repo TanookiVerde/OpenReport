@@ -208,9 +208,9 @@ Como aplicação, foi visto outro exercício em sala de aula para desenvolver ca
 Número|Data|Funcionalidades
 ----|----|-----
 1|18/05|Adicionar e remover Componentes, Acessar banco de dados
-2|?|Edição de componentes, salvar como template XML, Edição do banco de dados através do programa e anteriores.
-3|?|Exportar para PDF, abrir template e anteriores.
-Final|?|Finalização - polimento - e correção de bugs.
+2|06/06|Edição de componentes, salvar como template XML, Edição do banco de dados através do programa e anteriores.
+3|20/06|Exportar para PDF, abrir template e anteriores.
+Final|04/07|Finalização - polimento - e correção de bugs.
 
 ## Ferramentas
 * Java 1.8
