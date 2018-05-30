@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package openreport.database;
 
 import java.sql.*;
 import com.mchange.v2.c3p0.*;
 import java.beans.PropertyVetoException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,8 +16,6 @@ import java.util.logging.Logger;
  *
  * @author Gabriel Aureo
  */
-
-/*
 public class DatabaseManager {
     static String url = "jdbc:mysql://den1.mysql6.gear.host:3306/openreports";
     static String user = "openreports";
@@ -41,15 +39,23 @@ public class DatabaseManager {
         return cpds;
     }
     
-    public static Test callStatement(Test obj, String methodCall){
+    public static <T extends IData> ArrayList<T> callStatement(Class<T> dummy, String methodCall) {
         CallableStatement cst = null;
         Connection con = connect();
+        ArrayList<T> array = new ArrayList<T>();
         try {
             cst = con.prepareCall(methodCall);
             ResultSet rs = cst.executeQuery();
-            obj.populate(rs);
-           
+            while(rs.next()){
+                T obj = dummy.newInstance();
+                obj.populate(rs);
+                array.add(obj);
+            }           
         } catch (SQLException ex) {
+            Logger.getLogger(DatabaseManager.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(DatabaseManager.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
             Logger.getLogger(DatabaseManager.class.getName()).log(Level.SEVERE, null, ex);
         } finally{
             try {
@@ -60,10 +66,10 @@ public class DatabaseManager {
             }            
         }
         
-        return obj;
+        return array;
     }
         
-    public static Connection connect(){
+    private static Connection connect(){
         try {
             return cpds.getConnection();
         } catch (SQLException ex) {
@@ -72,54 +78,9 @@ public class DatabaseManager {
         
     }
     
-    private static Connection getConnection() throws SQLException{
-        if(con != null && !con.isClosed()){
-            return con;
-        }
-        return connect();
-    }
-    
-    
-
-    public static void test(Connection c){
-        try {
-            Statement st = c.createStatement();
-            ResultSet set = st.executeQuery("select * from professor");
-            while(set.next()){
-                String cpf = set.getString("CPF");
-                String nome = set.getString("Nome");
-                System.out.println(cpf + ' ' + nome);
-            }
-            st.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(DatabaseManager.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
-    public static void printResultSet(ResultSet set){
-        try {
-            ResultSetMetaData rsmd = set.getMetaData();
-            int count = rsmd.getColumnCount();
-            for(int i = 1; i <= count ; i++){
-                    if (i > 1) System.out.print("\t| ");
-                    System.out.print(rsmd.getColumnLabel(i));
-                }
-            System.out.println("");
-            while(set.next()){
-                for(int i = 1; i <= count ; i++){
-                    if (i > 1) System.out.print("\t| ");
-                    System.out.print(set.getString(i));
-                }
-                System.out.println("");
-            }
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(DatabaseManager.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    }
-    
     public static void main(String argv[]){
+        ArrayList<Aluno> array = new ArrayList<Aluno>();
+        Aluno aluno = new Aluno();
         try {
             //Connection c = DatabaseManager.connect();
             //test(c);
@@ -128,11 +89,9 @@ public class DatabaseManager {
             Logger.getLogger(DatabaseManager.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        ResultSet rs = callStatement("call ALUNODISC(\"Historia\")");
-        printResultSet(rs);
+        array = (ArrayList<Aluno>)callStatement(aluno.getClass(), "call ALUNODISC(\"Historia\")");
+        System.out.print(array.toString());
     }
     
     
 }
-
-*/

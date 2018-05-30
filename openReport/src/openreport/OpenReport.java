@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import pdfexport.*;
+import openreport.database.*;
 
 public class OpenReport extends Application {
     @Override
@@ -18,6 +19,7 @@ public class OpenReport extends Application {
         stage.show();
     }
     public static void main(String[] args) {
+        DatabaseManager.main(args);
         launch(args);
     }
 }
