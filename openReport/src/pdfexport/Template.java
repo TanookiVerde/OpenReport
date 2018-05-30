@@ -68,11 +68,21 @@ public class Template {
     @FXML
     public void initialize() {
         try{
+            //Adiciona Document Header
             Node docHeader = FXMLLoader.load(getClass().getResource(DocumentHeader.SLOT_PATH));
             slotGrid.getChildren().add(docHeader);
+            //Adiciona Page Header
             Node pageHeader = FXMLLoader.load(getClass().getResource(PageHeader.SLOT_PATH));
             slotGrid.getChildren().add(pageHeader);
-            //ToDo: Add outros Slots
+            //Adiciona Body
+            Node body = FXMLLoader.load(getClass().getResource(Body.SLOT_PATH));
+            slotGrid.getChildren().add(body);
+            //Adiciona Page Footer
+            Node pageFooter = FXMLLoader.load(getClass().getResource(PageFooter.SLOT_PATH));
+            slotGrid.getChildren().add(pageFooter);
+            //Adiciona Document Footer
+            Node documentFooter = FXMLLoader.load(getClass().getResource(DocumentFooter.SLOT_PATH));
+            slotGrid.getChildren().add(documentFooter);
         }catch(IOException i){
             System.out.println(i.getMessage());
         }
