@@ -19,7 +19,6 @@ public class OpenReport extends Application {
         stage.show();
     }
     public static void main(String[] args) {
-        //DatabaseManager.main(args);
         launch(args);
     }
 }

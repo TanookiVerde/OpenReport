@@ -39,7 +39,14 @@ public class DatabaseManager {
         return cpds;
     }
     
-    public static <T extends IData> ArrayList<T> callStatement(Class<T> dummy, String methodCall) {
+    /**
+     * 
+     * @param <T>
+     * @param itemClass Type of the item to populate the returning array. Use T.class.
+     * @param methodCall Call to the stored procedure in the the database
+     * @return Array populated by information from the database
+     */
+    public static <T extends IData> ArrayList<T> callStatement(Class<T> itemClass, String methodCall) {
         CallableStatement cst = null;
         Connection con = connect();
         ArrayList<T> array = new ArrayList<T>();
@@ -47,7 +54,7 @@ public class DatabaseManager {
             cst = con.prepareCall(methodCall);
             ResultSet rs = cst.executeQuery();
             while(rs.next()){
-                T obj = dummy.newInstance();
+                T obj = itemClass.newInstance();
                 obj.populate(rs);
                 array.add(obj);
             }           
@@ -79,17 +86,14 @@ public class DatabaseManager {
     }
     
     public static void main(String argv[]){
-        ArrayList<Aluno> array = new ArrayList<Aluno>();
-        Aluno aluno = new Aluno();
+        ArrayList<Aluno> array;
         try {
-            //Connection c = DatabaseManager.connect();
-            //test(c);
             cpds = initializeDataSource();
         } catch (PropertyVetoException ex) {
             Logger.getLogger(DatabaseManager.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        array = (ArrayList<Aluno>)callStatement(aluno.getClass(), "call ALUNODISC(\"Historia\")");
+        array = callStatement(Aluno.class, "call ALUNODISC(\"Historia\")");
         System.out.print(array.toString());
     }
     
