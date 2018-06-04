@@ -9,15 +9,15 @@ import pdfexport.Template;
 import pdfexport.components.IComponent;
 
 public interface ISlot {
-    public List<IComponent> getComponentList();
-    public int getMaxComponentNumber();
-    public VBox getComponentGrid();
     public void addTitle(ActionEvent event);
     public void addHeader(ActionEvent event);
     public void addSprite(ActionEvent event);
     public void addSignature(ActionEvent event);
     public void addSimpleTable(ActionEvent event);
     public void addText(ActionEvent event);
+    public List<IComponent> getComponentList();
+    public int getMaxComponentNumber();
+    public VBox getComponentGrid();
     public static <T extends IComponent> void AddComponent(T component, ISlot slot){
         if(slot.getComponentGrid().getChildren().size() + 1 > slot.getMaxComponentNumber()) {
             return;
