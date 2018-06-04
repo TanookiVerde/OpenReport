@@ -49,4 +49,9 @@ public class Text implements IComponent {
     @Override @FXML
     public void editComponent(ActionEvent event) {
     }
+
+    @Override
+    public String getFXMLPath() {
+        return FXML_PATH;
+    }
 }

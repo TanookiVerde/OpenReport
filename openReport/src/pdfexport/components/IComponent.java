@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.layout.VBox;
 
 public interface IComponent {
+    public String getFXMLPath();
     public void print(Document document) throws IOException, DocumentException;
     public void setComponentInformation(VBox slot, Parent node, List<IComponent> template);
     @FXML public void deleteComponent(ActionEvent event);

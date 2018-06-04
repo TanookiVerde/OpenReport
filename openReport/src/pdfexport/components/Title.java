@@ -82,4 +82,9 @@ public class Title implements IComponent{
     public void editComponent(ActionEvent event) {
         System.out.println("EDITOU");
     }
+
+    @Override
+    public String getFXMLPath() {
+        return FXML_PATH;
+    }
 }
