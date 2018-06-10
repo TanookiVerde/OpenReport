@@ -13,10 +13,6 @@ O time considera pronto um software que possibilite ao usuário adicionar, edita
 Nome|Tipo|Horas|Concluído
 -----|----|----|-----
 |Telas isoladas ocas|Interface|2h|X
-|Adição de Dados em cada Campo|Interface BD|3h|O
-|Edição de Dados em cada Campo|Interface BD|2h|O
-|Remoção de Dados em cada Campo|Interface BD|1h|O
-|Conexão Direta com BD para acesso e edição|Interface BD|4h|X
 |Interface dos componentes isoladamente|Interface Componentes|1h|X
 |Adição de Componentes|Interface Componentes|3h|X
 |Remoção de Componentes|Interface Componentes|1h|X
@@ -38,6 +34,8 @@ Nome|Tipo|Horas|Concluído
 |Enumeração dos Queries de acordo com o componente Tabela Simples|Banco de Dados|2h|
 |Implementação dos Queries enumerados|Banco de Dados|6h|O
 |Integração com Java|Banco de Dados|5h|X
+|Testes JUnit|Documentação|N/A|
+<br>
 
 Bônus|Tipo|Horas
 ----|----|-----
@@ -128,6 +126,34 @@ Nesta sprint, além das tarefas principais concluídas e outras quase terminadas
 
 Acredita-se que através dessa mudança, o grupo não precisará migrar o desenvolvimento para Java Web, algo que envolveria um tempo fora de cogitação para ser codificado.
 
+### Sprint 6
+#### Backlog:
+* Atualização Semanal Wiki (6 de 12)
+* Implementação de Queries Enumerados (incompleto)
+* Integração com Java
+* Componente imagem
+* Componente tabela
+* Imprimir Componentes de acordo com Layout (incompleto)
+
+
+#### Retrospectiva:
+Um progressivo grau de refatoração do código auxiliou na limpeza e no caráter modular do projeto. O código de estruturação da parte visual do projeto foi melhorado consideravelmente, sendo agora de fácil entendimento e menos redundante. De resto, o trabalho das queries segue sendo feito, juntamente com novas tarefas de integração de front e back-end.
+
+### Sprint 7
+#### Backlog:
+* Atualização Semanal Wiki (7 de 12)
+* Implementação de Queries Enumerados (incompleto)
+* Enumerar Alunos por Turma
+* Enumerar Turmas por Série
+* Enumerar Professor por Turma
+* Conexão direta com BD para acesso e edição
+* Implementar componentes em outras telas
+* Esboços de Design
+
+
+#### Retrospectiva:
+Juntamente com mais melhores no código de front, foi decidido que a categoria do backlog de Interface BD fora removida, optando por uma nova direção para o projeto - um escopo reduzido aonde o programa funcione com um banco de dados já populado, diferente do inicialmente planejado que contemplava uma tela extra de adição, remoção e edição no banco de dados. Começou-se a estudar a aplicabilidade de testes JUnit.
+Quanto ao visual do projeto, começaram a ser feitos os primeiros esboços de uma melhoria geral na interface.
 ## Relatórios produzidos _(em ordem de entrega)_
 Os links *(nos títulos)* concedem permissão para comentários, agradecemos quaisquer observações que possam ser feitas para melhorar a qualidade de nossos relatórios!
 <br>
