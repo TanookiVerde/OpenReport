@@ -229,7 +229,18 @@ Além disso, foram vistas definições formais de testes, estratégias e limites
 ### Relatório 8 - Entrega de Sprint 5, continuação de testes.
 As aulas dessa semana por parte do professor Eber serviram para expandir o conceito de Testes de Caixa Branca, que concerne casos de testes referentes a perspectiva interna do programa, isto é, o código fonte. Para entendê-los melhor, apresentou-se o conceito de Grafos de Fluxo elementares, Grafos de Controle dentre outros que permitiam estruturar o programa em forma de nós que possam ser efetivamente percorridos pelos casos de teste propostos.
 
-Como aplicação, foi visto outro exercício em sala de aula para desenvolver casos de testes de um programa que verificava características de lados de triangulos.   
+Como aplicação, foi visto outro exercício em sala de aula para desenvolver casos de testes de um programa que verificava características de lados de triangulos. Um obstáculo considerável (segurança no Fundão) e que vinha se mostrando preocupante para todos os alunos no campus do Fundão se alastrou ao longo da semana, culminando em sequestros relâmpagos e o cancelamento de várias aulas para Quinta e Sexta-Feira. Felizmente o andamento do projeto não foi afetado e não perdeu-se nenhuma aula ou progresso nas sprints.
+
+
+### Relatório 9 - Entrega de Sprint 6, semana de Greve dos Caminhoneiros no Fundão
+Essa semana foi marcada pelo cancelamento oficial das atividades acadêmicas da Reitoria em função da alarmante Greve dos Caminhoneiros. Em virtude dos acontecimentos, o professor Luis Felipe organizou a _HACKCOMB_, uma hackathon para que os alunos pudessem aproveitar o tempo ocioso para acelerar o desenvolvimento do projeto.
+
+Foi oferecida a oportunidade aos alunos de atuar nos seus projetos dentro do espaço de uma empresa aonde o professor estava, e, para aqueles que não pudessem comparecer, um hangouts geral. O grupo Gaara VS RockLee participou por meio dos hangouts, embora alguns membros tenham tido problemas técnicos e de saúde. 
+
+O evento foi inteiramente segmentado em etapas cronometradas, fazendo-se o uso da técnica Pomodoro para dosar intervalos e gerir mais produtividade. Consiste na divisão de 25 minutos para produção focada, e intervalos de 5 à 10 minutos encaixados entre cada bloco de produtividade.
+
+Acredita-se que foi uma ótima oportunidade para produzir mesmo com o estado de calamidade do país. O grupo teve ótimos resultados, refletidos nos relatórios das sprints que envolvem uma grande limpeza no código e novas direções/adequações propícias para o projeto.
+ 
 ## Iterações do Produto Final
 Número|Data|Funcionalidades
 ----|----|-----
