@@ -154,6 +154,11 @@ Um progressivo grau de refatoração do código auxiliou na limpeza e no caráte
 #### Retrospectiva:
 Juntamente com mais melhores no código de front, foi decidido que a categoria do backlog de Interface BD fora removida, optando por uma nova direção para o projeto - um escopo reduzido aonde o programa funcione com um banco de dados já populado, diferente do inicialmente planejado que contemplava uma tela extra de adição, remoção e edição no banco de dados. Começou-se a estudar a aplicabilidade de testes JUnit.
 Quanto ao visual do projeto, começaram a ser feitos os primeiros esboços de uma melhoria geral na interface.
+![menuPrincipal](https://i.imgur.com/bUhLu3E.png) 
+**Menu Principal**
+<br><br><br><br><br>
+![criacaoTemplate](https://i.imgur.com/ZGePtfb.png)
+**Criação de Template**
 ## Relatórios produzidos _(em ordem de entrega)_
 Os links *(nos títulos)* concedem permissão para comentários, agradecemos quaisquer observações que possam ser feitas para melhorar a qualidade de nossos relatórios!
 <br>
