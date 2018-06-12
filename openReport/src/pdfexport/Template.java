@@ -44,7 +44,7 @@ public class Template {
      */
     @FXML
     private void toPDF(ActionEvent event){
-        //gera um pdf relatorio a partir dos componentes em cada slot
+        PDFCreator.makeDocumentFromTemplate(template);
     }
     /**
      * Este método é chamado quando o usuário clica no botão de exportar template.
