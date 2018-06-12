@@ -6,8 +6,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.layout.VBox;
+import javafx.scene.control.TextField;
 
 public class Sprite implements IComponent{
+    public String componentName;
     public String path;
     
     // Para referenciar em funções de adição, remoção e edição
@@ -15,6 +17,11 @@ public class Sprite implements IComponent{
     public Parent node;
     public java.util.List<IComponent> list;
     public static String FXML_PATH = "/pdfexport/components/Sprite.fxml";
+    
+    @FXML
+    private TextField componentNameTF;
+    @FXML
+    private TextField pathTF;
     
     public Sprite(String _path){
         path = _path;
@@ -42,6 +49,9 @@ public class Sprite implements IComponent{
     }
     @Override @FXML
     public void editComponent(ActionEvent event) {
+        this.componentName = componentNameTF.getText();
+        this.path = pathTF.getText();
+        System.out.println("Componente ASSINATURA editado com sucesso! Novo conteudo: " + this.componentName + " e " + this.path);
     }
     
     @Override

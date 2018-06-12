@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="278.0" prefWidth="600.0" text="Cabeçalho" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pdfexport.components.Header">
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="278.0" prefWidth="600.0" text="Imagem" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pdfexport.components.Sprite">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
          <children>
@@ -33,7 +33,9 @@
                     </rowConstraints>
                      <children>
                         <Label text="Nome do Componente" />
-                        <TextField GridPane.columnIndex="1" />
+                        <TextField fx:id="componentNameTF" GridPane.columnIndex="1" />
+                        <TextField fx:id="pathTF" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Caminho da Imagem " GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                   <ButtonBar prefHeight="40.0" prefWidth="200.0">
