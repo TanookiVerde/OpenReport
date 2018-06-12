@@ -21,7 +21,17 @@ public class Header implements IComponent {
     public String logoPath;
     
     @FXML
-    public TextField componentNameTF;
+    private TextField componentNameTF;
+    @FXML
+    private TextField schoolNameTF;
+    @FXML
+    private TextField addressTF;
+    @FXML
+    private TextField logoPathTF;
+    @FXML
+    private TextField websiteTF;
+    @FXML
+    private TextField telefoneTF;
    
     
     // Para referenciar em funções de adição, remoção e edição
@@ -87,8 +97,13 @@ public class Header implements IComponent {
     }
     @Override @FXML
     public void editComponent(ActionEvent event) {
-        componentName = componentNameTF.getText();
-        System.out.println(componentName);
+        this.componentName = componentNameTF.getText();
+        this.schoolName = schoolNameTF.getText();
+        this.street = addressTF.getText();
+        this.logoPath = logoPathTF.getText();
+        this.webSite = websiteTF.getText();
+        this.telefone = telefoneTF.getText();
+        System.out.println("Componente CABEÇALHO editado com sucesso! Novo conteudo: " + this.componentName + ", " + this.schoolName + ", " + this.street + "...");
     }
     @Override
     public String getFXMLPath() {

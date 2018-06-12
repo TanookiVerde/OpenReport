@@ -34,6 +34,16 @@
                      <children>
                         <Label text="Nome do Componente" />
                         <TextField fx:id="componentNameTF" GridPane.columnIndex="1" />
+                        <TextField fx:id="schoolNameTF" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Nome da Escola" GridPane.rowIndex="1" />
+                        <Label layoutX="10.0" layoutY="44.0" text="Endereço" GridPane.rowIndex="2" />
+                        <Label layoutX="10.0" layoutY="72.0" text="Website" GridPane.rowIndex="3" />
+                        <Label text="Telefone" GridPane.rowIndex="4" />
+                        <Label text="Caminho para Logo" GridPane.rowIndex="5" />
+                        <TextField fx:id="addressTF" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="websiteTF" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="telefoneTF" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="logoPathTF" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
                   <ButtonBar prefHeight="40.0" prefWidth="200.0">
