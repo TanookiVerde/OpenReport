@@ -71,6 +71,7 @@ public class Template {
             //Adiciona Document Header
             Node docHeader = FXMLLoader.load(getClass().getResource(DocumentHeader.SLOT_PATH));
             slotGrid.getChildren().add(docHeader);
+            /**
             //Adiciona Page Header
             Node pageHeader = FXMLLoader.load(getClass().getResource(PageHeader.SLOT_PATH));
             slotGrid.getChildren().add(pageHeader);
@@ -83,6 +84,7 @@ public class Template {
             //Adiciona Document Footer
             Node documentFooter = FXMLLoader.load(getClass().getResource(DocumentFooter.SLOT_PATH));
             slotGrid.getChildren().add(documentFooter);
+            **/
         }catch(IOException i){
             System.out.println(i.getMessage());
         }

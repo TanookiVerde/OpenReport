@@ -8,8 +8,10 @@ import javafx.scene.layout.VBox;
 import javafx.fxml.*;
 import java.util.List;
 import javafx.scene.Parent;
+import javafx.scene.control.TextField;
 
 public class Header implements IComponent {
+    public String componentName;
     public String schoolName;
     public String street;
     public String aptNumber;
@@ -17,6 +19,9 @@ public class Header implements IComponent {
     public String telefone;
     public String webSite;
     public String logoPath;
+    
+    @FXML
+    public TextField componentNameTF;
    
     
     // Para referenciar em funções de adição, remoção e edição
@@ -82,8 +87,9 @@ public class Header implements IComponent {
     }
     @Override @FXML
     public void editComponent(ActionEvent event) {
+        componentName = componentNameTF.getText();
+        System.out.println(componentName);
     }
-
     @Override
     public String getFXMLPath() {
         return FXML_PATH;

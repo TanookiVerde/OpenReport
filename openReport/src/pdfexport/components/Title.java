@@ -6,22 +6,28 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.layout.VBox;
+import javafx.scene.control.TextField;
 
 /**
 * Classe que representa o component Title.
 */
 public class Title implements IComponent{
+    public String componentName;
     public String title;
     public String subtitle;
-    
-    //public final static String FXML_PATH = "/pdfexport/components/Title.fxml";
     
     // Para referenciar em funções de adição, remoção e edição
     public VBox vbox; 
     public Parent node;
     public java.util.List<IComponent> list;
     public static String FXML_PATH = "/pdfexport/components/Title.fxml";
-
+    
+    @FXML
+    private TextField componentNameTF;
+    @FXML
+    private TextField titleTF;
+    @FXML
+    private TextField subtitleTF;
     
     public Title(){
         this.title = " ";
@@ -80,7 +86,10 @@ public class Title implements IComponent{
      */
     @Override @FXML
     public void editComponent(ActionEvent event) {
-        System.out.println("EDITOU");
+        this.componentName = componentNameTF.getText();
+        this.title = titleTF.getText();
+        this.subtitle = subtitleTF.getText();
+        System.out.println("Componente TÍTULO editado com sucesso! Novo conteudo: " + this.title + ", " + this.componentName + " e " + this.subtitle);
     }
 
     @Override

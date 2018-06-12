@@ -36,8 +36,10 @@ public interface ISlot {
             
             slot.getComponentList().add(newComponent);
         }catch(Exception i){
-            System.out.println(i.getMessage());
-            System.out.println(i.getStackTrace());
+            System.out.println("Message " + i.getMessage());
+            System.out.println("StackTrace: " + i.getStackTrace());
+            System.out.println("Cause: " + i.getCause());
+            i.printStackTrace();
         }
     }
 }

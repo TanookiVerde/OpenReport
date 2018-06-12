@@ -7,8 +7,10 @@ import javafx.scene.layout.VBox;
 import java.util.List;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
+import javafx.scene.control.TextField;
 
 public class Signature implements IComponent{
+    public String componentName;
     public String name;
     public String role;
     
@@ -17,6 +19,11 @@ public class Signature implements IComponent{
     public Parent node;
     public java.util.List<IComponent> list;
     public static String FXML_PATH = "/pdfexport/components/Signature.fxml";
+    
+    @FXML
+    public TextField componentNameTF;
+    public TextField nameTF;
+    public TextField roleTF;
      
     public Signature(){
          name = " ";
@@ -58,6 +65,10 @@ public class Signature implements IComponent{
     }
     @Override @FXML
     public void editComponent(ActionEvent event) {
+        this.componentName = componentNameTF.getText();
+        this.name = nameTF.getText();
+        this.role = roleTF.getText();
+        System.out.println("Componente ASSINATURA editado com sucesso! Novo conteudo: " + this.name + ", " + this.componentName + " e " + this.role);
     }
 
     @Override

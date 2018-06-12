@@ -6,15 +6,22 @@ import javafx.event.ActionEvent;
 import javafx.scene.layout.VBox;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
+import javafx.scene.control.TextField;
 
 public class Text implements IComponent {
     public String text;
+    public String componentName;
     
     // Para referenciar em funções de adição, remoção e edição
     public VBox vbox; 
     public Parent node;
     public java.util.List<IComponent> list;
     public static String FXML_PATH = "/pdfexport/components/Text.fxml";
+    
+    @FXML
+    private TextField componentNameTF;
+    @FXML
+    private TextField contentText;
     
     public Text(String text) {
         this.text = text;
@@ -48,6 +55,9 @@ public class Text implements IComponent {
     }
     @Override @FXML
     public void editComponent(ActionEvent event) {
+        this.componentName = componentNameTF.getText();
+        this.text = contentText.getText();
+        System.out.println("Componente TEXTO editado com sucesso! Novo conteudo: " + this.text + " e " + this.componentName);
     }
 
     @Override
