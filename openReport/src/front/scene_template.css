@@ -1,6 +1,8 @@
 /*
     Este arquivo CSS é destinado à estilização itens inerentes à criação de templates.
     Cor base Adobe Color: #182340
+    Cor amarelo post-it: #FEFFE4
+    Cor background cinza AdobeXD: #E4E4E4
  */
 
 .menuButton .arrow {
@@ -20,11 +22,11 @@
     -fx-background-color: #FEF5FF;
     -fx-border-radius: 0;
     -fx-border-style: none;
-    */
+    
     -fx-background-radius: 3,2,1;
     -fx-padding: 3 30 3 30;
     -fx-background-radius: 0;
     -fx-text-fill: black;
     -fx-font-size: 14px;
-
+    */
 }
