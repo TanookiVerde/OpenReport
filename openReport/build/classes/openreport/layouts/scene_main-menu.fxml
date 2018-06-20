@@ -22,7 +22,7 @@
                   </Rectangle>
                   <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-alignment: left;" text="Novo Relatório">
                      <HBox.margin>
-                        <Insets left="-72.0" right="250.0" top="73.0" />
+                        <Insets left="-88.0" right="250.0" top="73.0" />
                      </HBox.margin>
                   </Button>
                </children>
@@ -39,7 +39,7 @@
                   </Rectangle>
                   <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="110.0" styleClass="button-div" text="Abrir Template">
                      <HBox.margin>
-                        <Insets left="-72.0" right="250.0" top="73.0" />
+                        <Insets left="-88.0" right="250.0" top="73.0" />
                      </HBox.margin>
                   </Button>
                </children>
@@ -52,7 +52,7 @@
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1a7f86" height="200.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-margin: 0;" styleClass="button-rect" width="200.0" />
                   <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="110.0" text="Ajuda">
                      <HBox.margin>
-                        <Insets left="-72.0" right="250.0" top="73.0" />
+                        <Insets left="-88.0" right="250.0" top="73.0" />
                      </HBox.margin>
                   </Button>
                </children>
