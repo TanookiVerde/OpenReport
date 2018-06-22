@@ -74,7 +74,7 @@
       </VBox>
    </left>
    <top>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header-text" text="OpenReport" textAlignment="JUSTIFY" wrappingWidth="443.13671875" BorderPane.alignment="CENTER">
+      <Text fill="#1a7f86" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header-text" text="OpenReport" textAlignment="JUSTIFY" wrappingWidth="443.13671875" BorderPane.alignment="CENTER">
          <font>
             <Font name="System Bold" size="72.0" />
          </font>
