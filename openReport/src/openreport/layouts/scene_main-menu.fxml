@@ -20,7 +20,7 @@
                         <Insets />
                      </HBox.margin>
                   </Rectangle>
-                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-alignment: left;" text="Novo Relatório">
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Novo Relatório">
                      <HBox.margin>
                         <Insets left="-88.0" right="250.0" top="73.0" />
                      </HBox.margin>
@@ -37,7 +37,7 @@
                         <Insets />
                      </HBox.margin>
                   </Rectangle>
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="110.0" styleClass="button-div" text="Abrir Template">
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="110.0" text="Abrir Template">
                      <HBox.margin>
                         <Insets left="-88.0" right="250.0" top="73.0" />
                      </HBox.margin>
@@ -70,7 +70,7 @@
       </VBox>
    </left>
    <top>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Droid-Serif;" styleClass="header-text" text="OpenReport" textAlignment="JUSTIFY" wrappingWidth="443.13671875" BorderPane.alignment="CENTER">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header-text" text="OpenReport" textAlignment="JUSTIFY" wrappingWidth="443.13671875" BorderPane.alignment="CENTER">
          <font>
             <Font name="System Bold" size="72.0" />
          </font>

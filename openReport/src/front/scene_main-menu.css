@@ -9,11 +9,11 @@
  **********************/
 
 @font-face {
-    font-family: Droid-Serif;
-    src: url("DroidSerif-Regular.ttf");
+    /*font-family: Droid-Serif;*/
+    src: url("fonts/DroidSerif-Regular.ttf");
       
-    font-family: Work-Sans;
-    src: url("WorkSans-Regular.ttf");
+    /*font-family: Work-Sans;
+    src: url("WorkSans-Regular.ttf");*/
 }
 
 .main-div {
@@ -23,7 +23,7 @@
 }
 .header-text {
     -fx-text-fill: #1A7F86; 
-    -fx-font-family: Droid-Serif;
+    -fx-font-family: "Droid Serif";
     -fx-translate-x: -220;
     -fx-translate-y: 100;
 }
