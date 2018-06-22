@@ -12,8 +12,8 @@
     /*font-family: Droid-Serif;*/
     src: url("fonts/DroidSerif-Regular.ttf");
       
-    /*font-family: Work-Sans;
-    src: url("WorkSans-Regular.ttf");*/
+    /*font-family: Work Sans;*/
+    src: url("WorkSans-Regular.ttf");
 }
 
 .main-div {
@@ -35,11 +35,11 @@
 }
 
 .button-div {
-   
+   -fx-font-family: "Work Sans";
 }
 .button {
     /*-fx-scale-x: 1.5;*/
-    -fx-font-size: 22px;
+    -fx-font-size: 24px;
     -fx-min-width: 300;
     -fx-alignment: left;
     -fx-background-color: #E4E4E4;
