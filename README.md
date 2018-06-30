@@ -16,9 +16,9 @@ Nome|Tipo|Horas|Concluído
 |Interface dos componentes isoladamente|Interface Componentes|1h|X
 |Adição de Componentes|Interface Componentes|3h|X
 |Remoção de Componentes|Interface Componentes|1h|X
-|Edição de Componentes|Interface Componentes|3h|O
-|Salvar Modificações em Classe Template|Interface Componentes|2h|
-|Chamada de Exportar PDF a partir de Classe|Interface Componentes|2h|
+|Edição de Componentes|Interface Componentes|3h|X
+|Salvar Modificações em Classe Template|Interface Componentes|2h|X
+|Chamada de Exportar PDF a partir de Classe|Interface Componentes|2h|X
 |Serialização e Deserialização de Classe Template em XML|Exportar PDF|2h|X
 |Salvar XML em arquivo|Exportar PDF|1h|X
 |Imprimir Cabeçalho|Exportar PDF|3h|X
@@ -27,14 +27,22 @@ Nome|Tipo|Horas|Concluído
 |Imprimir Assinatura|Exportar PDF|2h|X
 |Imprimir Tabela Simples|Exportar PDF|4h|X
 |Tabela: Pegar dados do BD|Exportar PDF|3h|X
-|Imprimir componentes de acordo com Layout|Exportar PDF|5h|O
+|Imprimir componentes de acordo com Layout|Exportar PDF|5h|X
 |Finalização Diagrama ER|Banco de Dados|1h|X
 |Implementação do Diagrama e das tabelas em mySQL|Banco de Dados|2h|X
 |Popular Banco de Dados|Banco de Dados|1h|X
-|Enumeração dos Queries de acordo com o componente Tabela Simples|Banco de Dados|2h|
-|Implementação dos Queries enumerados|Banco de Dados|6h|O
+|Enumeração dos Queries de acordo com o componente Tabela Simples|Banco de Dados|2h|X
+|Implementação dos Queries enumerados|Banco de Dados|6h|X
 |Integração com Java|Banco de Dados|5h|X
-|Testes JUnit|Documentação|N/A|
+|Testes JUnit|Documentação|N/A| O
+|Componente Histórico Escolar|Interface|3h| O
+|Componente Listagem Turmas|Interface|3h| O
+|Componente Listagem Alunos|Interface|3h| O
+|Componente Listagem Professores|Interface|3h| O
+|Polimento do Layout de Impressão|Exportar PDF|3h|O
+|Document Header|Exportar PDF|4h|O
+|Visual dos Componentes|Exportar PDF|4h|O
+|Correção na tela de Customização|Exportar PDF|4h|O
 <br>
 
 Bônus|Tipo|Horas
@@ -42,8 +50,8 @@ Bônus|Tipo|Horas
 Escolher entre pagina vertical e horizontal|Exportar PDF|3h
 Visual do Componente Tabela para histórico Escolar|Interface Componentes|1h
 Visual do Componente Imagem |Interface Componentes|1h
-Componente Tabela para histórico Escolar|Exportar PDF|4h
-Componente Imagem |Exportar PDF|1h
+Componente Tabela para histórico Escolar|Interface|4h
+Componente Imagem |Interface|1h
 
 ## Sprints
 ### [Burn down Charts de cada Sprint, por membro](https://docs.google.com/spreadsheets/d/1cLAJabJcqsTo1P4E_HbKuMOHV_B_Jd2DMFNLmmlBLp0/edit?usp=sharing)
