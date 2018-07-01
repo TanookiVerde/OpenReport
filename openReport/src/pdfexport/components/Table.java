@@ -1,8 +1,10 @@
 package pdfexport.components;
 
 import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import javafx.event.ActionEvent;
@@ -57,6 +59,14 @@ public class Table implements IComponent{
         
         document.add(table);
         document.add(new Paragraph("\n"));
+    }
+    public void printAsPageHeader(PdfWriter writer, Document document, PdfContentByte cb) throws IOException, DocumentException 
+    {
+     //INVÁLIDO
+    }
+    public void printAsPageFooter(PdfWriter writer, Document document, PdfContentByte cb) throws IOException, DocumentException 
+    {
+     //INVÁLIDO
     }
     @Override
     public void setComponentInformation(VBox slot, Parent node, java.util.List<IComponent> template) {

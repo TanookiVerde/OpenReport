@@ -88,6 +88,14 @@ public class Header implements IComponent {
         document.add(table);
         document.add(new Paragraph("\n"));
     }
+    public void printAsPageHeader(PdfWriter writer, Document document, PdfContentByte cb) throws IOException, DocumentException 
+    {
+        //INVALIDO
+    }
+    public void printAsPageFooter(PdfWriter writer, Document document, PdfContentByte cb) throws IOException, DocumentException 
+    {
+        //INVALIDO
+    }
     @Override @FXML
     public void deleteComponent(ActionEvent event) {
         int currentIndex = vbox.getChildren().indexOf(node);

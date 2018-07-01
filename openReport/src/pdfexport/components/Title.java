@@ -1,6 +1,9 @@
 package pdfexport.components;
 
 import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.ColumnText;
+import com.itextpdf.text.pdf.PdfContentByte;
+import com.itextpdf.text.pdf.PdfWriter;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -56,6 +59,40 @@ public class Title implements IComponent{
             document.add(subtitle_paragraph);
         }
         document.add(new Paragraph("\n"));
+    }
+    public void printAsPageHeader(PdfWriter writer, Document document, PdfContentByte cb) throws IOException, DocumentException
+    {
+        Font ffont = new Font(Font.FontFamily.HELVETICA, 8, Font.ITALIC);
+        Phrase header = new Phrase("", ffont);
+        Chunk title_chunk = new Chunk(title, ffont);
+        header.add(title_chunk + "\n");
+        
+        if(subtitle != null){
+            Chunk subtitle_chunk = new Chunk(subtitle, ffont);
+            header.add(subtitle_chunk);            
+        }
+        
+        ColumnText.showTextAligned(cb, Element.ALIGN_CENTER,
+                    header,
+                    (document.right() - document.left()) / 2 + document.leftMargin(),
+                    document.top() + 10, 0);
+    }
+    public void printAsPageFooter(PdfWriter writer, Document document, PdfContentByte cb) throws IOException, DocumentException 
+    {
+        Font ffont = new Font(Font.FontFamily.HELVETICA, 8, Font.ITALIC);
+        Phrase footer = new Phrase("", ffont);
+        Chunk title_chunk = new Chunk(title, ffont);
+        footer.add(title_chunk + "\n");
+        
+        if(subtitle != null){
+            Chunk subtitle_chunk = new Chunk(subtitle, ffont);
+            footer.add(subtitle_chunk);            
+        }
+        
+        ColumnText.showTextAligned(cb, Element.ALIGN_CENTER,
+                footer,
+                (document.right() - document.left()) / 2 + document.leftMargin(),
+                document.bottom() - 10, 0);
     }
     /**
      * Este método é chamado assim que se cria um component. Através dele o component sabe

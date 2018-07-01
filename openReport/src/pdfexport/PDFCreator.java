@@ -58,19 +58,29 @@ public class PDFCreator {
         
         public void PrintHeader(PdfWriter writer, Document document, PdfContentByte cb)
         {           
-            Phrase header = new Phrase("this is a header", ffont);
-            ColumnText.showTextAligned(cb, Element.ALIGN_CENTER,
-                    header,
-                    (document.right() - document.left()) / 2 + document.leftMargin(),
-                    document.top() + 10, 0);
+            try
+            {
+                for(int i = 0; i < header.size(); i++){
+                    header.get(i).printAsPageHeader(writer, document, cb);
+                }
+            }
+            catch(Exception e)
+            {
+            e.printStackTrace();
+            }
         }
         public void PrintFooter(PdfWriter writer, Document document, PdfContentByte cb)
         {        
-            Phrase footer = new Phrase("this is a footer", ffont);
-            ColumnText.showTextAligned(cb, Element.ALIGN_CENTER,
-                    footer,
-                    (document.right() - document.left()) / 2 + document.leftMargin(),
-                    document.bottom() - 10, 0);
+            try
+            {
+                for(int i = 0; i < footer.size(); i++){
+                    footer.get(i).printAsPageFooter(writer, document, cb);
+                }
+            }
+            catch(Exception e)
+            {
+            e.printStackTrace();
+            }
         }
         public void SetComponents(List<IComponent> footer, List<IComponent> header)
         {
@@ -86,11 +96,18 @@ public class PDFCreator {
     }
     public static void makeDocumentFromTemplate(Template template){
         try{
+            
+            
             Document document = new Document();
             
             PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(DEST));
             FooterHeaderHandler event = new FooterHeaderHandler();
-            writer.setPageEvent(event);
+            
+            if(template.pageFooter != null && template.pageHeader != null)
+            {
+                event.SetComponents(template.pageFooter, template.pageHeader);
+                writer.setPageEvent(event);
+            }
             
                     
             document.open();
@@ -98,19 +115,19 @@ public class PDFCreator {
             //header da primeira pagina do doc inteiro
             for(int i = 0; i < template.documentHeader.size(); i++){
                 template.documentHeader.get(i).print(document);
-            }
+            }/*
             // header de todos menos primeira
             for(int i = 0; i < template.pageHeader.size(); i++){
                 template.pageHeader.get(i).print(document);
-            }
+            }*/
             //corpo (for provavelmente)
             for(int i = 0; i < template.body.size(); i++){
                 template.body.get(i).print(document);
-            }
+            }/*
             //msm do header mas pro footer (os 2)
             for(int i = 0; i < template.pageFooter.size(); i++){
                 template.pageFooter.get(i).print(document);
-            }
+            }*/
             for(int i = 0; i < template.documentFooter.size(); i++){
                 template.documentFooter.get(i).print(document);
             }

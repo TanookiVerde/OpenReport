@@ -1,6 +1,9 @@
 package pdfexport.components;
 
 import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.ColumnText;
+import com.itextpdf.text.pdf.PdfContentByte;
+import com.itextpdf.text.pdf.PdfWriter;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.VBox;
@@ -39,6 +42,28 @@ public class Text implements IComponent {
         p.setAlignment(Element.ALIGN_CENTER);
         document.add(p);
         document.add(new Paragraph("\n"));
+    }
+    public void printAsPageHeader(PdfWriter writer, Document document, PdfContentByte cb) throws IOException, DocumentException 
+    {      
+        Font ffont = new Font(Font.FontFamily.HELVETICA, 8, Font.ITALIC);
+        Phrase header = new Phrase("", ffont);
+        header.add(text);
+        
+        ColumnText.showTextAligned(cb, Element.ALIGN_CENTER,
+                header,
+                (document.right() - document.left()) / 2 + document.leftMargin(),
+                document.top() + 10, 0);
+    }
+    public void printAsPageFooter(PdfWriter writer, Document document, PdfContentByte cb) throws IOException, DocumentException 
+    {      
+        Font ffont = new Font(Font.FontFamily.HELVETICA, 8, Font.ITALIC);
+        Phrase footer = new Phrase("", ffont);
+        footer.add(text);
+        
+        ColumnText.showTextAligned(cb, Element.ALIGN_CENTER,
+                footer,
+                (document.right() - document.left()) / 2 + document.leftMargin(),
+                document.bottom() - 10, 0);
     }
     @Override
     public void setComponentInformation(VBox slot, Parent node, java.util.List<IComponent> template) {
