@@ -9,6 +9,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.VBox;
+import openreport.SceneController;
+import openreport.Screen;
 import pdfexport.slots.*;
 
 /**
@@ -53,6 +55,7 @@ public class Template {
      */
     @FXML
     private void saveToXML(ActionEvent event){
+        System.out.println("XML");
     }
     /**
      * Este método deve ser chamado quando o usuário clica no botão de voltar
@@ -60,6 +63,10 @@ public class Template {
      */
     @FXML
     private void backToMainMenu(ActionEvent event){
+        try{
+            SceneController.openScene(Screen.MAIN);
+        }catch(IOException e){
+        }
     }
     /**
      * Este método é chamado logo no inicio quando se entra na tela de customização.
