@@ -145,7 +145,7 @@ public class PDFCreator {
             for(int i = 0; i < template.pageFooter.size(); i++){
                 template.pageFooter.get(i).print(document);
             }*/
-            event.SetPrintFooter(false);
+            //event.SetPrintFooter(false);
             for(int i = 0; i < template.documentFooter.size(); i++){
                 template.documentFooter.get(i).print(document);
             }

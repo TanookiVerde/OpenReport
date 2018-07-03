@@ -11,7 +11,8 @@
       <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <items>
           <Button mnemonicParsing="false" onAction="#toPDF" text="Exportar para PDF (Coloque no mínimo um componente)" />
-            <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" onAction="#backToMainMenu" text="Voltar ao Menu Principal" />
+            <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" onAction="#saveToXML" text="Salvar em XML" />
+            <Button layoutX="332.0" layoutY="13.0" mnemonicParsing="false" onAction="#backToMainMenu" text="Voltar ao Menu Principal" />
         </items>
       </ToolBar>
    </bottom>
