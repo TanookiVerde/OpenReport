@@ -10,7 +10,7 @@ import static pdfexport.slots.ISlot.AddComponent;
 
 public class DocumentFooter implements ISlot{
     public final int MAX_COMPONENT_NUMBER           = 1;
-    public final static String SLOT_PATH            = "/pdfexport/slots/PageHeader.fxml";
+    public final static String SLOT_PATH            = "/pdfexport/slots/DocumentFooter.fxml";
     
     @FXML
     private VBox componentGrid;

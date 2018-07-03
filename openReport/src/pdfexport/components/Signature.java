@@ -73,7 +73,7 @@ public class Signature implements IComponent{
     }
     public void printAsPageFooter(PdfWriter writer, Document document, PdfContentByte cb) throws IOException, DocumentException 
     {        
-        Font ffont = new Font(Font.FontFamily.HELVETICA, 8, Font.ITALIC);
+        Font ffont = new Font(Font.FontFamily.HELVETICA, 10, Font.ITALIC);
         //Phrase footer = new Phrase("", ffont);     
         Chunk line_chunk = new Chunk("_______________________________________________________", ffont);
         //footer.add(line_chunk + "\n");
@@ -83,12 +83,20 @@ public class Signature implements IComponent{
         
         Chunk subtitle_chunk = new Chunk(role, ffont);
         //footer.add(subtitle_chunk);
-        Phrase footer = new Phrase(name + "\n" + role, ffont);   
+        String current = "_______________________________________________________";
+        Phrase footer = new Phrase(current, ffont);   
         
         ColumnText.showTextAligned(cb, Element.ALIGN_CENTER,
                 footer,
                 (document.right() - document.left()) / 2 + document.leftMargin(),
                 document.bottom() - 10, 0);
+        
+        current = name + ", " + role;
+        footer = new Phrase(current, ffont);
+        ColumnText.showTextAligned(cb, Element.ALIGN_CENTER,
+                footer,
+                (document.right() - document.left()) / 2 + document.leftMargin(),
+                document.bottom() - 25, 0);
     }
     @Override
     public void setComponentInformation(VBox slot, Parent node, List<IComponent> template) {

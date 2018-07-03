@@ -33,10 +33,17 @@ import java.io.IOException;
 
 public class PDFCreator {
     public static final String DEST = "results/objects/test.pdf";
+    
+    //Margins
+    private static float left = 30;
+    private static float right = 30;
+    private static float top = 30;
+    private static float bottom = 50;
  
     static class FooterHeaderHandler extends PdfPageEventHelper {
         Font ffont = new Font(Font.FontFamily.UNDEFINED, 8, Font.ITALIC);
         boolean firstPage = false;
+        boolean printFooter = true;
         
         List<IComponent> footer;
         List<IComponent> header;
@@ -52,7 +59,8 @@ public class PDFCreator {
             {
                 firstPage = true;
             }
-            PrintFooter(writer, document, cb);
+            if(printFooter)
+                PrintFooter(writer, document, cb);
             System.out.print("page\n");
         }
         
@@ -87,6 +95,10 @@ public class PDFCreator {
             this.footer = footer;
             this.header = header;
         }
+        public void SetPrintFooter(boolean value)
+        {
+            printFooter = value;
+        }
     }
     
     public static Document createDocument(String destination) throws IOException, DocumentException{
@@ -110,11 +122,16 @@ public class PDFCreator {
             }
             
                     
+            document.setMargins(left, right, top, bottom);
             document.open();
             
             //header da primeira pagina do doc inteiro
-            for(int i = 0; i < template.documentHeader.size(); i++){
-                template.documentHeader.get(i).print(document);
+            if(template.documentHeader != null)
+            {
+                for(int i = 0; i < template.documentHeader.size(); i++)
+                {
+                    template.documentHeader.get(i).print(document);
+                }
             }/*
             // header de todos menos primeira
             for(int i = 0; i < template.pageHeader.size(); i++){
@@ -128,6 +145,7 @@ public class PDFCreator {
             for(int i = 0; i < template.pageFooter.size(); i++){
                 template.pageFooter.get(i).print(document);
             }*/
+            event.SetPrintFooter(false);
             for(int i = 0; i < template.documentFooter.size(); i++){
                 template.documentFooter.get(i).print(document);
             }
