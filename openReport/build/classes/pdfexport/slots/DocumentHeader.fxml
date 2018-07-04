@@ -19,7 +19,6 @@
                       <MenuItem mnemonicParsing="false" onAction="#addHeader" text="Cabeçalho" />
                         <MenuItem mnemonicParsing="false" onAction="#addSprite" text="Sprite" />
                         <MenuItem mnemonicParsing="false" onAction="#addSignature" text="Assinatura" />
-                        <MenuItem mnemonicParsing="false" onAction="#addSimpleTable" text="Tabela Simples" />
                         <MenuItem mnemonicParsing="false" onAction="#addText" text="Texto" />
                     </items>
                   </MenuButton>

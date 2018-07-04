@@ -22,7 +22,6 @@ public class DocumentFooter implements ISlot{
 
     @Override
     public void addHeader(ActionEvent event) {
-        AddComponent(new Header(),this);
     }
 
     @Override
@@ -36,13 +35,16 @@ public class DocumentFooter implements ISlot{
     }
 
     @Override
-    public void addSimpleTable(ActionEvent event) {
-        AddComponent(new Table(),this);
+    public void addText(ActionEvent event) {
+        AddComponent(new Text(),this);
+    }
+    
+    @Override
+    public void addGradeTable(ActionEvent event) {
     }
 
     @Override
-    public void addText(ActionEvent event) {
-        AddComponent(new Text(),this);
+    public void addListing(ActionEvent event) {
     }
     
     @Override

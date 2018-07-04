@@ -13,8 +13,9 @@ public interface ISlot {
     public void addHeader(ActionEvent event);
     public void addSprite(ActionEvent event);
     public void addSignature(ActionEvent event);
-    public void addSimpleTable(ActionEvent event);
     public void addText(ActionEvent event);
+    public void addGradeTable(ActionEvent event);
+    public void addListing(ActionEvent event);
     public List<IComponent> getComponentList();
     public int getMaxComponentNumber();
     public VBox getComponentGrid();

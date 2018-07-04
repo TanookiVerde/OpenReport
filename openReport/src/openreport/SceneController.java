@@ -4,12 +4,11 @@ import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
 import javafx.stage.Stage;
-import openreport.Screen;
 
 public class SceneController {
     public static Stage mainStage;
-    private static final String TEMPLATE_SCREEN = "layouts/scene_template.fxml";
-    private static final String MAIN_SCREEN = "layouts/scene_main-menu.fxml";
+    private static final String TEMPLATE_SCREEN = "Template.fxml";
+    private static final String MAIN_SCREEN = "MainMenu.fxml";
     
     public static void setStage(Stage stage){
         mainStage = stage;

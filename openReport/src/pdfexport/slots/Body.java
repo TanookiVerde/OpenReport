@@ -23,7 +23,6 @@ public class Body implements ISlot {
 
     @Override
     public void addHeader(ActionEvent event) {
-        AddComponent(new Header(),this);
     }
 
     @Override
@@ -37,13 +36,18 @@ public class Body implements ISlot {
     }
 
     @Override
-    public void addSimpleTable(ActionEvent event) {
-        AddComponent(new Table(),this);
+    public void addText(ActionEvent event) {
+        AddComponent(new Text(),this);
+    }
+    
+    @Override
+    public void addGradeTable(ActionEvent event) {
+        AddComponent(new GradeTable(),this);
     }
 
     @Override
-    public void addText(ActionEvent event) {
-        AddComponent(new Text(),this);
+    public void addListing(ActionEvent event) {
+        AddComponent(new GradeTable(),this);
     }
     
     @Override
@@ -60,4 +64,6 @@ public class Body implements ISlot {
     public int getMaxComponentNumber(){
         return MAX_COMPONENT_NUMBER;
     }
+
+    
 }

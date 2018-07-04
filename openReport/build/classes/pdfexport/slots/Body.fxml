@@ -16,11 +16,11 @@
                   <MenuButton mnemonicParsing="false" styleClass="menuButton" text="Adicionar">
                     <items>
                       <MenuItem mnemonicParsing="false" onAction="#addTitle" text="Título" />
-                      <MenuItem mnemonicParsing="false" onAction="#addHeader" text="Cabeçalho" />
                         <MenuItem mnemonicParsing="false" onAction="#addSprite" text="Sprite" />
                         <MenuItem mnemonicParsing="false" onAction="#addSignature" text="Assinatura" />
-                        <MenuItem mnemonicParsing="false" onAction="#addSimpleTable" text="Tabela Simples" />
                         <MenuItem mnemonicParsing="false" onAction="#addText" text="Texto" />
+                        <MenuItem mnemonicParsing="false" onAction="#addGradeTable" text="Histórico Escolar" />
+                        <MenuItem mnemonicParsing="false" onAction="#addListing" text="Listagem" />
                     </items>
                   </MenuButton>
                   <ScrollPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
