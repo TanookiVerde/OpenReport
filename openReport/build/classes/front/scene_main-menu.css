@@ -21,6 +21,8 @@
     -fx-background-color: #E4E4E4;
     -fx-background-image: url("img/background1.png");
 }
+
+/*
 .header-text {
     -fx-text-fill: #1A7F86; 
     -fx-font-family: "Droid Serif";
@@ -28,6 +30,16 @@
     -fx-translate-x: -220;
     -fx-translate-y: 100;
 }
+*/
+
+.header-text {
+    -fx-text-fill: #1A7F86; 
+    -fx-font-family: "Droid Serif";
+    -fx-font-smoothing-type: gray;
+    /*-fx-translate-x: 110; 
+    -fx-translate-y: 100;*/
+}
+
 
 .button-grid {
     -fx-translate-x: 160;
@@ -40,7 +52,7 @@
 .button {
     /*-fx-scale-x: 1.5;*/
     -fx-font-size: 24px;
-    -fx-min-width: 300;
+    /*-fx-min-width: 300;*/oiuoio
     -fx-alignment: left;
     -fx-background-color: #E4E4E4;
     -fx-border-style: none;
@@ -52,8 +64,10 @@
 }
 
 .button-rect {
-    -fx-scale-x: 0.125;
-    -fx-scale-y: 0.125;
+    /*-fx-scale-x: 0.125;
+    -fx-scale-y: 0.125;*/
+    -fx-
+ 
 }
 .menuButton .arrow {
     /*
