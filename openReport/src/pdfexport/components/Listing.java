@@ -4,28 +4,25 @@ import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.io.IOException;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import javafx.beans.value.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Parent;
 import javafx.scene.layout.VBox;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class Listing implements IComponent{
-    ObservableList<String> categoryList = FXCollections.observableArrayList("Alunos", "Professores");
-    ObservableList<String> alunosFilterList = FXCollections.observableArrayList("Turma","Disciplina","Série");
-    ObservableList<String> professorFilterList = FXCollections.observableArrayList("Turma","Disciplina");
+    private final ObservableList<String> categoryList = FXCollections.observableArrayList("Alunos", "Professores");
+    private final ObservableList<String> alunosFilterList = FXCollections.observableArrayList("Turma","Disciplina","Série");
+    private final ObservableList<String> professorFilterList = FXCollections.observableArrayList("Turma","Disciplina");
     
-    @FXML private Label categoryLabel;
     @FXML private ComboBox<String> categoryCB;
-    @FXML private Label filterLabel;
     @FXML private ComboBox<String> filterCB;
     @FXML private TextField inputTF;
+    
+    private String input;
     
     // Para referenciar em funções de adição, remoção e edição
     public VBox vbox; 
@@ -67,9 +64,11 @@ public class Listing implements IComponent{
         list.remove(currentIndex);
         System.out.println(list);
     }
+    
     @Override @FXML
     public void editComponent(ActionEvent event) {
-        System.out.println("Componente LISTING editado com sucesso!");
+        input = inputTF.getText();
+        System.out.println("Componente LISTING editado com sucesso! Valor Input: "+input);
     }
     
     @Override
