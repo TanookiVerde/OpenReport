@@ -1,9 +1,47 @@
-/*
-    Este arquivo CSS é destinado à estilização itens inerentes à criação de templates.
-    Cor base Adobe Color: #182340
+/**********************
+
+    Este arquivo CSS é destinado à estilização a tela de componentes do OpenReport
+    Cor base Adobe Color: #1A7F86
+    Cor hover Adobe Color: #011516 #02244 - melhor
     Cor amarelo post-it: #FEFFE4
     Cor background cinza AdobeXD: #E4E4E4
- */
+
+ **********************/
+
+@font-face {
+    /*font-family: Droid Serif;*/
+    src: url("fonts/DroidSerif-Regular.ttf");
+      
+    /*font-family: Work Sans;*/
+    src: url("WorkSans-Regular.ttf");
+}
+
+.body {
+    -fx-font-family: "Work Sans";
+}
+
+.button-div {
+   -fx-font-family: "Work Sans";
+}
+
+.button {
+    /*
+    -fx-font-size: 24px;
+    -fx-background-color: #E4E4E4;
+    -fx-border-style: none;
+    -fx-text-fill: #1A7F86;
+    */
+}
+
+.bottom-trig {
+    -fx-rotate: 45;
+    -fx-scale-x: 0.5;
+    -fx-scale-y: 0.5;
+    -fx-translate-x: 100;
+    -fx-translate-y: 370;
+}
+
+/* Classes para remover flechas dos menus expandíveis */
 
 .menuButton .arrow {
     /*

@@ -7,11 +7,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<TitledPane text="Body" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pdfexport.slots.Body">
+<TitledPane styleClass="main-div" stylesheets="@../../front/scene_slot.css" text="Conteúdo Principal" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pdfexport.slots.Body">
    <content>
-      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="670.0" prefWidth="200.0">
+      <AnchorPane minHeight="30.0" minWidth="0.0" prefHeight="647.0" prefWidth="200.0" styleClass="inner-div">
          <children>
-            <VBox prefHeight="670.0" prefWidth="200.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <VBox prefHeight="670.0" prefWidth="200.0" spacing="10.0" style="-fx-min-height: 50;" styleClass="inner-div" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <MenuButton mnemonicParsing="false" styleClass="menuButton" text="Adicionar">
                     <items>
@@ -23,7 +23,7 @@
                         <MenuItem mnemonicParsing="false" onAction="#addListing" text="Listagem" />
                     </items>
                   </MenuButton>
-                  <ScrollPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0" style="-fx-min-height: 50;" styleClass="inner-div" VBox.vgrow="ALWAYS">
                      <content>
                         <VBox fx:id="componentGrid" prefHeight="200.0" prefWidth="200.0" />
                      </content>

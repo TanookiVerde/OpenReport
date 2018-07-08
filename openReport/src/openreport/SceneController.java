@@ -16,8 +16,11 @@ public class SceneController {
     public static void openScene(Screen screen)throws IOException{
         Parent root = FXMLLoader.load(OpenReport.class.getResource(getScreenPathFromType(screen)));
         Scene scene = new Scene(root);
+        
+
         if(mainStage != null){
             mainStage.setScene(scene);
+            mainStage.setResizable(false);
             mainStage.show();
         }
     }

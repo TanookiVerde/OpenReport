@@ -23,14 +23,17 @@
                      </font>
                   </Text>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="60.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <HBox fillHeight="false" prefHeight="45.0" prefWidth="200.0" translateY="100.0">
+                  <HBox fillHeight="false" prefHeight="45.0" prefWidth="200.0" styleClass="button-div" translateY="100.0">
                      <children>
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1a7f86" height="40.0" opacity="0.0" stroke="WHITE" strokeType="INSIDE" styleClass="button-rect" width="100.0" />
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1a7f86" height="40.0" layoutX="10.0" layoutY="10.0" stroke="WHITE" strokeType="INSIDE" styleClass="button-rect" width="40.0" />
-                        <Button mnemonicParsing="false" onAction="#newReport" onDragDetected="#newReport" text="Novo Relatório">
+                        <Button mnemonicParsing="false" onAction="#newReport" onDragDetected="#newReport" styleClass="button-div" text="Novo Relatório">
                            <HBox.margin>
                               <Insets bottom="20.0" />
                            </HBox.margin>
+                           <font>
+                              <Font name="Comic Sans MS" size="13.0" />
+                           </font>
                         </Button>
                      </children>
                   </HBox>
