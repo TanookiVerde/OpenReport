@@ -10,7 +10,7 @@ import static pdfexport.slots.ISlot.AddComponent;
 
 public class Body implements ISlot {
     
-    public final int MAX_COMPONENT_NUMBER           = 5;
+    public final int MAX_COMPONENT_NUMBER           = 4;
     public final static String SLOT_PATH            = "/pdfexport/slots/Body.fxml";
     
     @FXML
@@ -47,7 +47,7 @@ public class Body implements ISlot {
 
     @Override
     public void addListing(ActionEvent event) {
-        AddComponent(new GradeTable(),this);
+        AddComponent(new Listing(),this);
     }
     
     @Override
