@@ -2,8 +2,11 @@ package pdfexport.components;
 
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfContentByte;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import javafx.beans.value.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,6 +15,10 @@ import javafx.scene.layout.VBox;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import openreport.database.*;
+import openreport.database.Aluno;
+import openreport.database.DatabaseManager;
+import static openreport.database.DatabaseManager.callStatement;
 
 public class Listing implements IComponent{
     private final ObservableList<String> categoryList = FXCollections.observableArrayList("Alunos", "Professores");
@@ -36,6 +43,94 @@ public class Listing implements IComponent{
     @Override
     public void print(Document document) throws IOException, DocumentException {          
         //ToDo
+        String category = categoryCB.getValue();
+        String filter = filterCB.getValue();
+        
+        if(category == "Alunos")
+        {
+            ArrayList<Aluno> array;
+            switch(filter)
+            {
+                case "Turma":
+                    array = callStatement(Aluno.class, "call ALUNOTURMA(\"" + input + "\")");
+                    break;
+                case "Disciplina":
+                    array = callStatement(Aluno.class, "call ALUNODISC(\"" + input + "\")");
+                    break;
+                case "Série":
+                    array = callStatement(Aluno.class, "call ALUNOSÉRIE(\"" + input + "\")");
+                    break;
+                default:
+                    array = new ArrayList<Aluno>();
+                    break;
+            }
+            
+            if(array == null) return;
+            
+            PdfPTable table =  new PdfPTable(4);
+            Phrase p;
+            Font font = FontFactory.getFont(FontFactory.HELVETICA, 12, Font.BOLD);
+            p = new Phrase("Nome", font);
+            table.addCell(p);
+            p = new Phrase("Matricula", font);
+            table.addCell(p);
+            p = new Phrase("CPF", font);
+            table.addCell(p);
+            p = new Phrase("Data de Nascimento", font);  
+            table.addCell(p); 
+            font = FontFactory.getFont(FontFactory.HELVETICA, 10, Font.NORMAL); 
+            for(int i = 0; i < array.size(); i++)
+            {
+                p = new Phrase(array.get(i).nome, font);  
+                table.addCell(p);
+                p = new Phrase(array.get(i).matricula);
+                table.addCell(p);
+                p = new Phrase(array.get(i).cpf, font); 
+                table.addCell(p);
+                p = new Phrase(array.get(i).nascimento, font);  
+                table.addCell(p);          
+            }
+            document.add(table);
+        }
+        else if(category == "Professores")
+        {
+            ArrayList<Professor> array;
+            switch(filter)
+            {
+                case "Turma":
+                    array = callStatement(Professor.class, "call PROFTURMA(\"" + input + "\")");
+                    break;
+                case "Disciplina":
+                    array = callStatement(Professor.class, "call PROFDISC(\"" + input + "\")");
+                    break;
+                default:
+                    array = new ArrayList<Professor>();
+                    break;
+            }
+            
+            if(array == null) return;
+            
+            PdfPTable table =  new PdfPTable(3);
+            Phrase p;
+            Font font = FontFactory.getFont(FontFactory.HELVETICA, 12, Font.BOLD);
+            p = new Phrase("Nome", font);
+            table.addCell(p);
+            p = new Phrase("CPF", font);
+            table.addCell(p);
+            p = new Phrase("Data de Nascimento", font);  
+            table.addCell(p); 
+            font = FontFactory.getFont(FontFactory.HELVETICA, 10, Font.NORMAL); 
+            for(int i = 0; i < array.size(); i++)
+            {
+                p = new Phrase(array.get(i).nome, font);  
+                table.addCell(p);
+                p = new Phrase(array.get(i).cpf, font); 
+                table.addCell(p);
+                p = new Phrase(array.get(i).nascimento, font);  
+                table.addCell(p);          
+            }
+            document.add(table);
+        }
     }
     
     @Override

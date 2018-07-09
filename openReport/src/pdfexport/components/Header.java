@@ -79,7 +79,6 @@ public class Header implements IComponent {
         subtable.addCell("WEBSITE: " + webSite);
         
         table.addCell(imgCell);
-        PdfPCell nameCell = new PdfPCell();
         table.addCell("ESCOLA: " + schoolName);
         table.setWidths(new float[] { 1, 4 });
         table.addCell("ENDEREÇO: " + street + ", " + aptNumber + " - " + cep);

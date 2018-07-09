@@ -37,7 +37,7 @@ public class Text implements IComponent {
     }
     @Override
     public void print(Document document) throws IOException, DocumentException {
-        Font paragraph_font = FontFactory.getFont(FontFactory.HELVETICA, 15, Font.NORMAL);
+        Font paragraph_font = FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL);
         Paragraph p = new Paragraph(text, paragraph_font);
         p.setAlignment(Element.ALIGN_CENTER);
         document.add(p);

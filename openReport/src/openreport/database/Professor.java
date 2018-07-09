@@ -10,24 +10,22 @@ import java.sql.SQLException;
 
 /**
  *
- * @author Gabriel Aureo
+ * @author Matheus Vinicius
  */
-public class Aluno extends IData {
+public class Professor extends IData{
     public String cpf;
     public String nome;
     public String nascimento;
-    public String matricula;
 
     @Override
     public void populate(ResultSet set) throws SQLException {
         cpf = set.getString("Nome");
         nome = set.getString("CPF");
         nascimento = set.getString("Nascimento");
-        matricula = set.getString("Matricula");
     }
     
     public String toString(){
-        return nome + " , " + cpf + " , " + nascimento + " , " + matricula + "\n";
+        return nome + " , " + cpf + " , " + nascimento + "\n";
     }
     
 }
