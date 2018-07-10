@@ -28,8 +28,10 @@ public class Listing implements IComponent{
     @FXML private ComboBox<String> categoryCB;
     @FXML private ComboBox<String> filterCB;
     @FXML private TextField inputTF;
+    @FXML private TextField schoolCnpjTF;
     
     private String input;
+    private String schoolCnpj;
     
     // Para referenciar em funções de adição, remoção e edição
     public VBox vbox; 
@@ -163,7 +165,8 @@ public class Listing implements IComponent{
     @Override @FXML
     public void editComponent(ActionEvent event) {
         input = inputTF.getText();
-        System.out.println("Componente LISTING editado com sucesso! Valor Input: "+input);
+        schoolCnpj = schoolCnpjTF.getText();
+        System.out.println("Componente LISTING editado com sucesso! Valor Input: " + input + schoolCnpj);
     }
     
     @Override
