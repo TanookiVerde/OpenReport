@@ -43,14 +43,21 @@ public class DatabaseManager {
      * 
      * @param <T>
      * @param item An uninitialized dummy item do be filled with information from the database
-     * @param methodCall Call to the stored procedure in the the database
+     * @param procedureName Name of the procedure stored on the database
+     * @param parameters List of parameters to passed as arguments to the stored procedure
      * @return The same T item but with new values. 
      */    
-    public static <T extends IData> T callStatement(T item, String methodCall) {
+    public static <T extends IData> T callStatement(T item, String procedureName, Object... parameters) {
         CallableStatement cst = null;
         Connection con = connect();
         try {            
-            cst = con.prepareCall(methodCall);
+            String procedure = parseProcedure(procedureName, parameters.length);
+            cst = con.prepareCall(procedure);
+            System.out.println(procedure);
+            for(int i = 1; i < parameters.length + 1; i++){
+                cst.setObject(i, parameters[i - 1]);
+            }
+            
             ResultSet rs = cst.executeQuery();
             rs.next();
             item.populate(rs);
@@ -71,15 +78,22 @@ public class DatabaseManager {
      * 
      * @param <T>
      * @param itemClass Type of the item to populate the returning array. Use T.class.
-     * @param methodCall Call to the stored procedure in the the database
+     * @param procedureName Name of the procedure stored on the database
+     * @param parameters List of parameters to passed as arguments to the stored procedure
      * @return Array populated by information from the database
      */
-    public static <T extends IData> ArrayList<T> callStatement(Class<T> itemClass, String methodCall) {
+    public static <T extends IData> ArrayList<T> callStatement(Class<T> itemClass, String procedureName, Object... parameters) {
         CallableStatement cst = null;
         Connection con = connect();
         ArrayList<T> array = new ArrayList<T>();
         try {
-            cst = con.prepareCall(methodCall);
+            String procedure = parseProcedure(procedureName, parameters.length);
+            cst = con.prepareCall(procedure);
+            System.out.println(procedure);
+            for(int i = 1; i < parameters.length + 1; i++){
+                cst.setObject(i, parameters[i - 1]);
+            }
+            System.out.println(procedure);
             ResultSet rs = cst.executeQuery();
             while(rs.next()){
                 T obj = itemClass.newInstance();
@@ -103,6 +117,16 @@ public class DatabaseManager {
         
         return array;
     }
+    
+    private static String parseProcedure(String procedureName, int length){
+        String procedure = "call " + procedureName + "(";
+        for(int i =0; i < length - 1; i++){
+            procedure = procedure.concat("?, ");
+        }
+        procedure = procedure.concat("?)");
+        System.out.println(procedure);
+        return procedure;
+    }
         
     private static Connection connect(){
         try {
@@ -113,17 +137,18 @@ public class DatabaseManager {
         
     }
     
-    /*public static void main(String argv[]){
+    public static void main(String argv[]){
         ArrayList<Aluno> array;
         try {
             cpds = initializeDataSource();
         } catch (PropertyVetoException ex) {
             Logger.getLogger(DatabaseManager.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        array = callStatement(Aluno.class, "call ALUNODISC(\"Historia\")");
+        Historico hist = new Historico();
+        array = callStatement(Aluno.class, "ALUNODISC", "historia");
+        hist = callStatement(hist, "Historico", "10836787790");
         System.out.print(array.toString());
-    }*/
+    }
     
     
 }

@@ -52,13 +52,13 @@ public class Listing implements IComponent{
             switch(filter)
             {
                 case "Turma":
-                    array = callStatement(Aluno.class, "call ALUNOTURMA(\"" + input + "\")");
+                    array = callStatement(Aluno.class, "ALUNOTURMA", input);
                     break;
                 case "Disciplina":
-                    array = callStatement(Aluno.class, "call ALUNODISC(\"" + input + "\")");
+                    array = callStatement(Aluno.class, "ALUNODISC", input);
                     break;
                 case "Série":
-                    array = callStatement(Aluno.class, "call ALUNOSÉRIE(\"" + input + "\")");
+                    array = callStatement(Aluno.class, "ALUNOSÉRIE", input);
                     break;
                 default:
                     array = new ArrayList<Aluno>();
@@ -98,10 +98,10 @@ public class Listing implements IComponent{
             switch(filter)
             {
                 case "Turma":
-                    array = callStatement(Professor.class, "call PROFTURMA(\"" + input + "\")");
+                    array = callStatement(Professor.class, "PROFTURMA", input);
                     break;
                 case "Disciplina":
-                    array = callStatement(Professor.class, "call PROFDISC(\"" + input + "\")");
+                    array = callStatement(Professor.class, "PROFDISC", input);
                     break;
                 default:
                     array = new ArrayList<Professor>();

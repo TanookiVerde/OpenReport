@@ -9,10 +9,11 @@ import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import openreport.database.DatabaseManager;
 import openreport.database.Historico;
 
 public class GradeTable implements IComponent{
-    public int registry;
+    public String registry;
     public int columnAmount;
     public int cellPerColumn;
     
@@ -26,13 +27,16 @@ public class GradeTable implements IComponent{
     public static String FXML_PATH = "/pdfexport/components/GradeTable.fxml";
 
     public GradeTable(){
-        registry = 0;
+        registry = "0";
         columnAmount = 1;
         cellPerColumn = 1;
     }
     @Override
     public void print(Document document) throws IOException, DocumentException {          
         Historico historico = new Historico();
+        if(registry == null) return;
+        System.out.println(registry);
+        historico = DatabaseManager.callStatement(historico, "HISTORICO", registry);
         
         PdfPTable raiz = new PdfPTable(1);
         PdfPTable alunoInfo1 = new PdfPTable(2);
@@ -103,7 +107,7 @@ public class GradeTable implements IComponent{
     }
     @Override @FXML
     public void editComponent(ActionEvent event) {
-        this.registry = Integer.parseInt(registryTF.getText());
+        registry = registryTF.getText();
         System.out.println("Componente GRADETABLE editado com sucesso! Novo conteudo: " + this.registry);
     }
     
