@@ -1,8 +1,7 @@
 package pdfexport.components;
 
 import com.itextpdf.text.*;
-import com.itextpdf.text.pdf.PdfContentByte;
-import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.text.pdf.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import javafx.event.ActionEvent;
@@ -10,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import openreport.database.Historico;
 
 public class GradeTable implements IComponent{
     public int registry;
@@ -32,7 +32,51 @@ public class GradeTable implements IComponent{
     }
     @Override
     public void print(Document document) throws IOException, DocumentException {          
-        //ToDo
+        Historico historico = new Historico();
+        
+        PdfPTable raiz = new PdfPTable(1);
+        PdfPTable alunoInfo1 = new PdfPTable(2);
+        PdfPTable alunoInfo2 = new PdfPTable(2);
+        PdfPTable notas = new PdfPTable(4);
+        
+        Phrase p;
+        Font font = FontFactory.getFont(FontFactory.HELVETICA, 12, Font.BOLD);
+             
+        p = new Phrase(historico.aluno.nome, font);  
+        alunoInfo1.addCell(p);
+        p = new Phrase(historico.aluno.cpf);
+        alunoInfo1.addCell(p);
+        p = new Phrase(historico.aluno.matricula, font); 
+        alunoInfo2.addCell(p);
+        p = new Phrase(historico.aluno.nascimento, font);  
+        alunoInfo2.addCell(p);    
+        
+        p = new Phrase("Série", font);
+        notas.addCell(p);
+        p = new Phrase("Disciplina", font);
+        notas.addCell(p);
+        p = new Phrase("Nota", font);
+        notas.addCell(p);
+        p = new Phrase("Frequência", font);
+        notas.addCell(p);
+        font = FontFactory.getFont(FontFactory.HELVETICA, 10, Font.NORMAL); 
+        for(int i = 0; i < historico.notas.size(); i++)
+        {
+            p = new Phrase(historico.notas.get(i).serie, font);  
+            notas.addCell(p);
+            p = new Phrase(historico.notas.get(i).disciplina, font);  
+            notas.addCell(p);
+            p = new Phrase(Float.toString(historico.notas.get(i).media), font);  
+            notas.addCell(p);
+            p = new Phrase(Float.toString(historico.notas.get(i).frequencia), font);  
+            notas.addCell(p);
+        }
+        
+        raiz.addCell(alunoInfo1);
+        raiz.addCell(alunoInfo2);
+        raiz.addCell(notas);
+        
+        document.add(raiz);
     }
     @Override
     public void printAsPageHeader(PdfWriter writer, Document document, PdfContentByte cb) throws IOException, DocumentException 

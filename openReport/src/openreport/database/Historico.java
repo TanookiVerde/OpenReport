@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class Historico extends IData {
     public Aluno aluno;
     
-    class Nota{
+    public class Nota{
         public String serie;
         public String disciplina;
         public float frequencia;
@@ -27,6 +27,7 @@ public class Historico extends IData {
 
     @Override
     public void populate(ResultSet set) throws SQLException {
+        aluno = new Aluno();
         notas = new ArrayList<Nota>();
         aluno.populate(set);
         do{
