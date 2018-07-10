@@ -1,6 +1,7 @@
 package pdfexport.components;
 
 import com.itextpdf.text.*;
+import com.itextpdf.text.TabStop.Alignment;
 import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
@@ -15,6 +16,7 @@ import javafx.scene.layout.VBox;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javax.swing.GroupLayout;
 import openreport.database.*;
 import openreport.database.Aluno;
 import openreport.database.DatabaseManager;
@@ -54,7 +56,7 @@ public class Listing implements IComponent{
             switch(filter)
             {
                 case "Turma":
-                    array = callStatement(Aluno.class, "ALUNOTURMA", input);
+                    array = callStatement(Aluno.class, "ALUNOTURMA", input, schoolCnpj);
                     break;
                 case "Disciplina":
                     array = callStatement(Aluno.class, "ALUNODISC", input);
@@ -92,6 +94,12 @@ public class Listing implements IComponent{
                 p = new Phrase(array.get(i).nascimento, font);  
                 table.addCell(p);          
             }
+            font = FontFactory.getFont(FontFactory.HELVETICA, 15, Font.BOLD); 
+            p = new Phrase("Listagem de " + category + " por " + filter + ": " + input, font);  
+            Paragraph para = new Paragraph(p);
+            para.setAlignment(Element.ALIGN_CENTER);
+            document.add(para);
+            document.add(new Phrase("\n"));
             document.add(table);
         }
         else if(category == "Professores")
@@ -189,3 +197,4 @@ public class Listing implements IComponent{
                 });
     }
 }
+ 
