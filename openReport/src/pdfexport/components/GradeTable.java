@@ -35,7 +35,6 @@ public class GradeTable implements IComponent{
     public void print(Document document) throws IOException, DocumentException {          
         Historico historico = new Historico();
         if(registry == null) return;
-        System.out.println(registry);
         historico = DatabaseManager.callStatement(historico, "HISTORICO", registry);
         
         PdfPTable raiz = new PdfPTable(1);
@@ -46,9 +45,10 @@ public class GradeTable implements IComponent{
         Phrase p;
         Font font = FontFactory.getFont(FontFactory.HELVETICA, 12, Font.BOLD);
              
-        p = new Phrase(historico.aluno.nome, font);  
+        p = new Phrase(historico.aluno.nome, font);
+        System.out.println(historico.aluno.nome);
         alunoInfo1.addCell(p);
-        p = new Phrase(historico.aluno.cpf);
+        p = new Phrase(historico.aluno.cpf, font);
         alunoInfo1.addCell(p);
         p = new Phrase(historico.aluno.matricula, font); 
         alunoInfo2.addCell(p);
@@ -61,7 +61,7 @@ public class GradeTable implements IComponent{
         notas.addCell(p);
         p = new Phrase("Nota", font);
         notas.addCell(p);
-        p = new Phrase("Frequência", font);
+        p = new Phrase("Frequência (%)", font);
         notas.addCell(p);
         font = FontFactory.getFont(FontFactory.HELVETICA, 10, Font.NORMAL); 
         for(int i = 0; i < historico.notas.size(); i++)

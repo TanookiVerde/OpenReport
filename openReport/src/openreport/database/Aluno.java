@@ -7,6 +7,9 @@ package openreport.database;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 /**
  *
@@ -20,9 +23,11 @@ public class Aluno extends IData {
     
     @Override
     public void populate(ResultSet set) throws SQLException {
-        cpf = set.getString("Nome");
-        nome = set.getString("CPF");
-        nascimento = set.getString("Nascimento");
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/YYYY");
+        cpf = set.getString("CPF");
+        nome = set.getString("Nome");
+        nascimento = dateFormat.format(set.getDate("Nascimento"));
+        
         matricula = set.getString("Matricula");
     }
     

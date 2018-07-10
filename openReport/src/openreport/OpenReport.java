@@ -2,6 +2,7 @@ package openreport;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+import openreport.database.DatabaseManager;
 
 public class OpenReport extends Application {
     @Override
@@ -10,6 +11,7 @@ public class OpenReport extends Application {
         SceneController.openScene(Screen.TEMPLATE);
     }
     public static void main(String[] args) {
+        DatabaseManager.main(args);
         launch(args);
     }
 }

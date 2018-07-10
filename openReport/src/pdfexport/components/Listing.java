@@ -58,7 +58,7 @@ public class Listing implements IComponent{
                     array = callStatement(Aluno.class, "ALUNODISC", input);
                     break;
                 case "Série":
-                    array = callStatement(Aluno.class, "ALUNOSÉRIE", input);
+                    array = callStatement(Aluno.class, "ALUNOSERIE", input);
                     break;
                 default:
                     array = new ArrayList<Aluno>();

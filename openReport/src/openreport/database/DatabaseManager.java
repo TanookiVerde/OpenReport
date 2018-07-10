@@ -144,10 +144,6 @@ public class DatabaseManager {
         } catch (PropertyVetoException ex) {
             Logger.getLogger(DatabaseManager.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Historico hist = new Historico();
-        array = callStatement(Aluno.class, "ALUNODISC", "historia");
-        hist = callStatement(hist, "Historico", "10836787790");
-        System.out.print(array.toString());
     }
     
     
