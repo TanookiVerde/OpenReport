@@ -42,6 +42,34 @@ public class DatabaseManager {
     /**
      * 
      * @param <T>
+     * @param item An uninitialized dummy item do be filled with information from the database
+     * @param methodCall Call to the stored procedure in the the database
+     * @return The same T item but with new values. 
+     */    
+    public static <T extends IData> T callStatement(T item, String methodCall) {
+        CallableStatement cst = null;
+        Connection con = connect();
+        try {            
+            cst = con.prepareCall(methodCall);
+            ResultSet rs = cst.executeQuery();
+            rs.next();
+            item.populate(rs);
+        } catch (SQLException ex) {
+            Logger.getLogger(DatabaseManager.class.getName()).log(Level.SEVERE, null, ex);
+        } finally{
+            try {
+                cst.close();
+                con.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(DatabaseManager.class.getName()).log(Level.SEVERE, null, ex);
+            }            
+        }
+        
+        return item;
+    }
+    /**
+     * 
+     * @param <T>
      * @param itemClass Type of the item to populate the returning array. Use T.class.
      * @param methodCall Call to the stored procedure in the the database
      * @return Array populated by information from the database
@@ -57,7 +85,7 @@ public class DatabaseManager {
                 T obj = itemClass.newInstance();
                 obj.populate(rs);
                 array.add(obj);
-            }           
+            }      
         } catch (SQLException ex) {
             Logger.getLogger(DatabaseManager.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
@@ -85,7 +113,7 @@ public class DatabaseManager {
         
     }
     
-    public static void main(String argv[]){
+    /*public static void main(String argv[]){
         ArrayList<Aluno> array;
         try {
             cpds = initializeDataSource();
@@ -95,7 +123,7 @@ public class DatabaseManager {
         
         array = callStatement(Aluno.class, "call ALUNODISC(\"Historia\")");
         System.out.print(array.toString());
-    }
+    }*/
     
     
 }

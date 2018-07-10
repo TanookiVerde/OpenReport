@@ -12,18 +12,19 @@ import java.sql.SQLException;
  *
  * @author Gabriel Aureo
  */
-public class Aluno extends IData {
-    public String cpf;
-    public String nome;
-    public String nascimento;
-    public String matricula;
-    
+public class Turma extends IData{
+    String nome;
+    Escola escola;
+    String serie;
+    int ano;
+
     @Override
     public void populate(ResultSet set) throws SQLException {
-        cpf = set.getString("Nome");
-        nome = set.getString("CPF");
-        nascimento = set.getString("Nascimento");
-        matricula = set.getString("Matricula");
+        nome = set.getString("Nome");
+        serie = set.getString("Serie");
+        ano = set.getInt("Ano");
+        escola.populate(set);
+        
     }
     
 }

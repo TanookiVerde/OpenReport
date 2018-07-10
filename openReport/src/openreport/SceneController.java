@@ -20,6 +20,7 @@ public class SceneController {
 
         if(mainStage != null){
             mainStage.setScene(scene);
+            mainStage.setTitle("OpenReport");
             mainStage.setResizable(false);
             mainStage.show();
         }

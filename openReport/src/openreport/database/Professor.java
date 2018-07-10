@@ -24,8 +24,9 @@ public class Professor extends IData{
         nascimento = set.getString("Nascimento");
     }
     
-    public String toString(){
+    //Eu dei override do toString só pra testar, não era necessário colocar nas outras classes :v
+    /*public String toString(){
         return nome + " , " + cpf + " , " + nascimento + "\n";
-    }
+    }*/
     
 }
