@@ -169,9 +169,7 @@ Quanto ao visual do projeto, começaram a ser feitos os primeiros esboços de um
 ![criacaoTemplate](https://i.imgur.com/ZGePtfb.png) 
 <br>
 **Criação de Template**
-## Relatórios produzidos _(em ordem de entrega)_
-Os links *(nos títulos)* concedem permissão para comentários, agradecemos quaisquer observações que possam ser feitas para melhorar a qualidade de nossos relatórios!
-<br>
+
 
 ### Sprint 8
 #### Backlog:
@@ -215,6 +213,11 @@ Para a sprint a seguir, falta apenas refinar a tela de templates, concluir o boo
 * Impressão de dados do Componente de Listagem
 
 Muitos erros repentinos surgiram no decorrer dessa semana, requerindo do grupo longas horas de troubleshooting e desenvolvimento para cobrir o tempo perdido. Porém, mesmo sendo às vésperas da entrega final, o grupo conseguiu com êxito concluir o OpenReport, funcionando de maneira adequada e com toda a documentação entregue. Espera-se que a apresentação seja um sucesso.
+
+
+## Relatórios produzidos _(em ordem de entrega)_
+Os links *(nos títulos)* concedem permissão para comentários, agradecemos quaisquer observações que possam ser feitas para melhorar a qualidade de nossos relatórios!
+<br>
 
 ### [Relatório 1 - Métodos Ágeis, Scrum e Análise de Requisitos](http://goo.gl/Qp6Mvm) 
 Um dos conceitos fundamentais da Engenharia de Software é o planejamento; um projeto feito sem organização ou estratégia pode virar facilmente um desastre e frustrar tanto o cliente quanto os próprios desenvolvedores. Nesse contexto, dentre as diversas maneiras de se lidar com este problema, destaca-se o uso de Métodos Ágeis, que consistem em técnicas e metodologias para potencializar o ritmo de desenvolvimento de um projeto.
