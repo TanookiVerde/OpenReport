@@ -13,9 +13,6 @@ import javafx.scene.Parent;
 import javafx.scene.control.TextField;
 
 public class Signature implements IComponent{
-    public String componentName;
-    public String name;
-    public String role;
     
    // Para referenciar em funções de adição, remoção e edição
     public VBox vbox; 
@@ -29,8 +26,6 @@ public class Signature implements IComponent{
     public TextField roleTF;
      
     public Signature(){
-         name = " ";
-         role = " ";
      }
     @Override
     public void print(Document document) throws IOException, DocumentException {        
@@ -40,14 +35,14 @@ public class Signature implements IComponent{
         line_paragraph.setAlignment(Element.ALIGN_CENTER);
         document.add(line_paragraph);
         
-        Chunk name_chunk = new Chunk(name, lineName_font);
+        Chunk name_chunk = new Chunk(nameTF.getText(), lineName_font);
         Paragraph name_paragraph = new Paragraph(name_chunk);
         name_paragraph.setFont(lineName_font);
         name_paragraph.setAlignment(Element.ALIGN_CENTER);
         document.add(name_paragraph);
         
         Font subtitle_font = FontFactory.getFont(FontFactory.HELVETICA, 10, Font.ITALIC);
-        Chunk subtitle_chunk = new Chunk(role, subtitle_font);
+        Chunk subtitle_chunk = new Chunk(roleTF.getText(), subtitle_font);
         Paragraph subtitle_paragraph = new Paragraph(subtitle_chunk);
         subtitle_paragraph.setFont(subtitle_font);
         subtitle_paragraph.setAlignment(Element.ALIGN_CENTER);
@@ -60,10 +55,10 @@ public class Signature implements IComponent{
         Chunk line_chunk = new Chunk("_______________________________________________________", ffont);
         header.add(line_chunk + "\n");
                
-        Chunk name_chunk = new Chunk(name, ffont);
+        Chunk name_chunk = new Chunk(nameTF.getText(), ffont);
         header.add(name_chunk + ", ");
         
-        Chunk subtitle_chunk = new Chunk(role, ffont);
+        Chunk subtitle_chunk = new Chunk(roleTF.getText(), ffont);
         header.add(subtitle_chunk);
         
         ColumnText.showTextAligned(cb, Element.ALIGN_CENTER,
@@ -78,10 +73,10 @@ public class Signature implements IComponent{
         Chunk line_chunk = new Chunk("_______________________________________________________", ffont);
         //footer.add(line_chunk + "\n");
                
-        Chunk name_chunk = new Chunk(name, ffont);
+        Chunk name_chunk = new Chunk(nameTF.getText(), ffont);
         //footer.add(name_chunk + ", ");
         
-        Chunk subtitle_chunk = new Chunk(role, ffont);
+        Chunk subtitle_chunk = new Chunk(roleTF.getText(), ffont);
         //footer.add(subtitle_chunk);
         String current = "_______________________________________________________";
         Phrase footer = new Phrase(current, ffont);   
@@ -91,7 +86,7 @@ public class Signature implements IComponent{
                 (document.right() - document.left()) / 2 + document.leftMargin(),
                 document.bottom() - 10, 0);
         
-        current = name + ", " + role;
+        current = nameTF.getText() + ", " + roleTF.getText();
         footer = new Phrase(current, ffont);
         ColumnText.showTextAligned(cb, Element.ALIGN_CENTER,
                 footer,
@@ -113,10 +108,6 @@ public class Signature implements IComponent{
     }
     @Override @FXML
     public void editComponent(ActionEvent event) {
-        this.componentName = componentNameTF.getText();
-        this.name = nameTF.getText();
-        this.role = roleTF.getText();
-        System.out.println("Componente ASSINATURA editado com sucesso! Novo conteudo: " + this.name + ", " + this.componentName + " e " + this.role);
     }
 
     @Override
