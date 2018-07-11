@@ -18,6 +18,9 @@
 
 .body {
     -fx-font-family: "Work Sans";
+    -fx-background-image: url("img/background2.png");
+    -fx-background-color: #E4E4E4;
+
 }
 
 .button-bar {
@@ -32,6 +35,7 @@
     -fx-padding: 10;
     -fx-margin: 4;
     -fx-background-color: #104F53;
+    -fx-font-size: 14px;
 }
 
 .button1:hover {
@@ -39,3 +43,20 @@
     -fx-text-fill: #FEFEFE;
     -fx-animated: true;
 }
+
+.button2 {
+    -fx-text-fill: #E4E4E4;
+    -fx-arc-width: 0;
+    -fx-border-radius: 0;
+    -fx-padding: 10 -5;
+    -fx-margin: 4;
+    -fx-background-color: #104F53;
+    -fx-font-size: 14px;
+}
+
+.button2:hover {
+    -fx-background-color: #4C959A;
+    -fx-text-fill: #FEFEFE;
+    -fx-animated: true;
+}
+
