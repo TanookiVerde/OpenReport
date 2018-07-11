@@ -9,8 +9,9 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="96.0" prefWidth="600.0" stylesheets="@../../front/scene_component.css" text="Histórico Escolar" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pdfexport.components.GradeTable">
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="96.0" prefWidth="600.0" style="-fx-background-color: #1A7F86;" stylesheets="@../../front/scene_component.css" text="Histórico Escolar" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pdfexport.components.GradeTable">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
          <children>
@@ -34,6 +35,9 @@
          </children></AnchorPane>
   </content>
    <graphic>
-      <Button mnemonicParsing="false" onAction="#deleteComponent" text="-" />
+      <Button mnemonicParsing="false" onAction="#deleteComponent" style="-fx-border-style: none; -fx-background-color: #4C959A;" text="-" textFill="WHITE">
+         <font>
+            <Font name="Work Sans ExtraBold" size="13.0" />
+         </font></Button>
    </graphic>
 </TitledPane>

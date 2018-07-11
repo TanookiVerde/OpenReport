@@ -34,6 +34,6 @@
          </children></AnchorPane>
   </content>
    <graphic>
-      <Button mnemonicParsing="false" onAction="#deleteComponent" text="-" />
+      <Button mnemonicParsing="false" onAction="#deleteComponent" style="-fx-background-color: #4C959A;" text="-" textFill="WHITE" />
    </graphic>
 </TitledPane>

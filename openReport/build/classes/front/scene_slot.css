@@ -13,10 +13,10 @@
     src: url("fonts/DroidSerif-Regular.ttf");
       
     /*font-family: Work Sans;*/
-    src: url("WorkSans-Regular.ttf");
+    src: url("fonts/WorkSans-Regular.ttf");
     
      /*font-family: Work Sans Bold;*/
-    src: url("WorkSans-Bold.ttf");
+    src: url("fonts/WorkSans-Bold.ttf");
 }
 
 .main-div {
@@ -35,7 +35,6 @@ Variáveis para mudança de titled pane conforme especificação interna das cla
 
 .titled-pane {
     -fx-text-fill: #1A7F86;
-    -fx-font-family: "Work Sans Bold";
 }
 
 .titled-pane > .title > .arrow-button 
@@ -82,24 +81,7 @@ Variáveis para mudança de titled pane conforme especificação interna das cla
     -fx-translate-y: 120;
 }
 
-.button-div {
-   -fx-font-family: "Work Sans";
-}
-.button {
-    -fx-font-family: "Work SanS";
-    /*
-    -fx-font-size: 24px;
-    -fx-background-color: #E4E4E4;
-    -fx-border-style: none;
-    -fx-text-fill: #1A7F86;
-    */
-}
 
-
-
-.anchor {
-    -fx-background-color: #999999;
-}
 /******************
 
 Variáveis para mudança de menu conforme especificação interna das classes JavaFX 
@@ -121,7 +103,7 @@ Variáveis para mudança de menu conforme especificação interna das classes Ja
 
 .menu-button > .label {
     -fx-text-fill: #E4E4E4;
-    -fx-font-family: "Work Sans Bold";
+    -fx-font-family: "Work Sans";
     -fx-font-size: 16px;
 }
 
