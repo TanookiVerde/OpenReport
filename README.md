@@ -176,18 +176,46 @@ Os links *(nos títulos)* concedem permissão para comentários, agradecemos qua
 ### Sprint 8
 #### Backlog:
 * Atualização Semanal Wiki (8 de 12)
-* Implementação de Queries Enumerados (incompleto)
-* Enumerar Alunos por Turma
-* Enumerar Turmas por Série
-* Enumerar Professor por Turma
-* Conexão direta com BD para acesso e edição
-* Implementar componentes em outras telas
-* Esboços de Design
+* Impressão de Componentes no Document Header
+* Impressão de Componentes no Page Header
+* Ajustes na Integração Java-MySQL
+* Criação de Classes para Listas de Dados
+* Transição de Telas
+* Testes com Importação/Exportação de XML 
+* Protótipo de tela de template
+* Início do front-end da Tela do Menu Principal
 
 
 #### Retrospectiva:
-Juntamente com mais melhores no código de front, foi decidido que a categoria do backlog de Interface BD fora removida, optando por uma nova direção para o projeto - um escopo reduzido aonde o programa funcione com um banco de dados já populado, diferente do inicialmente planejado que contemplava uma tela extra de adição, remoção e edição no banco de dados. Começou-se a estudar a aplicabilidade de testes JUnit.
-Quanto ao visual do projeto, começaram a ser feitos os primeiros esboços de uma melhoria geral na interface.
+O projeto enfim começou a amadurecer visualmente, e vários experimentos no CSS de JavaFX foram realizados, certamente servindo para concluir o front-end nas próximas sprints. De resto, partes fundamentais da integração do back-end com o projeto começaram a funcionar de maneira adequada. A transição entre as telas do projeto também foi concluída.
+
+De resto, os primeiros testes foram realizados, com importação e exportação de XML. 
+
+### Sprint 9
+#### Backlog: 
+* Atualização Semanal Wiki (9 de 12)
+* Impressão de Componentes no Page Footer
+* Impressão de Componentes no Document Footer
+* Componente de Histórico Escolar
+* Componente de Listagem de Alunos/Professores
+* Codificação finalizada da tela inicial
+#### Retrospectiva: 
+A sprint 9 fluiu em direta sequência da anterior, refinando o que já havia sido iniciando e concluído os detalhes remanescentes. De fato, os itens do backlog começaram a diferir significativamente do anteriormente definido, pois houve bastante co-operação em várias áreas do programa para concluir esta sprint. Acredita-se no entanto que isso seja natural no ciclo de desenvolvimento de software, afinal, é comum visualizar erros em partes ocultas do programa até mesmo no final do ciclo de desenvolvimento, o que requer sempre uma visão geral do programa desenvolvido.
+
+Para a sprint a seguir, falta apenas refinar a tela de templates, concluir o book de relatório final, apresentação em slides e resolver os últimos bugs de integração do back-end com front-end.
+
+
+### Sprint 10
+#### Backlog: 
+* Atualização Semanal Wiki (10~12 de 12) - algumas atrasadas
+* Escrita do Book da Disciplina
+* Integração com Banco de Dados para acessar dados de Histórico Escolar
+* Impressão de dados do Componente de Histórico Escolar
+* Integração com BD para acessar Queries de Listagem de Alunos e Professores
+* Impressão de dados do Componente de Listagem
+
+Muitos erros repentinos surgiram no decorrer dessa semana, requerindo do grupo longas horas de troubleshooting e desenvolvimento para cobrir o tempo perdido. Porém, mesmo sendo às vésperas da entrega final, o grupo conseguiu com êxito concluir o OpenReport, funcionando de maneira adequada e com toda a documentação entregue. Espera-se que a apresentação seja um sucesso.
+
 ### [Relatório 1 - Métodos Ágeis, Scrum e Análise de Requisitos](http://goo.gl/Qp6Mvm) 
 Um dos conceitos fundamentais da Engenharia de Software é o planejamento; um projeto feito sem organização ou estratégia pode virar facilmente um desastre e frustrar tanto o cliente quanto os próprios desenvolvedores. Nesse contexto, dentre as diversas maneiras de se lidar com este problema, destaca-se o uso de Métodos Ágeis, que consistem em técnicas e metodologias para potencializar o ritmo de desenvolvimento de um projeto.
 
