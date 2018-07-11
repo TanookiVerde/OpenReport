@@ -163,14 +163,31 @@ Um progressivo grau de refatoração do código auxiliou na limpeza e no caráte
 Juntamente com mais melhores no código de front, foi decidido que a categoria do backlog de Interface BD fora removida, optando por uma nova direção para o projeto - um escopo reduzido aonde o programa funcione com um banco de dados já populado, diferente do inicialmente planejado que contemplava uma tela extra de adição, remoção e edição no banco de dados. Começou-se a estudar a aplicabilidade de testes JUnit.
 Quanto ao visual do projeto, começaram a ser feitos os primeiros esboços de uma melhoria geral na interface.
 ![menuPrincipal](https://i.imgur.com/bUhLu3E.png) 
+<br>
 **Menu Principal**
 <br><br><br><br><br>
-![criacaoTemplate](https://i.imgur.com/ZGePtfb.png)
+![criacaoTemplate](https://i.imgur.com/ZGePtfb.png) 
+<br>
 **Criação de Template**
 ## Relatórios produzidos _(em ordem de entrega)_
 Os links *(nos títulos)* concedem permissão para comentários, agradecemos quaisquer observações que possam ser feitas para melhorar a qualidade de nossos relatórios!
 <br>
 
+### Sprint 8
+#### Backlog:
+* Atualização Semanal Wiki (8 de 12)
+* Implementação de Queries Enumerados (incompleto)
+* Enumerar Alunos por Turma
+* Enumerar Turmas por Série
+* Enumerar Professor por Turma
+* Conexão direta com BD para acesso e edição
+* Implementar componentes em outras telas
+* Esboços de Design
+
+
+#### Retrospectiva:
+Juntamente com mais melhores no código de front, foi decidido que a categoria do backlog de Interface BD fora removida, optando por uma nova direção para o projeto - um escopo reduzido aonde o programa funcione com um banco de dados já populado, diferente do inicialmente planejado que contemplava uma tela extra de adição, remoção e edição no banco de dados. Começou-se a estudar a aplicabilidade de testes JUnit.
+Quanto ao visual do projeto, começaram a ser feitos os primeiros esboços de uma melhoria geral na interface.
 ### [Relatório 1 - Métodos Ágeis, Scrum e Análise de Requisitos](http://goo.gl/Qp6Mvm) 
 Um dos conceitos fundamentais da Engenharia de Software é o planejamento; um projeto feito sem organização ou estratégia pode virar facilmente um desastre e frustrar tanto o cliente quanto os próprios desenvolvedores. Nesse contexto, dentre as diversas maneiras de se lidar com este problema, destaca-se o uso de Métodos Ágeis, que consistem em técnicas e metodologias para potencializar o ritmo de desenvolvimento de um projeto.
 
@@ -252,8 +269,45 @@ Foi oferecida a oportunidade aos alunos de atuar nos seus projetos dentro do esp
 
 O evento foi inteiramente segmentado em etapas cronometradas, fazendo-se o uso da técnica Pomodoro para dosar intervalos e gerir mais produtividade. Consiste na divisão de 25 minutos para produção focada, e intervalos de 5 à 10 minutos encaixados entre cada bloco de produtividade.
 
-Acredita-se que foi uma ótima oportunidade para produzir mesmo com o estado de calamidade do país. O grupo teve ótimos resultados, refletidos nos relatórios das sprints que envolvem uma grande limpeza no código e novas direções/adequações propícias para o projeto.
+Acredita-se que foi uma ótima oportunidade para produzir mesmo com o estado de calamidade do país. O grupo teve ótimos resultados, refletidos nos relatórios das sprints que envolvem uma grande limpeza no código e novas direções/adequações propícias para o projeto. 
+
  
+ ### Relatório 10 - Entrega de Sprint 7, Casos de Uso e revisão das aulas anteriores
+
+ Esta foi a primeira semana propriamente dita de aula após o intervalo prolongado da greve dos caminhoneiros. Foi lecionada uma revisão dos métodos principais vistos de geração de casos teste, como os de Caixa Preta e Caixa Branca descritos em relatórios anteriores. Acreditamos que foi de auxílio razoável para situar o grupo na matéria que ficou um pouco esquecida pós greve. 
+
+ Para dar início ao resto do conteúdo, o professor Eber entrou em detalhe sobre uma série de técnicas e características de especificação de software. Destacam-se nessas o nome para métodos, seus parâmetros e saída, uma menção geral da ferramenta OCL, que é uma linguagem declarativa descrevendo regras para a *Unified Modelling Language* (UML), além da importância sumária de se comentar código produzido. 
+
+ Juntamente a essas explicações, falou-se sobre o conteúdo de casos de uso, com o professor elencando conceitos como pré e pós condição (referente ao sistema antes e depois de rodar), fluxo de sucesso e alternativo (casos de êxito - sem "jump" e condicionais), e casos de utilização. Em cima deste conteúdo foi realizado um exercício de modelagem de casos de uso em cima do projeto de cada grupo, e no nosso caso, sobre o OpenReport.
+
+ Na aula de quarta o grupo seguiu com a sprint review e planejou a próxima como usual, infelizmente sem destaques.
+
+ ### Relatório 11 - Greve Rodoviária, contato entre grupos
+Nesta semana, como a maioria dos elementos do grupo moram a uma distância considerável da faculdade e todas as linhas de ônibus responsáveis pelo transporte dos mesmos foram afetadas, não houve presença do grupo na aula de segunda do professor Eber. 
+
+Na quarta, no entanto, foi incentivado o contato entre os grupos para que pudessem resolver problemas potencialmente em comum com o desenvolvimento do projeto final. Conseguimos discutir um pouco sobre o funcionamento de testes JUnit com grupos que já tinham contato com essa tecnologia, em preparo para o desenvolvimento dos testes do OpenReport. Além disso, chegou ao conheciento do grupo que o professor Eber havia comentado mais sobre o conteúdo de casos de uso e revisando alguns conceitos básicos de testes usados para os mesmos dentre outros assuntos, através de outros poucos grupos que não foram impedidos de ir a aula em razão da greve.
+
+ ### Relatório 12 - Casos de Teste Funcionais
+
+ Para a aula de segunda, foi revisto o conteúdo de casos de uso, sob um viés de sua importância para produção de casos de teste. Assim, foi introduzido o tópico de Casos de Testes funcionais, através de um exercício em sala de aula que se encontra disponível na wiki do grupo GaaraVSRockLee.
+
+ A sprint review de quarta-feira foi complementado novamente pela ajuda de grupos próximos, sanando dúvidas de interface, JavaFX, e algumas referentes ao banco de dados do projeto.
+
+ ## Relatório 13 - Arquitetura de Software e jogo do Brasil
+
+Sendo uma das partes finais do conteúdo da disciplina, foi visto em sala de aula o conteúdo de arquitetura de software. O professor Eber decorreu sobre as vantagens de montar a visão lógica de uma arquitetura fazendo o uso de diagramas de classes|sequências|transições, introduzindo o tema com uma analogia comparando um prédio desenvolvido por uma equipe de Engenharia Civil e um software de uma empresa - ambos precisariam de uma planta para serem produzidos.
+
+Devido ao jogo do time Brasileiro na Copa Mundial da FIFA 2018, não houve aula de laboratório.
+
+ ## Relatório 14 - Preparações para apresentação final
+
+ Novamente houve um jogo da Copa Mundial da FIFA 2018, porém dessa vez o evento ocorreu na aula do professor Eber.
+
+ Na aula de quarta feira, foi decidido com a sprint review e o professor Luis um detalhamento maior da apresentação final do projeto, que viria complementada de um book contendo a trajetória inteira do grupo respectivo. Nosso grupo teria então que produzir uma apresentação de slides que, somada ao projeto, totalizem cerca de 15 minutos e contemple de maneira ideal e enxuta a jornada do grupo descrita no book. Também foram acertados detalhes da última prova, que seria na próxima segunda.
+
+ 
+
+
 ## Iterações do Produto Final
 Número|Data|Funcionalidades
 ----|----|-----
