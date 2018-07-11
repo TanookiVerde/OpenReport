@@ -12,8 +12,6 @@ import javafx.scene.Parent;
 import javafx.scene.control.TextField;
 
 public class Text implements IComponent {
-    public String text;
-    public String componentName;
     
     // Para referenciar em funções de adição, remoção e edição
     public VBox vbox; 
@@ -22,23 +20,17 @@ public class Text implements IComponent {
     public static String FXML_PATH = "/pdfexport/components/Text.fxml";
     
     @FXML
-    private TextField componentNameTF;
-    @FXML
     private TextField contentText;
     
-    public Text(String text) {
-        this.text = text;
-    }
     public Text(){
-        this.text = "Coloque seu texto aqui";
     }
     public void SetText(String txt){
-        this.text = txt;
+        contentText.setText(txt);
     }
     @Override
     public void print(Document document) throws IOException, DocumentException {
         Font paragraph_font = FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL);
-        Paragraph p = new Paragraph(text, paragraph_font);
+        Paragraph p = new Paragraph(contentText.getText(), paragraph_font);
         p.setAlignment(Element.ALIGN_CENTER);
         document.add(p);
         document.add(new Paragraph("\n"));
@@ -47,7 +39,7 @@ public class Text implements IComponent {
     {      
         Font ffont = new Font(Font.FontFamily.HELVETICA, 8, Font.ITALIC);
         Phrase header = new Phrase("", ffont);
-        header.add(text);
+        header.add(contentText.getText());
         
         ColumnText.showTextAligned(cb, Element.ALIGN_CENTER,
                 header,
@@ -58,7 +50,7 @@ public class Text implements IComponent {
     {      
         Font ffont = new Font(Font.FontFamily.HELVETICA, 8, Font.ITALIC);
         Phrase footer = new Phrase("", ffont);
-        footer.add(text);
+        footer.add(contentText.getText());
         
         ColumnText.showTextAligned(cb, Element.ALIGN_CENTER,
                 footer,
@@ -80,9 +72,6 @@ public class Text implements IComponent {
     }
     @Override @FXML
     public void editComponent(ActionEvent event) {
-        this.componentName = componentNameTF.getText();
-        this.text = contentText.getText();
-        System.out.println("Componente TEXTO editado com sucesso! Novo conteudo: " + this.text + " e " + this.componentName);
     }
 
     @Override

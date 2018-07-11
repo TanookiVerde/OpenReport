@@ -77,8 +77,6 @@ public class Sprite implements IComponent{
     }
     @Override @FXML
     public void editComponent(ActionEvent event) {
-        //this.path = pathTF.getText();
-        System.out.println("Componente ASSINATURA editado com sucesso! Novo conteudo: " + " e " + this.path);
     }
     @FXML
     public void activateFileChooser(ActionEvent event){

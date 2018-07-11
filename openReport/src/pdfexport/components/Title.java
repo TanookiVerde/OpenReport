@@ -15,9 +15,6 @@ import javafx.scene.control.TextField;
 * Classe que representa o component Title.
 */
 public class Title implements IComponent{
-    public String componentName;
-    public String title;
-    public String subtitle;
     
     // Para referenciar em funções de adição, remoção e edição
     public VBox vbox; 
@@ -26,15 +23,11 @@ public class Title implements IComponent{
     public static String FXML_PATH = "/pdfexport/components/Title.fxml";
     
     @FXML
-    private TextField componentNameTF;
-    @FXML
     private TextField titleTF;
     @FXML
     private TextField subtitleTF;
     
     public Title(){
-        this.title = " ";
-        this.subtitle = " ";
     }
     /**
      * Este método é chamado quando se está percorrendo o vetor de components e 
@@ -44,15 +37,15 @@ public class Title implements IComponent{
     @Override
     public void print(Document document) throws IOException, DocumentException {
         Font title_font = FontFactory.getFont(FontFactory.HELVETICA, 20, Font.BOLD);
-        Chunk title_chunk = new Chunk(title, title_font);
+        Chunk title_chunk = new Chunk(titleTF.getText(), title_font);
         Paragraph title_paragraph = new Paragraph(title_chunk);
         title_paragraph.setFont(title_font);
         title_paragraph.setAlignment(Element.ALIGN_CENTER);
         document.add(title_paragraph);
         
-        if(subtitle != null){
+        if(subtitleTF.getText() != null){
             Font subtitle_font = FontFactory.getFont(FontFactory.HELVETICA, 20, Font.ITALIC);
-            Chunk subtitle_chunk = new Chunk(subtitle, subtitle_font);
+            Chunk subtitle_chunk = new Chunk(subtitleTF.getText(), subtitle_font);
             Paragraph subtitle_paragraph = new Paragraph(subtitle_chunk);
             subtitle_paragraph.setFont(subtitle_font);
             subtitle_paragraph.setAlignment(Element.ALIGN_CENTER);
@@ -64,11 +57,11 @@ public class Title implements IComponent{
     {
         Font ffont = new Font(Font.FontFamily.HELVETICA, 8, Font.ITALIC);
         Phrase header = new Phrase("", ffont);
-        Chunk title_chunk = new Chunk(title, ffont);
+        Chunk title_chunk = new Chunk(titleTF.getText(), ffont);
         header.add(title_chunk + "\n");
         
-        if(subtitle != null){
-            Chunk subtitle_chunk = new Chunk(subtitle, ffont);
+        if(subtitleTF.getText() != null){
+            Chunk subtitle_chunk = new Chunk(subtitleTF.getText(), ffont);
             header.add(subtitle_chunk);            
         }
         
@@ -81,11 +74,11 @@ public class Title implements IComponent{
     {
         Font ffont = new Font(Font.FontFamily.HELVETICA, 8, Font.ITALIC);
         Phrase footer = new Phrase("", ffont);
-        Chunk title_chunk = new Chunk(title, ffont);
+        Chunk title_chunk = new Chunk(titleTF.getText(), ffont);
         footer.add(title_chunk + "\n");
         
-        if(subtitle != null){
-            Chunk subtitle_chunk = new Chunk(subtitle, ffont);
+        if(subtitleTF.getText() != null){
+            Chunk subtitle_chunk = new Chunk(subtitleTF.getText(), ffont);
             footer.add(subtitle_chunk);            
         }
         
@@ -123,10 +116,6 @@ public class Title implements IComponent{
      */
     @Override @FXML
     public void editComponent(ActionEvent event) {
-        this.componentName = componentNameTF.getText();
-        this.title = titleTF.getText();
-        this.subtitle = subtitleTF.getText();
-        System.out.println("Componente TÍTULO editado com sucesso! Novo conteudo: " + this.title + ", " + this.componentName + " e " + this.subtitle);
     }
 
     @Override
