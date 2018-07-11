@@ -32,9 +32,6 @@ public class Listing implements IComponent{
     @FXML private TextField inputTF;
     @FXML private TextField schoolCnpjTF;
     
-    private String input;
-    private String schoolCnpj;
-    
     // Para referenciar em funções de adição, remoção e edição
     public VBox vbox; 
     public Parent node;
@@ -56,13 +53,13 @@ public class Listing implements IComponent{
             switch(filter)
             {
                 case "Turma":
-                    array = callStatement(Aluno.class, "ALUNOTURMA", input, schoolCnpj);
+                    array = callStatement(Aluno.class, "ALUNOTURMA", inputTF.getText(), schoolCnpjTF.getText());
                     break;
                 case "Disciplina":
-                    array = callStatement(Aluno.class, "ALUNODISC", input);
+                    array = callStatement(Aluno.class, "ALUNODISC", inputTF.getText());
                     break;
                 case "Série":
-                    array = callStatement(Aluno.class, "ALUNOSERIE", input);
+                    array = callStatement(Aluno.class, "ALUNOSERIE", inputTF.getText());
                     break;
                 default:
                     array = new ArrayList<Aluno>();
@@ -95,7 +92,7 @@ public class Listing implements IComponent{
                 table.addCell(p);          
             }
             font = FontFactory.getFont(FontFactory.HELVETICA, 15, Font.BOLD); 
-            p = new Phrase("Listagem de " + category + " por " + filter + ": " + input, font);  
+            p = new Phrase("Listagem de " + category + " por " + filter + ": " + inputTF.getText(), font);  
             Paragraph para = new Paragraph(p);
             para.setAlignment(Element.ALIGN_CENTER);
             document.add(para);
@@ -108,10 +105,10 @@ public class Listing implements IComponent{
             switch(filter)
             {
                 case "Turma":
-                    array = callStatement(Professor.class, "PROFTURMA", input);
+                    array = callStatement(Professor.class, "PROFTURMA", inputTF.getText());
                     break;
                 case "Disciplina":
-                    array = callStatement(Professor.class, "PROFDISC", input);
+                    array = callStatement(Professor.class, "PROFDISC", inputTF.getText());
                     break;
                 default:
                     array = new ArrayList<Professor>();
@@ -172,9 +169,6 @@ public class Listing implements IComponent{
     
     @Override @FXML
     public void editComponent(ActionEvent event) {
-        input = inputTF.getText();
-        schoolCnpj = schoolCnpjTF.getText();
-        System.out.println("Componente LISTING editado com sucesso! Valor Input: " + input + schoolCnpj);
     }
     
     @Override
