@@ -20,6 +20,7 @@
     /*-fx-background-color: #E4E4E4;*/
     -fx-background-color: #E4E4E4;
     -fx-background-image: url("img/background1.png");
+    -fx-translate-x: 70;
 }
 
 /*
@@ -53,7 +54,7 @@
     /*-fx-scale-x: 1.5;*/
     -fx-font-size: 24px;
     /*-fx-min-width: 300;*/
-    -fx-background-color: #E4E4E4;
+    -fx-background-color: #FFFFFF;
     -fx-border-style: none;
     -fx-text-fill: #1A7F86;
 }
@@ -102,7 +103,7 @@
     -fx-rotate: 45;
     -fx-scale-x: 0.5;
     -fx-scale-y: 0.5;
-    -fx-translate-x: -500;
+    -fx-translate-x: -570;
     -fx-translate-y: 100;
 
 }

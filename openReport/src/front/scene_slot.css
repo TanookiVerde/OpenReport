@@ -14,18 +14,28 @@
       
     /*font-family: Work Sans;*/
     src: url("WorkSans-Regular.ttf");
+    
+     /*font-family: Work Sans Bold;*/
+    src: url("WorkSans-Bold.ttf");
 }
 
 .main-div {
 }
+/******************
 
+Variáveis para mudança de titled pane conforme especificação interna das classes JavaFX 
+
+*******************/
 .titled-pane > .title 
 {
     -fx-background-color: #FFFFFF;
     -fx-padding: 20 10; /* 2 10 3 10 */
-    -fx-text-fill: #1A7F86;
-    -fx-font-family: "Work Sans";
     -fx-font-size: 18px;
+}
+
+.titled-pane {
+    -fx-text-fill: #1A7F86;
+    -fx-font-family: "Work Sans Bold";
 }
 
 .titled-pane > .title > .arrow-button 
@@ -86,15 +96,43 @@
 }
 
 
-/* Variáveis para mudança de menu conforme especificação interna das classes JavaFX */
+
+.anchor {
+    -fx-background-color: #999999;
+}
+/******************
+
+Variáveis para mudança de menu conforme especificação interna das classes JavaFX 
+
+*******************/
 * {
     -fx-my-menu-color: #1A7F86;                 
     -fx-my-menu-color-highlighted: #4C959A;     
-    -fx-my-menu-font-color: #FFFFFF;           
-    -fx-my-menu-font-color-highlighted: #FFFFFF;
+    -fx-my-menu-font-color: #E4E4E4;           
+    -fx-my-menu-font-color-highlighted: #FEFEFE;
 }
 
 /* MENU BAR + Top-level MENU BUTTONS */
+
+.menu-button {
+    -fx-background-color: #1A7F86;
+    -fx-text-fill: #E4E4E4;
+}
+
+.menu-button > .label {
+    -fx-text-fill: #E4E4E4;
+    -fx-font-family: "Work Sans Bold";
+    -fx-font-size: 16px;
+}
+
+.menu-button:focused {
+    -fx-border-color: none;
+}
+
+.menu-button:hover {
+    -fx-background-color: #104F53;
+}
+
 .menu-bar {
     -fx-background-color: -fx-my-menu-color;
 }
