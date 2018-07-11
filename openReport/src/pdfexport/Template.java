@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.VBox;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
@@ -51,7 +52,7 @@ public class Template {
     private void toPDF(ActionEvent event){
         DirectoryChooser dc = new DirectoryChooser();
         File f = dc.showDialog(SceneController.mainStage);
-        PDFCreator.makeDocumentFromTemplate(template,f.getPath()+"\\your_pdf.pdf");
+        PDFCreator.makeDocumentFromTemplate(template,f.getPath()+"\\your_document.pdf");
     }
     /**
      * Este método é chamado quando o usuário clica no botão de exportar template.
@@ -60,7 +61,7 @@ public class Template {
      */
     @FXML
     private void saveToXML(ActionEvent event){
-        System.out.println("XML");
+        //ToDo
     }
     /**
      * Este método deve ser chamado quando o usuário clica no botão de voltar

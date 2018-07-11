@@ -8,7 +8,7 @@ public class OpenReport extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         SceneController.setStage(stage);
-        SceneController.openScene(Screen.TEMPLATE);
+        SceneController.openScene(Screen.MAIN);
     }
     public static void main(String[] args) {
         DatabaseManager.main(args);
