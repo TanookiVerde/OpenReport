@@ -1,5 +1,6 @@
 package pdfexport;
 
+import java.io.File;
 import java.io.IOException;
 import pdfexport.components.IComponent;
 import java.util.ArrayList;
@@ -9,6 +10,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.VBox;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
 import openreport.SceneController;
 import openreport.Screen;
 import pdfexport.slots.*;
@@ -46,7 +49,9 @@ public class Template {
      */
     @FXML
     private void toPDF(ActionEvent event){
-        PDFCreator.makeDocumentFromTemplate(template);
+        DirectoryChooser dc = new DirectoryChooser();
+        File f = dc.showDialog(SceneController.mainStage);
+        PDFCreator.makeDocumentFromTemplate(template,f.getPath()+"\\your_pdf.pdf");
     }
     /**
      * Este método é chamado quando o usuário clica no botão de exportar template.

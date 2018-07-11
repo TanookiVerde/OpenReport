@@ -106,13 +106,13 @@ public class PDFCreator {
         PdfWriter.getInstance(document, new FileOutputStream(destination));
         return document;
     }
-    public static void makeDocumentFromTemplate(Template template){
+    public static void makeDocumentFromTemplate(Template template, String dest){
         try{
             
             
             Document document = new Document();
             
-            PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(DEST));
+            PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(dest));
             FooterHeaderHandler event = new FooterHeaderHandler();
             
             if(template.pageFooter != null && template.pageHeader != null)
