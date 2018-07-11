@@ -4,6 +4,7 @@ import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.VBox;
 import pdfexport.Template;
 import pdfexport.components.IComponent;
@@ -21,6 +22,10 @@ public interface ISlot {
     public VBox getComponentGrid();
     public static <T extends IComponent> void AddComponent(T component, ISlot slot){
         if(slot.getComponentGrid().getChildren().size() + 1 > slot.getMaxComponentNumber()) {
+            Alert window = new Alert(Alert.AlertType.WARNING);
+            window.setTitle("Ação Inválida");
+            window.setContentText("O número de componentes nesta área já está no limite");
+            window.show();
             return;
         }
         try{

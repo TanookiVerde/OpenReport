@@ -30,6 +30,7 @@ import java.util.List;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import javafx.scene.control.Alert;
 
 public class PDFCreator {
     public static final String DEST = "results/objects/test.pdf";
@@ -108,8 +109,6 @@ public class PDFCreator {
     }
     public static void makeDocumentFromTemplate(Template template, String dest){
         try{
-            
-            
             Document document = new Document();
             
             PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(dest));
@@ -120,8 +119,6 @@ public class PDFCreator {
                 event.SetComponents(template.pageFooter, template.pageHeader);
                 writer.setPageEvent(event);
             }
-            
-                    
             document.setMargins(left, right, top, bottom);
             document.open();
             
@@ -132,27 +129,25 @@ public class PDFCreator {
                 {
                     template.documentHeader.get(i).print(document);
                 }
-            }/*
-            // header de todos menos primeira
-            for(int i = 0; i < template.pageHeader.size(); i++){
-                template.pageHeader.get(i).print(document);
-            }*/
-            //corpo (for provavelmente)
+            }
             for(int i = 0; i < template.body.size(); i++){
                 template.body.get(i).print(document);
-            }/*
-            //msm do header mas pro footer (os 2)
-            for(int i = 0; i < template.pageFooter.size(); i++){
-                template.pageFooter.get(i).print(document);
-            }*/
-            //event.SetPrintFooter(false);
+            }
             for(int i = 0; i < template.documentFooter.size(); i++){
                 template.documentFooter.get(i).print(document);
             }
-            
             document.close();
-            System.out.println("FINISHED DOCUMENT PRINTING");
+            
+            Alert window = new Alert(Alert.AlertType.INFORMATION);
+            window.setTitle("Finalizado");
+            window.setContentText("Documento PDF gerado com sucesso");
+            window.show();
+            
         } catch(Exception e){
+            Alert window = new Alert(Alert.AlertType.WARNING);
+            window.setTitle("Erro");
+            window.setContentText("Documento PDF não foi gerado. Veja se todos os componentes possuem informações não nulas e se possui acesso para salvar na pasta selecionada.");
+            window.show();
             e.printStackTrace();
         }
     }
