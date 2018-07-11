@@ -13,7 +13,6 @@ import openreport.database.DatabaseManager;
 import openreport.database.Historico;
 
 public class GradeTable implements IComponent{
-    public String registry;
     public int columnAmount;
     public int cellPerColumn;
     
@@ -27,15 +26,14 @@ public class GradeTable implements IComponent{
     public static String FXML_PATH = "/pdfexport/components/GradeTable.fxml";
 
     public GradeTable(){
-        registry = "0";
         columnAmount = 1;
         cellPerColumn = 1;
     }
     @Override
     public void print(Document document) throws IOException, DocumentException {          
         Historico historico = new Historico();
-        if(registry == null) return;
-        historico = DatabaseManager.callStatement(historico, "HISTORICO", registry);
+        if(registryTF.getText() == null) return;
+        historico = DatabaseManager.callStatement(historico, "HISTORICO", registryTF.getText());
         
         PdfPTable raiz = new PdfPTable(1);
         PdfPTable alunoInfo1 = new PdfPTable(2);
@@ -159,8 +157,6 @@ public class GradeTable implements IComponent{
     }
     @Override @FXML
     public void editComponent(ActionEvent event) {
-        registry = registryTF.getText();
-        System.out.println("Componente GRADETABLE editado com sucesso! Novo conteudo: " + this.registry);
     }
     
     @Override
