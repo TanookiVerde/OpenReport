@@ -43,17 +43,35 @@ public class GradeTable implements IComponent{
         PdfPTable notas = new PdfPTable(4);
         
         Phrase p;
+        Phrase subP;
+        Paragraph para;
         Font font = FontFactory.getFont(FontFactory.HELVETICA, 12, Font.BOLD);
-             
+        Font subtitleFont = FontFactory.getFont(FontFactory.HELVETICA, 8, Font.ITALIC);
+        
+        subP = new Phrase("Nome: ", subtitleFont);     
         p = new Phrase(historico.aluno.nome, font);
-        System.out.println(historico.aluno.nome);
-        alunoInfo1.addCell(p);
+        para = new Paragraph();
+        para.add(subP);
+        para.add(p);
+        alunoInfo1.addCell(para);
+        subP = new Phrase("CPF: ", subtitleFont);     
         p = new Phrase(historico.aluno.cpf, font);
-        alunoInfo1.addCell(p);
+        para = new Paragraph();
+        para.add(subP);
+        para.add(p);
+        alunoInfo1.addCell(para);
+        subP = new Phrase("Matricula: ", subtitleFont);
         p = new Phrase(historico.aluno.matricula, font); 
-        alunoInfo2.addCell(p);
+        para = new Paragraph();
+        para.add(subP);
+        para.add(p);
+        alunoInfo2.addCell(para);
+        subP = new Phrase("Data de Nascimento: ", subtitleFont);
         p = new Phrase(historico.aluno.nascimento, font);  
-        alunoInfo2.addCell(p);    
+        para = new Paragraph();
+        para.add(subP);
+        para.add(p);
+        alunoInfo2.addCell(para);
         
         p = new Phrase("Série", font);
         notas.addCell(p);
@@ -64,17 +82,51 @@ public class GradeTable implements IComponent{
         p = new Phrase("Frequência (%)", font);
         notas.addCell(p);
         font = FontFactory.getFont(FontFactory.HELVETICA, 10, Font.NORMAL); 
+        
+        PdfPTable serie, disc, media, freq;
+        serie = new PdfPTable(1);
+        serie.getDefaultCell().setBorder(PdfPCell.NO_BORDER);
+        disc = new PdfPTable(1);
+        disc.getDefaultCell().setBorder(PdfPCell.NO_BORDER);
+        media = new PdfPTable(1);
+        media.getDefaultCell().setBorder(PdfPCell.NO_BORDER);
+        freq = new PdfPTable(1);
+        freq.getDefaultCell().setBorder(PdfPCell.NO_BORDER);
+        //serie.getDefaultCell().setBackgroundColor(BaseColor.LIGHT_GRAY);
+        serie.getDefaultCell().setPaddingLeft(5);
+        serie.getDefaultCell().setVerticalAlignment(Element.ALIGN_MIDDLE);
+        serie.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
+        
+        String ser ="0";
+        String previousSerie = "-1";
         for(int i = 0; i < historico.notas.size(); i++)
         {
-            p = new Phrase(historico.notas.get(i).serie, font);  
-            notas.addCell(p);
+            //if(i == 0 ){serie.getDefaultCell().setBorder(PdfPCell.TOP | PdfPCell.RIGHT | PdfPCell.LEFT);}
+            //else if(i == historico.notas.size() - 1){serie.getDefaultCell().setBorder(PdfPCell.BOTTOM | PdfPCell.RIGHT | PdfPCell.LEFT);}
+            //else{serie.getDefaultCell().setBorder(PdfPCell.RIGHT | PdfPCell.LEFT);}
+                
+            ser = historico.notas.get(i).serie;
+            
+            if(!ser.equals(previousSerie)){
+                p = new Phrase(ser + "ª", font); 
+                //serie.getDefaultCell().setBorder(PdfPCell.TOP | PdfPCell.RIGHT | PdfPCell.LEFT);
+            }
+            else
+                p = new Phrase("", font); 
+            serie.addCell(p);
             p = new Phrase(historico.notas.get(i).disciplina, font);  
-            notas.addCell(p);
+            disc.addCell(p);
             p = new Phrase(Float.toString(historico.notas.get(i).media), font);  
-            notas.addCell(p);
+            media.addCell(p);
             p = new Phrase(Float.toString(historico.notas.get(i).frequencia), font);  
-            notas.addCell(p);
+            freq.addCell(p);
+            
+            previousSerie = ser;
         }
+        notas.addCell(serie);
+        notas.addCell(disc);
+        notas.addCell(media);
+        notas.addCell(freq);
         
         raiz.addCell(alunoInfo1);
         raiz.addCell(alunoInfo2);
