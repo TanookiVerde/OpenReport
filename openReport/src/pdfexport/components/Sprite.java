@@ -44,7 +44,7 @@ public class Sprite implements IComponent{
         Image img = Image.getInstance(path);  
         header.add(img);
         
-        ColumnText.showTextAligned(cb, Element.ALIGN_CENTER,
+        ColumnText.showTextAligned(cb, Element.ALIGN_CENTER,    
                 header,
                 (document.right() - document.left()) / 2 + document.leftMargin(),
                 document.top() + 10, 0);
