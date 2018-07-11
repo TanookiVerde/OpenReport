@@ -2,6 +2,7 @@ package pdfexport.components;
 
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
+import java.io.File;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.VBox;
@@ -9,29 +10,22 @@ import javafx.fxml.*;
 import java.util.List;
 import javafx.scene.Parent;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
+import openreport.SceneController;
 
 public class Header implements IComponent {
-    public String componentName;
-    public String schoolName;
-    public String street;
-    public String aptNumber;
-    public String cep;
-    public String telefone;
-    public String webSite;
-    public String logoPath;
+    public String path;
     
-    @FXML
-    private TextField componentNameTF;
     @FXML
     private TextField schoolNameTF;
     @FXML
     private TextField addressTF;
     @FXML
-    private TextField logoPathTF;
-    @FXML
     private TextField websiteTF;
     @FXML
     private TextField telefoneTF;
+    @FXML
+    private javafx.scene.text.Text lastSelectedPath;
    
     
     // Para referenciar em funções de adição, remoção e edição
@@ -40,23 +34,8 @@ public class Header implements IComponent {
     public List<IComponent> list;
     public static String FXML_PATH = "/pdfexport/components/Header.fxml";
 
-    public Header(String schoolName, String street, String aptNumber, String cep, String telefone, String webSite, String logoPath) {
-        this.schoolName = schoolName;
-        this.street = street;
-        this.aptNumber = aptNumber;
-        this.cep = cep;
-        this.telefone = telefone;
-        this.webSite = webSite;
-        this.logoPath = logoPath;
-    }
     public Header(){
-        this.schoolName = " ";
-        this.street = " ";
-        this.aptNumber = " ";
-        this.cep = " ";
-        this.telefone = " ";
-        this.webSite = " ";
-        this.logoPath = " ";
+        this.path = " ";
     }
     @Override
     public void setComponentInformation(VBox slot, Parent node, List<IComponent> template){
@@ -66,7 +45,7 @@ public class Header implements IComponent {
     }
     @Override
     public void print(Document document) throws IOException, DocumentException {
-        Image img = Image.getInstance(logoPath);  
+        Image img = Image.getInstance(path);  
         img.scaleAbsolute(80, 80);
         
         PdfPTable table =  new PdfPTable(2);
@@ -75,22 +54,24 @@ public class Header implements IComponent {
         imgCell.addElement(img);
         PdfPCell cell = new PdfPCell(subtable);
                 
-        subtable.addCell("CONTATO: " + telefone);
-        subtable.addCell("WEBSITE: " + webSite);
+        subtable.addCell("CONTATO: " + telefoneTF.getText());
+        subtable.addCell("WEBSITE: " + websiteTF.getText());
         
         table.addCell(imgCell);
-        table.addCell("ESCOLA: " + schoolName);
+        table.addCell("ESCOLA: " + schoolNameTF.getText());
         table.setWidths(new float[] { 1, 4 });
-        table.addCell("ENDEREÇO: " + street + ", " + aptNumber + " - " + cep);
+        table.addCell("ENDEREÇO: " + addressTF.getText());
         table.addCell(cell);
         
         document.add(table);
         document.add(new Paragraph("\n"));
     }
+    @Override
     public void printAsPageHeader(PdfWriter writer, Document document, PdfContentByte cb) throws IOException, DocumentException 
     {
         //INVALIDO
     }
+    @Override
     public void printAsPageFooter(PdfWriter writer, Document document, PdfContentByte cb) throws IOException, DocumentException 
     {
         //INVALIDO
@@ -104,16 +85,17 @@ public class Header implements IComponent {
     }
     @Override @FXML
     public void editComponent(ActionEvent event) {
-        this.componentName = componentNameTF.getText();
-        this.schoolName = schoolNameTF.getText();
-        this.street = addressTF.getText();
-        this.logoPath = logoPathTF.getText();
-        this.webSite = websiteTF.getText();
-        this.telefone = telefoneTF.getText();
-        System.out.println("Componente CABEÇALHO editado com sucesso! Novo conteudo: " + this.componentName + ", " + this.schoolName + ", " + this.street + "...");
     }
     @Override
     public String getFXMLPath() {
         return FXML_PATH;
+    }
+    
+    @FXML
+    public void activateFileChooser(ActionEvent event){
+        FileChooser fc = new FileChooser();
+        File f = fc.showOpenDialog(SceneController.mainStage);
+        path = f.getPath();
+        lastSelectedPath.setText(path);
     }
 }

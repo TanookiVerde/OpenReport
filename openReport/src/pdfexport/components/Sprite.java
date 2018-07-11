@@ -4,27 +4,26 @@ import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.ColumnText;
 import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfWriter;
+import java.io.File;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.layout.VBox;
-import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
+import openreport.SceneController;
 
 public class Sprite implements IComponent{
-    public String componentName;
     public String path;
+    
+    @FXML
+    private javafx.scene.text.Text lastSelectedPath;
     
     // Para referenciar em funções de adição, remoção e edição
     public VBox vbox; 
     public Parent node;
     public java.util.List<IComponent> list;
     public static String FXML_PATH = "/pdfexport/components/Sprite.fxml";
-    
-    @FXML
-    private TextField componentNameTF;
-    @FXML
-    private TextField pathTF;
     
     public Sprite(String _path){
         path = _path;
@@ -33,10 +32,11 @@ public class Sprite implements IComponent{
         path = "Coloque aqui onde está seu arquivo";
     }
     @Override
-    public void print(Document document) throws IOException, DocumentException { 
+    public void print(Document document) throws IOException, DocumentException {
         Image img = Image.getInstance(path);  
         document.add(img);
     }
+    @Override
     public void printAsPageHeader(PdfWriter writer, Document document, PdfContentByte cb) throws IOException, DocumentException 
     {     
         Font ffont = new Font(Font.FontFamily.HELVETICA, 8, Font.ITALIC);
@@ -49,6 +49,7 @@ public class Sprite implements IComponent{
                 (document.right() - document.left()) / 2 + document.leftMargin(),
                 document.top() + 10, 0);
     }
+    @Override
     public void printAsPageFooter(PdfWriter writer, Document document, PdfContentByte cb) throws IOException, DocumentException 
     {     
         Font ffont = new Font(Font.FontFamily.HELVETICA, 8, Font.ITALIC);
@@ -76,9 +77,15 @@ public class Sprite implements IComponent{
     }
     @Override @FXML
     public void editComponent(ActionEvent event) {
-        this.componentName = componentNameTF.getText();
-        this.path = pathTF.getText();
-        System.out.println("Componente ASSINATURA editado com sucesso! Novo conteudo: " + this.componentName + " e " + this.path);
+        //this.path = pathTF.getText();
+        System.out.println("Componente ASSINATURA editado com sucesso! Novo conteudo: " + " e " + this.path);
+    }
+    @FXML
+    public void activateFileChooser(ActionEvent event){
+        FileChooser fc = new FileChooser();
+        File f = fc.showOpenDialog(SceneController.mainStage);
+        path = f.getPath();
+        lastSelectedPath.setText(path);
     }
     
     @Override
