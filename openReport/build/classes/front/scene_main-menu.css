@@ -2,7 +2,7 @@
 
     Este arquivo CSS é destinado à estilização do menu inicial do OpenReport
     Cor base Adobe Color: #1A7F86
-    Cor hover Adobe Color: #011516 #02244 - melhor
+    Cor hover Adobe Color: #011516 #104F53 - melhor
     Cor amarelo post-it: #FEFFE4
     Cor background cinza AdobeXD: #E4E4E4
 
@@ -59,11 +59,12 @@
 }
 
 .button:hover {
-    -fx-text-fill: #022442;
+    -fx-text-fill: #104F53;
+    -fx-animated: true;
 }
 
 .button-rect:hover {
-    -fx-background-color: #022442;
+    -fx-background-color: #104F53;
 }
 
 .button-rect {

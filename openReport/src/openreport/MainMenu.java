@@ -17,14 +17,14 @@ public class MainMenu {
     private void loadReport(ActionEvent event){
         Alert window = new Alert(Alert.AlertType.WARNING);
         window.setTitle("Ação Inválida");
-        window.setContentText("Visite a Microsoft App Store para adquirir este conteúdo por $9.99");
+        window.setContentText("Visite a Microsoft App Store para adquirir este conteúdo por $9.99!");
         window.show();
     }
     @FXML
     private void help(ActionEvent event){
         Alert window = new Alert(Alert.AlertType.WARNING);
         window.setTitle("Ação Inválida");
-        window.setContentText("Visite a Microsoft App Store para adquirir este conteúdo por $9.99");
+        window.setContentText("Visite a Microsoft App Store para adquirir este conteúdo por $9.99!");
         window.show();
     }
 }
