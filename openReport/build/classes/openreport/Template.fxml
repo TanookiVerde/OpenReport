@@ -11,11 +11,11 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1053.0" styleClass="body" stylesheets="@../front/scene_template.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pdfexport.Template">
    <center>
-      <ScrollPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-style: none;" BorderPane.alignment="CENTER">
+      <ScrollPane pannable="true" prefHeight="200.0" prefWidth="200.0" style="-fx-border-style: none; -fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-style: none;">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <VBox fx:id="slotGrid" prefHeight="585.0" prefWidth="1053.0" />
+                  <VBox fx:id="slotGrid" prefHeight="585.0" prefWidth="1053.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="-385.6" />
                </children>
             </AnchorPane>
         </content>

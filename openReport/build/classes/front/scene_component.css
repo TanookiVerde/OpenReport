@@ -1,0 +1,27 @@
+/**********************
+
+    Este arquivo CSS é destinado à estilização a tela de componentes do OpenReport
+    Cor base Adobe Color: #1A7F86
+    Cor hover Adobe Color: #011516 #02244 - melhor
+    Cor amarelo post-it: #FEFFE4
+    Cor background cinza AdobeXD: #E4E4E4
+
+ **********************/
+
+@font-face {
+    /*font-family: Droid Serif;*/
+    src: url("fonts/DroidSerif-Regular.ttf");
+
+    /*font-family: Work Sans;*/
+    src: url("WorkSans-Regular.ttf");
+}
+
+.titled-pane > .title 
+{
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 0; /* 2 10 3 10 */
+    -fx-text-fill: #104F53;
+    -fx-font-family: "Work Sans";
+    -fx-border-style: none;
+    -fx-font-size: 14px;
+}
