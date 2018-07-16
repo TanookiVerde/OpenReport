@@ -3,6 +3,7 @@ package openreport;
 import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class SceneController {
@@ -21,6 +22,8 @@ public class SceneController {
         if(mainStage != null){
             mainStage.setScene(scene);
             mainStage.setTitle("OpenReport");
+            Image image = new Image(OpenReport.class.getResourceAsStream("/images/logo.png"));
+            mainStage.getIcons().add(image);
             mainStage.setResizable(false);
             mainStage.show();
         }

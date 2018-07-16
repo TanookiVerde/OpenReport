@@ -36,6 +36,8 @@ import java.util.Optional;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.control.ButtonType;
+import javafx.stage.StageStyle;
+import openreport.SceneController;
 
 public class PDFCreator {
     public static final String DEST = "results/objects/test.pdf";
@@ -144,9 +146,10 @@ public class PDFCreator {
             document.close();
             
             Alert window = new Alert(Alert.AlertType.CONFIRMATION);
+            window.initOwner(SceneController.mainStage);
             window.setHeaderText("Sucesso");
             window.setTitle("Finalizado");
-            window.setContentText("Documento PDF gerado com sucesso. O arquivo será aberto em instantes.");           
+            window.setContentText("Documento PDF gerado com sucesso. Deseja abrir o arquivo?");           
             
             ButtonType openBtn = new ButtonType("Abrir", ButtonData.OK_DONE);
             ButtonType cancelBtn = new ButtonType("Cancelar", ButtonData.CANCEL_CLOSE);
@@ -160,6 +163,7 @@ public class PDFCreator {
             
         } catch(Exception e){
             Alert window = new Alert(Alert.AlertType.WARNING);
+            window.initOwner(SceneController.mainStage);
             window.setTitle("Erro");
             window.setHeaderText("Falha");
             window.setContentText("Documento PDF não foi gerado. Veja se todos os componentes possuem informações não nulas e se possui acesso para salvar na pasta selecionada.");
