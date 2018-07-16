@@ -25,12 +25,17 @@ import com.itextpdf.text.pdf.ColumnText;
 import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfPageEventHelper;
 import com.itextpdf.text.pdf.PdfWriter;
+import java.awt.Desktop;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Optional;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.control.ButtonType;
 
 public class PDFCreator {
     public static final String DEST = "results/objects/test.pdf";
@@ -138,14 +143,25 @@ public class PDFCreator {
             }
             document.close();
             
-            Alert window = new Alert(Alert.AlertType.INFORMATION);
+            Alert window = new Alert(Alert.AlertType.CONFIRMATION);
+            window.setHeaderText("Sucesso");
             window.setTitle("Finalizado");
-            window.setContentText("Documento PDF gerado com sucesso");
-            window.show();
+            window.setContentText("Documento PDF gerado com sucesso. O arquivo será aberto em instantes.");           
+            
+            ButtonType openBtn = new ButtonType("Abrir", ButtonData.OK_DONE);
+            ButtonType cancelBtn = new ButtonType("Cancelar", ButtonData.CANCEL_CLOSE);
+            
+            window.getButtonTypes().setAll(openBtn, cancelBtn);
+            Optional<ButtonType> result = window.showAndWait();
+            
+            if (result.get() == openBtn){
+                Desktop.getDesktop().open(new File(dest));
+            }
             
         } catch(Exception e){
             Alert window = new Alert(Alert.AlertType.WARNING);
             window.setTitle("Erro");
+            window.setHeaderText("Falha");
             window.setContentText("Documento PDF não foi gerado. Veja se todos os componentes possuem informações não nulas e se possui acesso para salvar na pasta selecionada.");
             window.show();
             e.printStackTrace();

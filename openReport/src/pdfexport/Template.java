@@ -13,6 +13,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.layout.VBox;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
+import javax.swing.JFileChooser;
 import openreport.SceneController;
 import openreport.Screen;
 import pdfexport.slots.*;
@@ -50,9 +52,16 @@ public class Template {
      */
     @FXML
     private void toPDF(ActionEvent event){
-        DirectoryChooser dc = new DirectoryChooser();
-        File f = dc.showDialog(SceneController.mainStage);
-        PDFCreator.makeDocumentFromTemplate(template,f.getPath()+"\\your_document.pdf");
+        //DirectoryChooser dc = new DirectoryChooser();
+        //File f = dc.showDialog(SceneController.mainStage);
+        FileChooser fileChooser = new FileChooser();
+        ExtensionFilter filter = new ExtensionFilter("Arquivo PDF (*.pdf)","*.pdf");
+        fileChooser.getExtensionFilters().add(filter);
+        fileChooser.setSelectedExtensionFilter(filter);
+        fileChooser.setTitle("Salvar Arquivo");
+        File f = fileChooser.showSaveDialog(SceneController.mainStage);
+        PDFCreator.makeDocumentFromTemplate(template,f.getPath());
+        
     }
     /**
      * Este método é chamado quando o usuário clica no botão de exportar template.
