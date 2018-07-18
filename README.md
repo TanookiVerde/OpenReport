@@ -34,15 +34,15 @@ Nome|Tipo|Horas|Concluído
 |Enumeração dos Queries de acordo com o componente Tabela Simples|Banco de Dados|2h|X
 |Implementação dos Queries enumerados|Banco de Dados|6h|X
 |Integração com Java|Banco de Dados|5h|X
-|Testes JUnit|Documentação|N/A| O
-|Componente Histórico Escolar|Interface|3h| O
-|Componente Listagem Turmas|Interface|3h| O
-|Componente Listagem Alunos|Interface|3h| O
-|Componente Listagem Professores|Interface|3h| O
-|Polimento do Layout de Impressão|Exportar PDF|3h|O
-|Document Header|Exportar PDF|4h|O
-|Visual dos Componentes|Exportar PDF|4h|O
-|Correção na tela de Customização|Exportar PDF|4h|O
+|Testes JUnit|Documentação|N/A| X
+|Componente Histórico Escolar|Interface|3h| X
+|Componente Listagem Turmas|Interface|3h| X
+|Componente Listagem Alunos|Interface|3h| X
+|Componente Listagem Professores|Interface|3h| X
+|Polimento do Layout de Impressão|Exportar PDF|3h|X
+|Document Header|Exportar PDF|4h|X
+|Visual dos Componentes|Exportar PDF|4h|X
+|Correção na tela de Customização|Exportar PDF|4h|X
 <br>
 
 Bônus|Tipo|Horas
